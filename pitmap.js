@@ -359,13 +359,16 @@ const PitMap = (() => {
   function loadAvatars(state, onLoad) {
     if (!state._avatarImgs) state._avatarImgs = {};
     for (const pit of state.pits) {
-      if (pit.avatarUrl && !state._avatarImgs[pit.teamNumber]) {
-        const img = new Image();
-        img.onload  = onLoad;
-        img.onerror = () => {};
-        img.src = pit.avatarUrl;
-        state._avatarImgs[pit.teamNumber] = img;
-      }
+      if (!pit.avatarUrl || !pit.teamNumber) continue;
+      const existing = state._avatarImgs[pit.teamNumber];
+      // Skip only if already successfully loaded with the same URL
+      if (existing && existing.complete && existing.naturalWidth > 0 && existing._src === pit.avatarUrl) continue;
+      const img = new Image();
+      img.onload  = onLoad;
+      img.onerror = () => {};
+      img._src = pit.avatarUrl; // track which URL this image was loaded from
+      img.src  = pit.avatarUrl;
+      state._avatarImgs[pit.teamNumber] = img;
     }
   }
 
