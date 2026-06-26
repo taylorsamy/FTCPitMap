@@ -1,0 +1,5067 @@
+
+:root {
+  --avatar-size: 40;
+}
+
+.team-avatar {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAxHpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabVDbDcMgDPz3FB0BPyAwDmlSqRt0/B4YolD1JD/wWYdtOj/vFz0ahI0sbjmVlAJgxYpUJDk4avccrPsOmRyvdboIQUkR1Z85jf5Z50vAQ0UWb0L5OYh9JYpdE6xC4kHbRC0/hlAZQipO8BCovlZIJW/3FfYzrMhu1Jw8R9u8w8/bNlzviPhHRU5lDfCq5gNos0hae1JhOAeaGLlphI86J8FB/t1pgr4Zpllu6KdGtAAAAYNpQ0NQSUNDIHByb2ZpbGUAAHicfZE9SMNAHMVfU0WRiogVRBwyVBftoiKOtQpFqBBqhVYdTC79giYNSYqLo+BacPBjserg4qyrg6sgCH6AuAtOii5S4v+SQosYD4778e7e4+4dINTLTLM6YoCm22YqERcz2VWx6xUCBtGPcYRlZhlzkpSE7/i6R4Cvd1Ge5X/uz9Gr5iwGBETiGDNMm3iDeGbTNjjvE4dZUVaJz4knTLog8SPXFY/fOBdcFnhm2Eyn5onDxGKhjZU2ZkVTI54mjqiaTvlCxmOV8xZnrVxlzXvyF4Zy+soy12mOIIFFLEGCCAVVlFCGjSitOikWUrQf9/EPu36JXAq5SmDkWEAFGmTXD/4Hv7u18lOTXlIoDnS+OM7HKNC1CzRqjvN97DiNEyD4DFzpLX+lDsx+kl5raZEjoG8buLhuacoecLkDDD0Zsim7UpCmkM8D72f0TVlg4BboWfN6a+7j9AFIU1fJG+DgEBgrUPa6z7u723v790yzvx+hpXK5StDn0AAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+kCFREtN2XrIoAAAAeUSURBVFjD7ZdtcFTlFcd/9+4mm4TsrpsseSFLEtiFqAVECwXFCqi8CFkCKJiJpS1vz7ZAp7XacZzWaqdOZ9RhpFBhssaXCuIwzDDoinbUVIiVAjGJEAIFFjBvBIHd7GaT3ezr7YfsbjYZFNo60y85X+4855z7PP/7nHP+51wYkREZkREZkSFir7Zf2LV1W9Rlsmz7zjcXDg3C8S7CMe9mX5GHgSsDxuX09MjAJpfJUuMyWeTvCJwa2AssARwIx9L/GCAwGUDn7Ums1wJvu0yWtP8RnAzsBKxxjQbYi3BU3ehV9bD1HQB6lytVVwnoXCbLI7kdzkCqQVGUImAWYAHGxD+4D3ACzcBRSZKiwKvxfYafvRPhyMBuff1mAU4B0F7+erjfIuADl8lSntN+LgasBtYBd97gArzP1xw59btjV+9OKFbkBLnQp6YhqEpEsAbh0GC37rg5gIrCqNPO6/nOkUpNdUogYJQyM4sTymAwiMfjwe/3A6BSqdDr9ej1evbVntGngnvYEOSB0m5mRWTUZ3M52q8CkIDtcZBbhh8qpRSIHvDk+HqZu2U7ALGsDJpXLmPKrr1IkcjAFz22guxnfsul7m5aTrbQ1tZ23as7583lJWd6cl2hD7HQ7EavG/V6r6/3e4Gwasaec7kcDqhSX3sGu/X5VEXSarVapwNrCl3XKGw6MZBjaeqThxfOb+qbON5SeOYcUihMrPkU3sOfUxfs52pfH4AHOArUAo3A+dNXs82bL2Ylo1OuC7PI7GbmzGnMmzdPlz0q+6FLHV9Nv9XQX9Ln09AaTtbq/Xy/ahQN73x8vRBPBdC7uwdL3N9/pLKycmt9ff2CI+o0Zuzeg8rjQ9PYzGyPh9P3z1l/obDwNWETSkrFbgBWJJYLtWEWmV3cdtsEpk6dCmAuu7Xs2bq6uoUZ6uh7Kye6Hshw5vBRb5IofoNwZGG3bhpOMwMFcm1IBX+p1Wk3zpk7h+yZMzi8qopwvhGAjAvt3Fmz87mH//hiWQq4NcArieXcURHKzW7UstLe3tZOJJ4mwJr1Yr0WKE9XxQ4sneBmsS6ceu5GhKMa4ZDk4RST3dE5qIkpTUC5LMvcN/s+fIUF1FWtJFhqSngUAZ+5TJZpcU6rSRjuzYyy3OImXRXbB5gDgcC7ly9fTk2tBcIm+oHlajm2Z7HZxRJ9aAh7aiT+KscLRAKmpEciZF5sT9JcTyx2PM5vyLJMOBx+yZOdve/QI8sIWEoSfsaIVvv3Bdrwm6lFN0EbQqOO/g2oEjYRBtaGw+HehD0UCpkAhE2EgKpwVH6rJyIPqd4nxnlXJTQTgQyDz5f6BWfef/rXoWgkmjzUusS6D6j0ZWbuO7h8Kb5JA9FVNGpthcWVlhqmN65k8vOGwnbRUBiKA3EVjSn6ImEP+AOa5FU1FGb/8kTe7Qf7BkviqXE9lBr8fXJqgRg83lSATZoMTcTlHsxJvV6/GngMMGb1B+k3GAYqzevD8vUlyoeFKQrrgTcQDpWiKKZ0TXqSE53nnYm8zQI+BKYlbE+U+Bif0+cHFquH9ODu7iEAhU0okyZPiuTl5anjJCym5OWJ3N3vkPPPhsFwhCPc9eZu1D96FMaDfDGH/Z4kB/6kTKPKAozxHoyvx0djQ6ML4cgEDgD3JJx/YeqlzNgbApYJmzgkpxZIaosLmQpO2avta1tOtvS64r1ZlmV+UL6Ywoolw3m5W4pEX5i031GkkpVXF453syInCMDS/AwOPDljBTA34Xzs2DGCEdVZYD8wJ6H/2Zg+Juf7IkClsImPkp3EXm1vBYortu5A7R3Iww+e+pUvIsva0V4vvePHYbVaycrKSiKKdHYS/KQ2HP704LOx2s+25XY4e1O60it5+QUbjGMnM22SCU36YG41NjbyRX1D2+NNhU1+hYqEfn2Bn+lF3hjwY2ETbyejY6+23wJ0a/0B5m8emFEjumw6Z8+i6PMjqHx9HNqwjlBREQ/OexCj0Tj89mLAKcAF+IEcYEL8OZiP0Sj1x+ppbm7mYKvBu/tahj5hW50f4G6TB2CdsInXhrQ6q9U6A/hpgdtNUcPxgVAGQ9xy9jxyIIgUi1Fw7QpflRRz4pyTaDSKwWAgLS0tlRHygNI4MBOQmTKS0d7eTu0ntbS2tnLyipaay1kZCfuq0f3cM9aDBBuFTdivN81MAdAPreBUcWecb7OXdHa+12I2/+X4l8fvOnH8BGazmeLiYoxGI1qdFlke5LBAIIDX66Wrq4uzZ87S09NDTIHGLj32rsE0eTQ3yL1ju5HgSWET279p3JoKoBs6pAL8C9gC7MztcPp58QXs1faZwCZFUZ52Op2jnc7BsSwBUFEUFEUZMtcC/5AlfpimiiWVywwh5pZ0I0n8QdjE5m8b+Qd68KWuhO5j4CHg9twOZ3Vuh9OfJFSbCAubeBkYGx8IdsWnZyUWixGLxRLgeoBPgd8DE4RN3AesvSPfpzxe7KNCH2J+qRtZUl4WNvHct028kr3a/qEEecv+tLlBikb/nNvhbPkv/gRlQAekAb54j72eXxXwlgIqCXYIm9hwo72l/8NvbQWwAHgf6BI20TTysz8iIzIiI/LN8m+rb/BaNl27wwAAAABJRU5ErkJggg==");
+  background-size: contain;
+  background-position: center;
+  height: calc(var(--avatar-size) * 1px);
+  width: calc(var(--avatar-size) * 1px);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.team-7 {
+  background-image: url("/avatars/composed/2025/7_050f2636-ea41-43e1-9626-ce5a32934ccf");
+}
+.team-18 {
+  background-image: url("/avatars/composed/2025/18_20c2b6d3-58f8-4bfc-b998-c46928935e65");
+}
+.team-40 {
+  background-image: url("/avatars/composed/2025/40_c36b41b5-d424-440b-9ed4-f0b18b82c182");
+}
+.team-48 {
+  background-image: url("/avatars/composed/2025/48_10f9b7cc-45bb-4498-843d-a7912e38b385");
+}
+.team-72 {
+  background-image: url("/avatars/composed/2025/72_058c7dd3-fa9e-4a6d-ab74-f3ce5e9e7984");
+}
+.team-92 {
+  background-image: url("/avatars/composed/2025/92_fb50ea42-8608-4663-b3fb-e90a7a5d044c");
+}
+.team-127 {
+  background-image: url("/avatars/composed/2025/127_b56ccb78-fbc9-4aea-a7ea-c32df9bbb89b");
+}
+.team-226 {
+  background-image: url("/avatars/composed/2025/226_134f6ea9-9b5a-4536-8ce2-37c9e44dd91c");
+}
+.team-247 {
+  background-image: url("/avatars/composed/2025/247_bdf41831-8f84-4f8c-a2fb-ade35764522b");
+}
+.team-248 {
+  background-image: url("/avatars/composed/2025/248_1ce520c7-fcd6-40ad-93b7-40561b82e441");
+}
+.team-252 {
+  background-image: url("/avatars/composed/2025/252_7987f38a-6d11-4c70-8275-f6e7bda7700a");
+}
+.team-288 {
+  background-image: url("/avatars/composed/2025/288_0d2bdd78-8c69-4be1-9afd-64117c6a6f2a");
+}
+.team-293 {
+  background-image: url("/avatars/composed/2025/293_ce3233a7-7e80-4d03-a6b5-e870cb2052c4");
+}
+.team-365 {
+  background-image: url("/avatars/composed/2025/365_90bd77f0-2e19-473a-a926-54e44d356d40");
+}
+.team-369 {
+  background-image: url("/avatars/composed/2025/369_90948fb8-427e-434b-8aac-e54b674d9b21");
+}
+.team-417 {
+  background-image: url("/avatars/composed/2025/417_fb467e13-daa7-464e-812b-78a6c659c4d5");
+}
+.team-506 {
+  background-image: url("/avatars/composed/2025/506_3b4d3553-cb1b-46de-bebb-304cc15510b8");
+}
+.team-516 {
+  background-image: url("/avatars/composed/2025/516_baff5b80-86a2-4753-b320-e64cb68dca2c");
+}
+.team-636 {
+  background-image: url("/avatars/composed/2025/636_8ee5c958-ede4-4598-b446-d83b7d62722e");
+}
+.team-701 {
+  background-image: url("/avatars/composed/2025/701_125bf997-7ab7-4b17-8989-da24b83c5eeb");
+}
+.team-731 {
+  background-image: url("/avatars/composed/2025/731_afc52f6f-d273-4722-b6e0-512b5934b287");
+}
+.team-772 {
+  background-image: url("/avatars/composed/2025/772_8cbb4daf-9f75-44f7-a00f-964d08319bb4");
+}
+.team-1622 {
+  background-image: url("/avatars/composed/2025/1622_2a3a679d-9dfb-4394-80d9-f80e70ebec8e");
+}
+.team-2818 {
+  background-image: url("/avatars/composed/2025/2818_9e677721-fd46-4c08-a5f8-0adea820ff5f");
+}
+.team-2827 {
+  background-image: url("/avatars/composed/2025/2827_6a520f8a-536c-462c-a3bf-2cdededacdc2");
+}
+.team-2901 {
+  background-image: url("/avatars/composed/2025/2901_20e2fd94-c283-4fbe-939a-12adb25b4f04");
+}
+.team-3033 {
+  background-image: url("/avatars/composed/2025/3033_9be54603-33d3-4c52-9665-2f152081cd91");
+}
+.team-3050 {
+  background-image: url("/avatars/composed/2025/3050_2ae4544b-1b36-47ec-aff4-073d844ce1ac");
+}
+.team-3189 {
+  background-image: url("/avatars/composed/2025/3189_5736c6fd-2001-4cb8-b330-f0d67480bc16");
+}
+.team-3208 {
+  background-image: url("/avatars/composed/2025/3208_7ac89382-7480-4580-bb6e-81022e18d27b");
+}
+.team-3216 {
+  background-image: url("/avatars/composed/2025/3216_20897aa4-d4dd-486f-bfad-b24ecb1517fa");
+}
+.team-3311 {
+  background-image: url("/avatars/composed/2025/3311_b02a0f69-2130-4f82-942b-4e93b6db33fb");
+}
+.team-3409 {
+  background-image: url("/avatars/composed/2025/3409_cfa20b61-e351-4faa-830c-c78a2ba15a76");
+}
+.team-3470 {
+  background-image: url("/avatars/composed/2025/3470_5e2eced0-234a-4b7c-880d-2a5d15cdaeb2");
+}
+.team-3491 {
+  background-image: url("/avatars/composed/2025/3491_e8f74429-35f0-4b4d-8da1-e546b0275998");
+}
+.team-3507 {
+  background-image: url("/avatars/composed/2025/3507_53d53c3f-23b5-4bc8-aff9-940514a0a6bc");
+}
+.team-3526 {
+  background-image: url("/avatars/composed/2025/3526_58f9bc96-36c8-47bb-b201-a0849feeb34c");
+}
+.team-3587 {
+  background-image: url("/avatars/composed/2025/3587_86132ed8-05f7-4bca-aca8-d9792b6fb743");
+}
+.team-3592 {
+  background-image: url("/avatars/composed/2025/3592_6ba657c7-2a24-453c-90a5-02807b8df40b");
+}
+.team-3609 {
+  background-image: url("/avatars/composed/2025/3609_e9bb9742-0dc8-4d30-a560-99c2d6503edf");
+}
+.team-3638 {
+  background-image: url("/avatars/composed/2025/3638_2d1fa7f5-4a0e-41f6-bed8-c5291718b19a");
+}
+.team-3658 {
+  background-image: url("/avatars/composed/2025/3658_650c6e48-c5bc-402f-9bfc-228f38784123");
+}
+.team-3666 {
+  background-image: url("/avatars/composed/2025/3666_5c35d2c7-b6cf-4dfb-b512-f9999621b725");
+}
+.team-3747 {
+  background-image: url("/avatars/composed/2025/3747_e91f8bd7-d24c-484f-a46a-611e4f6e7eb4");
+}
+.team-3763 {
+  background-image: url("/avatars/composed/2025/3763_e2246166-779c-4b49-96b5-ac594944c0b3");
+}
+.team-3768 {
+  background-image: url("/avatars/composed/2025/3768_068e9bd5-5583-4282-bb72-e50f3d9c3d2a");
+}
+.team-3774 {
+  background-image: url("/avatars/composed/2025/3774_b0d28d17-8977-4fe3-aa88-e84d0de25ea7");
+}
+.team-3788 {
+  background-image: url("/avatars/composed/2025/3788_982858c3-a118-43e2-85a5-ae1576987164");
+}
+.team-3825 {
+  background-image: url("/avatars/composed/2025/3825_ef8206e2-8cfa-45f5-bf6d-0abdd4cf8cdd");
+}
+.team-3830 {
+  background-image: url("/avatars/composed/2025/3830_3bd34b1d-89b0-4c9b-810a-f4dc1895b6d7");
+}
+.team-3861 {
+  background-image: url("/avatars/composed/2025/3861_15e5693f-1844-4409-80e9-7555651d1e5f");
+}
+.team-3954 {
+  background-image: url("/avatars/composed/2025/3954_02548935-70b9-443e-8bef-08d35d8fb3ad");
+}
+.team-3977 {
+  background-image: url("/avatars/composed/2025/3977_8158dee1-e218-40f6-b9b3-74d2edcb8f7d");
+}
+.team-4008 {
+  background-image: url("/avatars/composed/2025/4008_dd40b477-31dd-4fe2-9463-630ac7fdc7fe");
+}
+.team-4029 {
+  background-image: url("/avatars/composed/2025/4029_9a3f39ec-13a3-4a5e-9de5-e03b5f53c5d6");
+}
+.team-4102 {
+  background-image: url("/avatars/composed/2025/4102_844e90f8-89c4-4c4f-8a15-9aab54b5ddde");
+}
+.team-4106 {
+  background-image: url("/avatars/composed/2025/4106_b106835f-2a41-4345-95cf-f641979d2d71");
+}
+.team-4115 {
+  background-image: url("/avatars/composed/2025/4115_5c744f1a-0f01-487a-a5dc-2d148b04b277");
+}
+.team-4133 {
+  background-image: url("/avatars/composed/2025/4133_8d106b6f-6681-4910-abdd-8a7f6384c9a7");
+}
+.team-4137 {
+  background-image: url("/avatars/composed/2025/4137_91b25a32-655a-47df-b99e-aad19ba68cb1");
+}
+.team-4149 {
+  background-image: url("/avatars/composed/2025/4149_fd263f09-4355-4a87-a956-709b3b89d2b4");
+}
+.team-4150 {
+  background-image: url("/avatars/composed/2025/4150_93b5c3a3-277f-4013-aa77-96101d326805");
+}
+.team-4153 {
+  background-image: url("/avatars/composed/2025/4153_441e3ef0-dcad-4994-9a34-3f6027042859");
+}
+.team-4193 {
+  background-image: url("/avatars/composed/2025/4193_37aba21b-8289-470f-b629-d8b0da6bcdf3");
+}
+.team-4194 {
+  background-image: url("/avatars/composed/2025/4194_2af6b97b-35c0-4aa6-995b-b026e1904e3a");
+}
+.team-4215 {
+  background-image: url("/avatars/composed/2025/4215_31413019-a134-4991-9e34-6c3147eb865b");
+}
+.team-4216 {
+  background-image: url("/avatars/composed/2025/4216_2d373d54-bf11-46d2-bc5c-dc2cd683e9cd");
+}
+.team-4234 {
+  background-image: url("/avatars/composed/2025/4234_eccc9652-e52d-4abe-b533-1fd4786833f6");
+}
+.team-4266 {
+  background-image: url("/avatars/composed/2025/4266_be1e10a5-1e5a-4352-baea-47f9f5db07bc");
+}
+.team-4348 {
+  background-image: url("/avatars/composed/2025/4348_eb17cfa7-ceb1-46c2-be31-053bc126f55a");
+}
+.team-4602 {
+  background-image: url("/avatars/composed/2025/4602_b9772f95-5590-4298-a95a-f272acd4ad2d");
+}
+.team-4625 {
+  background-image: url("/avatars/composed/2025/4625_c28c4b34-8bab-4701-b849-aeb712a658d9");
+}
+.team-4628 {
+  background-image: url("/avatars/composed/2025/4628_b297a952-1a42-4845-94ee-df0b274ceaf0");
+}
+.team-4654 {
+  background-image: url("/avatars/composed/2025/4654_56fd4b51-b0cd-4d28-8d78-ef7e16d0bda9");
+}
+.team-4707 {
+  background-image: url("/avatars/composed/2025/4707_c2404b97-b6c7-42bf-b77f-943da567a4b2");
+}
+.team-4711 {
+  background-image: url("/avatars/composed/2025/4711_ce90877b-716c-44c9-a8cb-34ced8eedf93");
+}
+.team-4813 {
+  background-image: url("/avatars/composed/2025/4813_eeb16c4a-7e3b-4dbb-973d-22594d6818a6");
+}
+.team-4885 {
+  background-image: url("/avatars/composed/2025/4885_2087beca-5d7d-4cff-bc94-3a46b475dd57");
+}
+.team-4886 {
+  background-image: url("/avatars/composed/2025/4886_04536a7a-7bac-4245-90c2-0abb247db209");
+}
+.team-4890 {
+  background-image: url("/avatars/composed/2025/4890_296ef0ec-a5b6-4c8f-8027-7e448eefe63d");
+}
+.team-4897 {
+  background-image: url("/avatars/composed/2025/4897_2787be5c-5520-47f4-8255-0412d3c39689");
+}
+.team-4921 {
+  background-image: url("/avatars/composed/2025/4921_f70dd0c8-dd09-4d14-949f-d43c8af28da0");
+}
+.team-4924 {
+  background-image: url("/avatars/composed/2025/4924_4b125ce0-02b7-497a-b07e-47c728500535");
+}
+.team-4946 {
+  background-image: url("/avatars/composed/2025/4946_9c6ad84b-b1cf-4a02-a559-105bbb3cc30f");
+}
+.team-4957 {
+  background-image: url("/avatars/composed/2025/4957_5c41d1cd-2271-4ef2-9b7e-028cd9dc6142");
+}
+.team-4965 {
+  background-image: url("/avatars/composed/2025/4965_1b2d0165-eafe-461d-bc64-5fe2cb1ecbb3");
+}
+.team-5009 {
+  background-image: url("/avatars/composed/2025/5009_87926991-37b2-42e0-b925-c4bc732967c5");
+}
+.team-5026 {
+  background-image: url("/avatars/composed/2025/5026_db6f6f26-afcd-4a39-aa0e-d97e81b71e60");
+}
+.team-5037 {
+  background-image: url("/avatars/composed/2025/5037_c5d9cdde-d02d-4035-b8df-6eb870c93de2");
+}
+.team-5040 {
+  background-image: url("/avatars/composed/2025/5040_80e5558b-044b-4b5f-b372-a75d3ae5f97c");
+}
+.team-5059 {
+  background-image: url("/avatars/composed/2025/5059_7cc5184f-b674-4a44-947f-c580c073921c");
+}
+.team-5064 {
+  background-image: url("/avatars/composed/2025/5064_cae73215-2c81-4091-a150-e200e3a2b563");
+}
+.team-5072 {
+  background-image: url("/avatars/composed/2025/5072_1c169fb1-d0ad-41b7-815f-1b060d10cb60");
+}
+.team-5108 {
+  background-image: url("/avatars/composed/2025/5108_4e68a848-ccf6-48a8-a709-bdcb45ec2f0f");
+}
+.team-5115 {
+  background-image: url("/avatars/composed/2025/5115_0762a3bf-caa0-4890-90ba-d48a043fd1a8");
+}
+.team-5131 {
+  background-image: url("/avatars/composed/2025/5131_ccdabb24-8625-4490-af12-4ab77f3556c8");
+}
+.team-5140 {
+  background-image: url("/avatars/composed/2025/5140_9ebfe1a4-b177-43a8-8931-fc25d96ab4a5");
+}
+.team-5141 {
+  background-image: url("/avatars/composed/2025/5141_754dac04-0db9-4ffd-a3ea-00ff47a31828");
+}
+.team-5153 {
+  background-image: url("/avatars/composed/2025/5153_a8d63074-9a29-4c4f-b1cc-158baadbe7e7");
+}
+.team-5155 {
+  background-image: url("/avatars/composed/2025/5155_80d6bee0-5cfd-4795-a557-337a1b9bde4d");
+}
+.team-5189 {
+  background-image: url("/avatars/composed/2025/5189_0804a7f4-2d0f-49da-9d7d-cfdf0dd18e9b");
+}
+.team-5199 {
+  background-image: url("/avatars/composed/2025/5199_ac5d503b-d648-4d3a-b26e-fc99a830ef11");
+}
+.team-5237 {
+  background-image: url("/avatars/composed/2025/5237_440c29ea-ba88-4db5-acf6-703a1277c1f1");
+}
+.team-5243 {
+  background-image: url("/avatars/composed/2025/5243_7f5c8e78-a1f9-44af-897a-4f63fd12db0c");
+}
+.team-5292 {
+  background-image: url("/avatars/composed/2025/5292_452ec7f8-45f6-4c40-a7f0-21f1505038a3");
+}
+.team-5309 {
+  background-image: url("/avatars/composed/2025/5309_27487f74-27c2-4a15-a068-c75857824ad5");
+}
+.team-5356 {
+  background-image: url("/avatars/composed/2025/5356_1ae9ed1c-7099-4c3c-9532-9a6511be359b");
+}
+.team-5459 {
+  background-image: url("/avatars/composed/2025/5459_a4271797-4c38-4e8b-8520-77742ff64f44");
+}
+.team-5470 {
+  background-image: url("/avatars/composed/2025/5470_18911611-56b8-4e74-9718-201873852f95");
+}
+.team-5484 {
+  background-image: url("/avatars/composed/2025/5484_404e2359-a767-46c5-bccf-fd4c51ae7d66");
+}
+.team-5501 {
+  background-image: url("/avatars/composed/2025/5501_f2bfcd71-aa1a-4e40-9c8c-334cd1c97e1d");
+}
+.team-5518 {
+  background-image: url("/avatars/composed/2025/5518_0fb02811-25c2-4ba5-b174-3c57835b3e16");
+}
+.team-5553 {
+  background-image: url("/avatars/composed/2025/5553_9367ee77-f63e-4c81-8615-0bad27663b42");
+}
+.team-5661 {
+  background-image: url("/avatars/composed/2025/5661_e8822660-c882-436a-be81-b20ee4fd7769");
+}
+.team-5663 {
+  background-image: url("/avatars/composed/2025/5663_739c7486-1bbe-4b64-8954-99d2c43b24ca");
+}
+.team-5683 {
+  background-image: url("/avatars/composed/2025/5683_cab05459-8620-4cda-bc21-6d02a7ac1ebf");
+}
+.team-5754 {
+  background-image: url("/avatars/composed/2025/5754_a243c259-c352-4ec7-8f98-1b64c69ba502");
+}
+.team-5795 {
+  background-image: url("/avatars/composed/2025/5795_93b4e1ff-db0f-42f2-a032-5a3d6065d26d");
+}
+.team-5893 {
+  background-image: url("/avatars/composed/2025/5893_783b78b1-1d41-4cfb-8352-bb3fe82e1439");
+}
+.team-5898 {
+  background-image: url("/avatars/composed/2025/5898_d43a8747-1762-465f-93ae-721bb0f50b79");
+}
+.team-5899 {
+  background-image: url("/avatars/composed/2025/5899_0c1ec7b1-94fc-4867-8971-c35905fce278");
+}
+.team-5906 {
+  background-image: url("/avatars/composed/2025/5906_99f18724-9c45-422e-9ec9-16e53a014aec");
+}
+.team-5911 {
+  background-image: url("/avatars/composed/2025/5911_2bbbcb6a-5c10-4d25-ab93-c801d9b56663");
+}
+.team-5921 {
+  background-image: url("/avatars/composed/2025/5921_d92cfc0b-065e-411b-a3d0-b7b110ca3b95");
+}
+.team-5962 {
+  background-image: url("/avatars/composed/2025/5962_15565f79-8be4-44f5-901c-d9e536614104");
+}
+.team-6055 {
+  background-image: url("/avatars/composed/2025/6055_7ea3287a-e0ae-4757-842f-a50693c0ef54");
+}
+.team-6133 {
+  background-image: url("/avatars/composed/2025/6133_d44c1077-3043-409c-a95f-087c15192a35");
+}
+.team-6147 {
+  background-image: url("/avatars/composed/2025/6147_9ec7eae5-55ef-49a5-b34a-33b56a4745f8");
+}
+.team-6152 {
+  background-image: url("/avatars/composed/2025/6152_573b9fa6-3730-4b53-bd82-d05616dbd78b");
+}
+.team-6165 {
+  background-image: url("/avatars/composed/2025/6165_405aa3b1-ab76-4352-8b56-91faf54db5cd");
+}
+.team-6168 {
+  background-image: url("/avatars/composed/2025/6168_5c8570cc-5889-4646-888e-80e629f9ead2");
+}
+.team-6174 {
+  background-image: url("/avatars/composed/2025/6174_02a9342b-7068-4f0a-9c2b-56dd8a6c6756");
+}
+.team-6183 {
+  background-image: url("/avatars/composed/2025/6183_f90fb159-0ec1-4f9d-b295-b3b1efee0795");
+}
+.team-6188 {
+  background-image: url("/avatars/composed/2025/6188_75004e3f-647d-4574-8051-7581d02c3dd3");
+}
+.team-6189 {
+  background-image: url("/avatars/composed/2025/6189_c5c5915a-98a3-4b98-9891-b82ed85344fe");
+}
+.team-6220 {
+  background-image: url("/avatars/composed/2025/6220_1f96fefc-0829-4eee-9968-87db6bd43d85");
+}
+.team-6255 {
+  background-image: url("/avatars/composed/2025/6255_27ec897e-7f0a-46e4-8622-47d52d2b8f21");
+}
+.team-6282 {
+  background-image: url("/avatars/composed/2025/6282_bf484a6b-306b-4bd6-aef6-ceae0816743b");
+}
+.team-6285 {
+  background-image: url("/avatars/composed/2025/6285_52b31475-503b-4d10-a500-186507d70b03");
+}
+.team-6294 {
+  background-image: url("/avatars/composed/2025/6294_9bc785ea-4455-48d4-af61-0d836e8dbb51");
+}
+.team-6298 {
+  background-image: url("/avatars/composed/2025/6298_819baebf-0817-49fc-938f-68f4921500e5");
+}
+.team-6322 {
+  background-image: url("/avatars/composed/2025/6322_acdcaf45-b736-4ed1-9e7d-bb5f1554e66d");
+}
+.team-6323 {
+  background-image: url("/avatars/composed/2025/6323_b529a3d1-aa26-42ea-b3a2-5020026612c3");
+}
+.team-6347 {
+  background-image: url("/avatars/composed/2025/6347_25d1bf7e-e26e-40b2-bce9-e7ce6363ec56");
+}
+.team-6372 {
+  background-image: url("/avatars/composed/2025/6372_40eee4ed-d53f-42bb-a2da-41319d3df0b5");
+}
+.team-6373 {
+  background-image: url("/avatars/composed/2025/6373_f9dbd2f1-e999-48d6-8c17-bfeaf377ce1d");
+}
+.team-6374 {
+  background-image: url("/avatars/composed/2025/6374_d13d4b2c-95ef-4349-a02e-7589ecf4b46c");
+}
+.team-6382 {
+  background-image: url("/avatars/composed/2025/6382_44935a36-eb6d-4bb4-a416-91d760f97f49");
+}
+.team-6402 {
+  background-image: url("/avatars/composed/2025/6402_3afcc8cf-98fe-4398-bcc2-fe1666661ff6");
+}
+.team-6407 {
+  background-image: url("/avatars/composed/2025/6407_c684e9be-d542-4828-bb92-85ac392828f1");
+}
+.team-6417 {
+  background-image: url("/avatars/composed/2025/6417_fdccbde3-3d02-4935-8d70-73976c3a2c4b");
+}
+.team-6420 {
+  background-image: url("/avatars/composed/2025/6420_8bb909fc-b8fe-43b1-b92b-0b9e56685eb7");
+}
+.team-6424 {
+  background-image: url("/avatars/composed/2025/6424_cf154630-2ab6-48d1-a52c-2932a632e27d");
+}
+.team-6458 {
+  background-image: url("/avatars/composed/2025/6458_771a6df8-ae95-4f79-bd1a-46514d71695b");
+}
+.team-6547 {
+  background-image: url("/avatars/composed/2025/6547_2bc8c59b-3e11-4e71-8462-0ae22f715fa3");
+}
+.team-6559 {
+  background-image: url("/avatars/composed/2025/6559_38e159bc-2e7d-4ff4-bad3-879c32581293");
+}
+.team-6566 {
+  background-image: url("/avatars/composed/2025/6566_63f4e02b-eff2-4470-937a-dc272b66dc2a");
+}
+.team-6567 {
+  background-image: url("/avatars/composed/2025/6567_b6da9450-c6f2-446c-8aff-e187f3fce7f1");
+}
+.team-6584 {
+  background-image: url("/avatars/composed/2025/6584_5d0c844d-24b9-4b97-bbf7-9d2910a61851");
+}
+.team-6832 {
+  background-image: url("/avatars/composed/2025/6832_16675d45-f4d0-467f-92f4-6d2af194c43c");
+}
+.team-6914 {
+  background-image: url("/avatars/composed/2025/6914_cfbc4272-247e-4d08-8b53-13c0ffc5f11b");
+}
+.team-6916 {
+  background-image: url("/avatars/composed/2025/6916_4af2dbf1-552d-4ba8-aaed-b9a7653914ab");
+}
+.team-6955 {
+  background-image: url("/avatars/composed/2025/6955_19dddd28-4c96-4254-ac17-e494f1d269e3");
+}
+.team-6976 {
+  background-image: url("/avatars/composed/2025/6976_5f575dd0-a3b0-4101-ae35-274c35804b2d");
+}
+.team-6996 {
+  background-image: url("/avatars/composed/2025/6996_2b1627f9-d68e-4e3f-8fa4-291c338bbe5d");
+}
+.team-7002 {
+  background-image: url("/avatars/composed/2025/7002_1568a940-b4d2-4ae8-897b-978c6e6cc3c5");
+}
+.team-7031 {
+  background-image: url("/avatars/composed/2025/7031_f22f0780-628a-4411-a82c-acf3e2e6d0f8");
+}
+.team-7078 {
+  background-image: url("/avatars/composed/2025/7078_d9dfcb0f-44f5-42bf-9884-1b38699a97ca");
+}
+.team-7083 {
+  background-image: url("/avatars/composed/2025/7083_d43cd3a4-84a2-4b78-b98d-09a9a8e020e2");
+}
+.team-7085 {
+  background-image: url("/avatars/composed/2025/7085_32c8bacd-dec3-4386-aadd-906ec617ddeb");
+}
+.team-7102 {
+  background-image: url("/avatars/composed/2025/7102_8efbd827-3d5a-424f-8226-51e953874cae");
+}
+.team-7105 {
+  background-image: url("/avatars/composed/2025/7105_f7c57e04-2b01-4a8d-8665-aefbd952ce58");
+}
+.team-7110 {
+  background-image: url("/avatars/composed/2025/7110_42f18ade-1418-4aa7-953f-f5a8fd2cb162");
+}
+.team-7129 {
+  background-image: url("/avatars/composed/2025/7129_368f271f-cda7-4b6f-a22d-e58092bc1b9e");
+}
+.team-7136 {
+  background-image: url("/avatars/composed/2025/7136_657ab499-8a61-4c97-b66f-0b60943b2e49");
+}
+.team-7149 {
+  background-image: url("/avatars/composed/2025/7149_c0b615b2-bf48-4ec8-a596-577ecfda9bec");
+}
+.team-7156 {
+  background-image: url("/avatars/composed/2025/7156_fde000c3-5fa8-44a8-b1ec-f1b2580f3f45");
+}
+.team-7172 {
+  background-image: url("/avatars/composed/2025/7172_e8a19843-20d1-4233-a601-1ec911c525cb");
+}
+.team-7175 {
+  background-image: url("/avatars/composed/2025/7175_ae05db1a-a005-4c3f-8440-dc369f9d691e");
+}
+.team-7182 {
+  background-image: url("/avatars/composed/2025/7182_119b833a-8bd3-4733-a6a4-d55b0d99e900");
+}
+.team-7198 {
+  background-image: url("/avatars/composed/2025/7198_c4afc3b1-1328-4d31-b6cd-936a16fb6b31");
+}
+.team-7209 {
+  background-image: url("/avatars/composed/2025/7209_b07d59c4-9373-4bc2-817e-9d3f074b46cc");
+}
+.team-7229 {
+  background-image: url("/avatars/composed/2025/7229_7e23285b-5082-4829-bcd7-17ace33d3481");
+}
+.team-7242 {
+  background-image: url("/avatars/composed/2025/7242_a0fda476-6e95-4f55-ab5d-0a9f35cb8c34");
+}
+.team-7248 {
+  background-image: url("/avatars/composed/2025/7248_6717dc53-b338-49a1-9175-b1fee0ca3042");
+}
+.team-7255 {
+  background-image: url("/avatars/composed/2025/7255_930c18f2-00d3-4cf9-b2e0-6c66adb2a626");
+}
+.team-7277 {
+  background-image: url("/avatars/composed/2025/7277_b1751641-f487-459e-b862-14fff80afba0");
+}
+.team-7341 {
+  background-image: url("/avatars/composed/2025/7341_467e11ab-eda2-4f66-8683-070c5a0f6cb3");
+}
+.team-7343 {
+  background-image: url("/avatars/composed/2025/7343_9275e15c-0922-4fb7-8ec4-fc14adb67a64");
+}
+.team-7390 {
+  background-image: url("/avatars/composed/2025/7390_f529a459-fa0d-43cc-9ad7-98411274b8c8");
+}
+.team-7407 {
+  background-image: url("/avatars/composed/2025/7407_34d4a8ff-ad23-4ae1-909a-a5bcc197b964");
+}
+.team-7420 {
+  background-image: url("/avatars/composed/2025/7420_f45bcb33-0672-4b1f-9898-c2f448ca4e7a");
+}
+.team-7438 {
+  background-image: url("/avatars/composed/2025/7438_a0cbf7e0-a452-471a-a0b4-70d4d7b41427");
+}
+.team-7460 {
+  background-image: url("/avatars/composed/2025/7460_97f1b41e-f2d3-4e0b-849d-586e5f6d0f4d");
+}
+.team-7462 {
+  background-image: url("/avatars/composed/2025/7462_0aa7cd4c-0dde-4fb9-979f-800d3f5c5006");
+}
+.team-7486 {
+  background-image: url("/avatars/composed/2025/7486_f885ec9d-d7c5-440f-be9a-e4c270670dae");
+}
+.team-7547 {
+  background-image: url("/avatars/composed/2025/7547_3704bd91-dd48-426c-bb80-dcade0af7683");
+}
+.team-7553 {
+  background-image: url("/avatars/composed/2025/7553_7ee5053b-a354-44ec-9fc0-bf4fd7f4b8b4");
+}
+.team-7571 {
+  background-image: url("/avatars/composed/2025/7571_1a77fea2-825d-4689-a545-99a1828bf652");
+}
+.team-7604 {
+  background-image: url("/avatars/composed/2025/7604_092168be-abfe-4b36-b2f2-53e17fd08015");
+}
+.team-7615 {
+  background-image: url("/avatars/composed/2025/7615_b0dc9d5f-7df2-4944-b676-4e220d4baf45");
+}
+.team-7641 {
+  background-image: url("/avatars/composed/2025/7641_8d274fbc-6278-4b27-8921-903745e62a7b");
+}
+.team-7643 {
+  background-image: url("/avatars/composed/2025/7643_dff25658-8427-4156-a6a7-1adfca9947e8");
+}
+.team-7689 {
+  background-image: url("/avatars/composed/2025/7689_645478de-9525-45d7-9a24-2d4a192d959c");
+}
+.team-7693 {
+  background-image: url("/avatars/composed/2025/7693_a3c3ef39-4643-46ec-b8d2-a2e954c0791d");
+}
+.team-7715 {
+  background-image: url("/avatars/composed/2025/7715_08b0096b-1178-4d34-8a31-f7d925a8b678");
+}
+.team-7767 {
+  background-image: url("/avatars/composed/2025/7767_b95844ab-2e3e-4c43-b23f-aef11d7dc4d7");
+}
+.team-7831 {
+  background-image: url("/avatars/composed/2025/7831_de1f6df7-9bdf-4119-b373-310fb425309d");
+}
+.team-7832 {
+  background-image: url("/avatars/composed/2025/7832_3a00c596-6d68-4039-8573-bdf049cca387");
+}
+.team-7842 {
+  background-image: url("/avatars/composed/2025/7842_d1e6769d-8b6d-4b35-acf3-50d2c31962fb");
+}
+.team-7951 {
+  background-image: url("/avatars/composed/2025/7951_a5d1399f-0a29-43f8-874b-c89e653c516e");
+}
+.team-7959 {
+  background-image: url("/avatars/composed/2025/7959_433d5ec8-f29f-4f50-9859-8f2c38376be8");
+}
+.team-8027 {
+  background-image: url("/avatars/composed/2025/8027_5b64e025-075c-4ec7-92c3-93098a34dcfd");
+}
+.team-8081 {
+  background-image: url("/avatars/composed/2025/8081_11ce1c1b-e650-4180-aec1-40dc64a54dd3");
+}
+.team-8109 {
+  background-image: url("/avatars/composed/2025/8109_b045347e-b1ff-4e62-ab25-bb147db501be");
+}
+.team-8110 {
+  background-image: url("/avatars/composed/2025/8110_32e34898-0a59-480b-95ab-0c1a20e9c3d0");
+}
+.team-8114 {
+  background-image: url("/avatars/composed/2025/8114_12ca5520-c5ce-4da2-ab3d-46b6fce9df53");
+}
+.team-8120 {
+  background-image: url("/avatars/composed/2025/8120_b7d86d37-9ade-42b1-989e-86f6589ac46f");
+}
+.team-8149 {
+  background-image: url("/avatars/composed/2025/8149_abcb115f-6e3a-4d9e-8b0e-57f713c174c9");
+}
+.team-8271 {
+  background-image: url("/avatars/composed/2025/8271_e1153246-dbd1-4067-a6bb-bd039128aece");
+}
+.team-8284 {
+  background-image: url("/avatars/composed/2025/8284_db0ff273-a0de-4590-a3ad-ddf326613446");
+}
+.team-8304 {
+  background-image: url("/avatars/composed/2025/8304_eeb6b736-1d35-4ee5-a29e-1b5edda35c3f");
+}
+.team-8379 {
+  background-image: url("/avatars/composed/2025/8379_56b1cc4f-6f94-4528-83dd-ec0ec2004259");
+}
+.team-8393 {
+  background-image: url("/avatars/composed/2025/8393_e78ec47e-bb4c-4bbf-bae0-5c0c31350ecc");
+}
+.team-8400 {
+  background-image: url("/avatars/composed/2025/8400_f537c209-5743-474c-ac52-23620c1925d2");
+}
+.team-8468 {
+  background-image: url("/avatars/composed/2025/8468_cdd4190a-009e-4849-8f1c-6ff7406f087b");
+}
+.team-8472 {
+  background-image: url("/avatars/composed/2025/8472_b07556d3-1bfd-47f9-911c-d13d87d9bf0e");
+}
+.team-8492 {
+  background-image: url("/avatars/composed/2025/8492_9c11c222-312c-43f8-bcb3-3e0a69d4ba5c");
+}
+.team-8533 {
+  background-image: url("/avatars/composed/2025/8533_9935f1ce-f788-4318-bd12-e3401a73dc21");
+}
+.team-8548 {
+  background-image: url("/avatars/composed/2025/8548_9aa792d4-2034-4874-8edc-61f5cf7697e5");
+}
+.team-8565 {
+  background-image: url("/avatars/composed/2025/8565_6ef0a51b-0f33-4c90-87da-1205242ab7fe");
+}
+.team-8569 {
+  background-image: url("/avatars/composed/2025/8569_a3a324fc-8278-4cde-9132-d915ea31c357");
+}
+.team-8579 {
+  background-image: url("/avatars/composed/2025/8579_1847464d-c8a2-459b-82c5-759f7e49663e");
+}
+.team-8581 {
+  background-image: url("/avatars/composed/2025/8581_78061538-98ec-4cc7-9f03-47174d625426");
+}
+.team-8603 {
+  background-image: url("/avatars/composed/2025/8603_50c54e2e-6d0a-4237-90ce-2972090ef9f0");
+}
+.team-8606 {
+  background-image: url("/avatars/composed/2025/8606_bc5dc795-680d-47d4-bb6f-06d21b4a6a2f");
+}
+.team-8617 {
+  background-image: url("/avatars/composed/2025/8617_c7e455ff-aab6-4263-9d20-bedc5d2a6987");
+}
+.team-8620 {
+  background-image: url("/avatars/composed/2025/8620_2f5ac47c-b481-460c-9e68-994561f3bd76");
+}
+.team-8626 {
+  background-image: url("/avatars/composed/2025/8626_de755fca-d8da-4466-a997-911724233ae3");
+}
+.team-8628 {
+  background-image: url("/avatars/composed/2025/8628_cb762f55-ff4c-47db-ae26-913e93b30b27");
+}
+.team-8641 {
+  background-image: url("/avatars/composed/2025/8641_6e391661-2cea-4ad8-a964-c01da57ac96a");
+}
+.team-8645 {
+  background-image: url("/avatars/composed/2025/8645_3d189f8a-3722-477b-9249-306c39aecc38");
+}
+.team-8651 {
+  background-image: url("/avatars/composed/2025/8651_7cfb63db-7d96-431c-aa9a-50e66feb6e9c");
+}
+.team-8680 {
+  background-image: url("/avatars/composed/2025/8680_86982dba-86af-4a70-b174-279b8babaaf8");
+}
+.team-8696 {
+  background-image: url("/avatars/composed/2025/8696_0b3dfd06-e834-4149-bc48-7689e6b02731");
+}
+.team-8721 {
+  background-image: url("/avatars/composed/2025/8721_0d76b95a-f848-4b10-ae6a-5a227eda1c3a");
+}
+.team-8807 {
+  background-image: url("/avatars/composed/2025/8807_b533ffce-9312-4870-bae7-c4dff624efbd");
+}
+.team-8811 {
+  background-image: url("/avatars/composed/2025/8811_360c8432-9720-4bcd-8b6a-9bbb99249a7b");
+}
+.team-8818 {
+  background-image: url("/avatars/composed/2025/8818_2e874a6b-34c8-4764-9efa-a5afa8e9d39e");
+}
+.team-8902 {
+  background-image: url("/avatars/composed/2025/8902_86db9341-13a6-4283-95c5-190d7935147b");
+}
+.team-8905 {
+  background-image: url("/avatars/composed/2025/8905_3200e864-c4de-49fc-a63c-48485b43d847");
+}
+.team-8907 {
+  background-image: url("/avatars/composed/2025/8907_27e0f46e-acc8-4e92-8e33-60b0a0adc257");
+}
+.team-8934 {
+  background-image: url("/avatars/composed/2025/8934_a00c4a75-0bf4-4624-81ed-0cb973b040bf");
+}
+.team-8973 {
+  background-image: url("/avatars/composed/2025/8973_7a2e3fa8-2910-45e3-847c-0adf9c0fb776");
+}
+.team-8996 {
+  background-image: url("/avatars/composed/2025/8996_2da2178d-56ee-4fa6-9062-9e22489adf53");
+}
+.team-9044 {
+  background-image: url("/avatars/composed/2025/9044_3959fb43-8faa-4230-9119-50236eb3865b");
+}
+.team-9045 {
+  background-image: url("/avatars/composed/2025/9045_795476a6-742c-43e6-b52e-6d326f58c2d5");
+}
+.team-9087 {
+  background-image: url("/avatars/composed/2025/9087_7075b181-3877-4ac1-93b4-5b6233716090");
+}
+.team-9110 {
+  background-image: url("/avatars/composed/2025/9110_72cf1566-c32a-4b57-8a71-cf9c4076c9ca");
+}
+.team-9113 {
+  background-image: url("/avatars/composed/2025/9113_942eace9-05df-4647-86b1-7931638c2ffc");
+}
+.team-9219 {
+  background-image: url("/avatars/composed/2025/9219_ca70da44-4f6f-493b-8cbd-66c97dad52e8");
+}
+.team-9247 {
+  background-image: url("/avatars/composed/2025/9247_97edb406-e02e-411a-9681-2f4f594a4dd9");
+}
+.team-9277 {
+  background-image: url("/avatars/composed/2025/9277_46a4a635-9002-4b92-a9f0-cfd18790dff8");
+}
+.team-9324 {
+  background-image: url("/avatars/composed/2025/9324_04188ea6-05ea-49e8-b9a2-1e636914b43f");
+}
+.team-9362 {
+  background-image: url("/avatars/composed/2025/9362_0805e826-7cab-4fc3-8244-c57108292b81");
+}
+.team-9381 {
+  background-image: url("/avatars/composed/2025/9381_3874ec39-9255-4efe-9a76-314533555bb3");
+}
+.team-9386 {
+  background-image: url("/avatars/composed/2025/9386_f0e3e3ac-a8d4-465f-98ff-afedf75eb7bb");
+}
+.team-9415 {
+  background-image: url("/avatars/composed/2025/9415_09eb118d-4152-441f-827a-a1fa0144bd37");
+}
+.team-9432 {
+  background-image: url("/avatars/composed/2025/9432_21ecf71d-4206-4012-962d-53087052d2d6");
+}
+.team-9513 {
+  background-image: url("/avatars/composed/2025/9513_a91d285f-50e7-4faf-affa-ee8a97baddc7");
+}
+.team-9533 {
+  background-image: url("/avatars/composed/2025/9533_b358228f-dd79-4f09-89f6-073ece60fe9c");
+}
+.team-9614 {
+  background-image: url("/avatars/composed/2025/9614_b790506b-cfd5-462b-972e-abb20d65c76e");
+}
+.team-9626 {
+  background-image: url("/avatars/composed/2025/9626_82f8acbb-60c5-4523-9cc5-85a4cf8c2601");
+}
+.team-9637 {
+  background-image: url("/avatars/composed/2025/9637_25b377d6-bfcf-43e8-8abe-74ad65793d11");
+}
+.team-9662 {
+  background-image: url("/avatars/composed/2025/9662_01a7ddb1-83f8-4d2e-a158-1fc92ce474fa");
+}
+.team-9707 {
+  background-image: url("/avatars/composed/2025/9707_d93f8d43-636c-40c8-b6f6-f42b87273df3");
+}
+.team-9735 {
+  background-image: url("/avatars/composed/2025/9735_11c05768-6c39-4a69-af7d-42c54dc415db");
+}
+.team-9768 {
+  background-image: url("/avatars/composed/2025/9768_9fa038c7-f17d-4ea9-be63-8c2967460fce");
+}
+.team-9808 {
+  background-image: url("/avatars/composed/2025/9808_17a67f5a-eee6-4f3d-b8c7-7c87b3b97561");
+}
+.team-9820 {
+  background-image: url("/avatars/composed/2025/9820_e28062b5-8a51-4aac-a156-c025787042e3");
+}
+.team-9821 {
+  background-image: url("/avatars/composed/2025/9821_0e0be649-a722-4318-b975-c0c1e7003b8c");
+}
+.team-9848 {
+  background-image: url("/avatars/composed/2025/9848_f104e580-4673-48b6-b585-d977a2c2e519");
+}
+.team-9864 {
+  background-image: url("/avatars/composed/2025/9864_5451441a-f96a-4544-93cc-4ef534f30537");
+}
+.team-9879 {
+  background-image: url("/avatars/composed/2025/9879_bef3f9af-55a8-4cee-ab0b-4655956650fa");
+}
+.team-9881 {
+  background-image: url("/avatars/composed/2025/9881_d6a1bf4a-e835-476c-b582-1ad88ebb8f33");
+}
+.team-9889 {
+  background-image: url("/avatars/composed/2025/9889_7aab5d9a-e86c-43d4-bdb5-dc2123b3cf33");
+}
+.team-9892 {
+  background-image: url("/avatars/composed/2025/9892_a7b66589-c346-49ab-b983-0b4c6d3606a4");
+}
+.team-9905 {
+  background-image: url("/avatars/composed/2025/9905_c681306f-ddea-4723-8fb7-e28c11d75187");
+}
+.team-9925 {
+  background-image: url("/avatars/composed/2025/9925_01eb5fbb-eb7a-4111-bd0c-703ce72c59bf");
+}
+.team-9952 {
+  background-image: url("/avatars/composed/2025/9952_20fe6593-64b4-4c6a-85c6-26306c869ba2");
+}
+.team-9968 {
+  background-image: url("/avatars/composed/2025/9968_0e3867bd-20ef-4ac6-b6bc-272780dd6596");
+}
+.team-9974 {
+  background-image: url("/avatars/composed/2025/9974_d0b076d3-7cba-40a6-af07-64485735d534");
+}
+.team-9981 {
+  background-image: url("/avatars/composed/2025/9981_7aad201a-c8cc-4937-8390-202295fb4c5c");
+}
+.team-9982 {
+  background-image: url("/avatars/composed/2025/9982_9e02da6e-b070-4a2c-a256-0c26ce80a4dc");
+}
+.team-9986 {
+  background-image: url("/avatars/composed/2025/9986_dfa2d70d-9870-4539-9cf8-3bb64fc3ce2b");
+}
+.team-9987 {
+  background-image: url("/avatars/composed/2025/9987_11dd285c-b137-49e2-840c-fbd17314e5e4");
+}
+.team-9999 {
+  background-image: url("/avatars/composed/2025/9999_04e4bf7e-828a-4742-ae97-cf12ef6e4da2");
+}
+.team-10006 {
+  background-image: url("/avatars/composed/2025/10006_7c7b636d-c669-45f0-8efb-6d28b83664d3");
+}
+.team-10015 {
+  background-image: url("/avatars/composed/2025/10015_28c718b3-ea6c-4f3f-bba0-0af7b5573761");
+}
+.team-10016 {
+  background-image: url("/avatars/composed/2025/10016_a98e5c89-3856-42a0-9232-1e820352f01d");
+}
+.team-10022 {
+  background-image: url("/avatars/composed/2025/10022_3900640f-bf0d-4273-b6f5-b13cc67931b1");
+}
+.team-10024 {
+  background-image: url("/avatars/composed/2025/10024_6b1eb3b7-7a79-471d-a311-f327d0cf7e23");
+}
+.team-10035 {
+  background-image: url("/avatars/composed/2025/10035_bfba0b7c-794b-4fba-9fd4-5c4be847ff91");
+}
+.team-10084 {
+  background-image: url("/avatars/composed/2025/10084_a638b3c6-3a4e-470a-a5f1-9ce1f5abfdf3");
+}
+.team-10087 {
+  background-image: url("/avatars/composed/2025/10087_69ec70cf-e6f6-48ba-81c3-3dbe2a6c959c");
+}
+.team-10088 {
+  background-image: url("/avatars/composed/2025/10088_91385218-dc35-4a64-afa1-156da93b7c16");
+}
+.team-10091 {
+  background-image: url("/avatars/composed/2025/10091_f6ec5348-d5bf-458d-b15f-672403f8ac98");
+}
+.team-10130 {
+  background-image: url("/avatars/composed/2025/10130_daa66d64-89c3-4c3d-b96d-94ea0e09377d");
+}
+.team-10132 {
+  background-image: url("/avatars/composed/2025/10132_bb93e29b-bfc5-45c9-bd2a-13827c50cf02");
+}
+.team-10138 {
+  background-image: url("/avatars/composed/2025/10138_3e804a22-f7cd-46f5-b107-c660a113f008");
+}
+.team-10161 {
+  background-image: url("/avatars/composed/2025/10161_55830145-8500-46e7-82ae-76f81ddc80d1");
+}
+.team-10179 {
+  background-image: url("/avatars/composed/2025/10179_48b4ead2-1d58-4f1b-96df-6ea583ea1b7d");
+}
+.team-10183 {
+  background-image: url("/avatars/composed/2025/10183_a3fbfeee-d55b-47f4-8d42-4802f1953e67");
+}
+.team-10195 {
+  background-image: url("/avatars/composed/2025/10195_168ebada-1eeb-4c26-bc3e-6aef516cd269");
+}
+.team-10255 {
+  background-image: url("/avatars/composed/2025/10255_01cbd04f-f209-4ce7-a2d0-70f04ee21215");
+}
+.team-10265 {
+  background-image: url("/avatars/composed/2025/10265_c246b273-3507-46f0-b655-2c5c31fe52aa");
+}
+.team-10298 {
+  background-image: url("/avatars/composed/2025/10298_b59acdca-7a5a-4890-bf2a-bb857e408e5b");
+}
+.team-10309 {
+  background-image: url("/avatars/composed/2025/10309_ef830c6a-6971-4f87-a25a-c85810384ab4");
+}
+.team-10333 {
+  background-image: url("/avatars/composed/2025/10333_7d75aa72-b1e3-41a9-866d-d9eea2786009");
+}
+.team-10354 {
+  background-image: url("/avatars/composed/2025/10354_048a2f23-6040-4798-aff4-395388ae8898");
+}
+.team-10355 {
+  background-image: url("/avatars/composed/2025/10355_a61007d8-ebe1-4a20-9c4f-d6a22348cf0e");
+}
+.team-10366 {
+  background-image: url("/avatars/composed/2025/10366_a31f2ad5-60e1-4ecb-9cae-b411e700473c");
+}
+.team-10435 {
+  background-image: url("/avatars/composed/2025/10435_c7464b0b-234e-427c-967b-781fb3303325");
+}
+.team-10448 {
+  background-image: url("/avatars/composed/2025/10448_c28aff0d-13ae-4136-b26b-d047cc02d599");
+}
+.team-10464 {
+  background-image: url("/avatars/composed/2025/10464_4b28a6a8-18f4-44b0-9b1a-2d266a42085f");
+}
+.team-10484 {
+  background-image: url("/avatars/composed/2025/10484_2f87e81d-45cb-403c-8466-07b0348122bd");
+}
+.team-10505 {
+  background-image: url("/avatars/composed/2025/10505_5b2649b2-dc87-49fa-a860-616574fe480d");
+}
+.team-10518 {
+  background-image: url("/avatars/composed/2025/10518_92dce5ed-5f1a-4dec-b04c-97e89d3099da");
+}
+.team-10544 {
+  background-image: url("/avatars/composed/2025/10544_e54ff217-6297-4385-a2c2-b0caa13b3cbf");
+}
+.team-10644 {
+  background-image: url("/avatars/composed/2025/10644_a04be458-67d9-463f-a2b6-9bb89c452a6f");
+}
+.team-10645 {
+  background-image: url("/avatars/composed/2025/10645_5804ff02-ffe0-4b3d-9113-db97cfb3edcf");
+}
+.team-10650 {
+  background-image: url("/avatars/composed/2025/10650_4753b0f4-1360-4f5d-aa2f-686f9a7b0bc9");
+}
+.team-10656 {
+  background-image: url("/avatars/composed/2025/10656_74eefea9-0c5d-4eda-a891-131bc794a5b2");
+}
+.team-10662 {
+  background-image: url("/avatars/composed/2025/10662_2d283e11-55c9-4371-8e13-a7b73ef7ef79");
+}
+.team-10663 {
+  background-image: url("/avatars/composed/2025/10663_c03782d5-abcc-4a08-a00f-f42501c673bc");
+}
+.team-10673 {
+  background-image: url("/avatars/composed/2025/10673_bfb9ff14-e9c0-4ac7-9b87-25d5e86ce3ff");
+}
+.team-10674 {
+  background-image: url("/avatars/composed/2025/10674_b90be04c-b403-4c69-be64-a00dedeef091");
+}
+.team-10723 {
+  background-image: url("/avatars/composed/2025/10723_e61822b5-b3d7-4b10-b7d9-63e26d753830");
+}
+.team-10735 {
+  background-image: url("/avatars/composed/2025/10735_f2bc1861-3989-4415-8446-3c23a7f52060");
+}
+.team-10785 {
+  background-image: url("/avatars/composed/2025/10785_b84143f8-2997-4dd0-aaa7-e154b4459e74");
+}
+.team-10793 {
+  background-image: url("/avatars/composed/2025/10793_6d35b106-8a7d-4a94-9a66-e31bd6c69010");
+}
+.team-10809 {
+  background-image: url("/avatars/composed/2025/10809_423fa478-afa6-481f-936a-253dbd4ab2c9");
+}
+.team-10820 {
+  background-image: url("/avatars/composed/2025/10820_3985672d-a25a-4a49-867e-c8dc6e406e81");
+}
+.team-10836 {
+  background-image: url("/avatars/composed/2025/10836_4179c27c-345c-4486-939f-4181bf46a72b");
+}
+.team-10868 {
+  background-image: url("/avatars/composed/2025/10868_5d1b622b-49fd-4e29-9dec-68a32f4e174c");
+}
+.team-10949 {
+  background-image: url("/avatars/composed/2025/10949_6d3635ab-944e-47e0-b120-c7a5be2dd84b");
+}
+.team-10974 {
+  background-image: url("/avatars/composed/2025/10974_f5cf6172-25d2-4c4b-8481-11adabf9e002");
+}
+.team-10984 {
+  background-image: url("/avatars/composed/2025/10984_8faaeba1-7e1a-4c77-a0eb-8641a9b9dbd8");
+}
+.team-11041 {
+  background-image: url("/avatars/composed/2025/11041_d055cc72-791e-44cd-a9e1-ea2ac5c1c0ad");
+}
+.team-11085 {
+  background-image: url("/avatars/composed/2025/11085_55727342-03ff-497f-8166-5dfc07d0a8af");
+}
+.team-11093 {
+  background-image: url("/avatars/composed/2025/11093_2f9702bc-c588-4a2d-9242-e9695d19a9ae");
+}
+.team-11112 {
+  background-image: url("/avatars/composed/2025/11112_118d915d-9e19-4119-9f83-ad91981450a1");
+}
+.team-11129 {
+  background-image: url("/avatars/composed/2025/11129_154e21bc-468b-44a2-9369-80480c6abd3c");
+}
+.team-11138 {
+  background-image: url("/avatars/composed/2025/11138_aa39835d-1d18-4c91-b7f0-556e4aee6c7e");
+}
+.team-11146 {
+  background-image: url("/avatars/composed/2025/11146_3f02ebb8-6bd9-49b0-b830-1c0230b80079");
+}
+.team-11192 {
+  background-image: url("/avatars/composed/2025/11192_58b40dd5-6e23-4d7a-99ee-f1dcc4c1d977");
+}
+.team-11206 {
+  background-image: url("/avatars/composed/2025/11206_f243e2d8-491c-4d58-a4e8-9866b58b6d1d");
+}
+.team-11208 {
+  background-image: url("/avatars/composed/2025/11208_cd95468f-6bbf-4c84-89ed-c43a723181fb");
+}
+.team-11212 {
+  background-image: url("/avatars/composed/2025/11212_32c458e1-fabe-4342-a7f2-3c7f005ac581");
+}
+.team-11241 {
+  background-image: url("/avatars/composed/2025/11241_cd2212ca-c965-47d9-92b8-6c499ea77bf8");
+}
+.team-11260 {
+  background-image: url("/avatars/composed/2025/11260_03d17782-58a8-4af7-bc8d-274e914049b8");
+}
+.team-11279 {
+  background-image: url("/avatars/composed/2025/11279_04973847-fe0b-46da-8935-ff6b6f51158c");
+}
+.team-11282 {
+  background-image: url("/avatars/composed/2025/11282_40d9b940-637b-4c65-b825-ed23d42e7cef");
+}
+.team-11308 {
+  background-image: url("/avatars/composed/2025/11308_696361c1-1d35-46f2-8833-cd8bb8a20d3d");
+}
+.team-11312 {
+  background-image: url("/avatars/composed/2025/11312_3c135034-30d3-4fa0-8cb3-bf64de26b105");
+}
+.team-11329 {
+  background-image: url("/avatars/composed/2025/11329_d32a941d-3b8d-417a-9bc7-902954f368de");
+}
+.team-11338 {
+  background-image: url("/avatars/composed/2025/11338_9c5d5b1a-d4e7-489d-ac7e-a7f74ed89906");
+}
+.team-11344 {
+  background-image: url("/avatars/composed/2025/11344_9180f20d-d2a5-4e45-b1bd-be9ebe41ca15");
+}
+.team-11349 {
+  background-image: url("/avatars/composed/2025/11349_24e0a883-d972-4bf2-902b-cbf9c4fe00e4");
+}
+.team-11354 {
+  background-image: url("/avatars/composed/2025/11354_3fc2fd17-a827-455a-83e3-026dbcd7bf63");
+}
+.team-11392 {
+  background-image: url("/avatars/composed/2025/11392_f4206da9-47ed-41d4-8e78-6d744d3c60eb");
+}
+.team-11441 {
+  background-image: url("/avatars/composed/2025/11441_fe4e14ee-2823-457b-ab51-b66e3e6a1529");
+}
+.team-11457 {
+  background-image: url("/avatars/composed/2025/11457_3be7487c-e20d-4899-bbf9-9808dc720ea2");
+}
+.team-11511 {
+  background-image: url("/avatars/composed/2025/11511_c831051f-0aca-49e7-9020-de205cd17328");
+}
+.team-11514 {
+  background-image: url("/avatars/composed/2025/11514_ededd838-7545-4f6d-8e51-03a472aabc6f");
+}
+.team-11531 {
+  background-image: url("/avatars/composed/2025/11531_8e77aa68-48ad-44f0-962b-084a42f3ec2b");
+}
+.team-11545 {
+  background-image: url("/avatars/composed/2025/11545_b9df3502-b713-490e-8a6b-5c855c55d04d");
+}
+.team-11561 {
+  background-image: url("/avatars/composed/2025/11561_bb3d1243-de6b-4c91-968f-f6869ac7438d");
+}
+.team-11567 {
+  background-image: url("/avatars/composed/2025/11567_16031414-dc2d-44b0-a64c-44ed499abaaf");
+}
+.team-11572 {
+  background-image: url("/avatars/composed/2025/11572_5abf4922-7f5a-437d-a4d4-9b8105b57214");
+}
+.team-11588 {
+  background-image: url("/avatars/composed/2025/11588_542f4c4e-d411-4a23-be54-a6ceaa813b4b");
+}
+.team-11618 {
+  background-image: url("/avatars/composed/2025/11618_80f6ecf6-baf6-43d5-ab67-774ad1f81c8d");
+}
+.team-11679 {
+  background-image: url("/avatars/composed/2025/11679_8bfd7020-e50e-41f2-8f40-8f05628a3707");
+}
+.team-11719 {
+  background-image: url("/avatars/composed/2025/11719_4e56d08b-d9d6-4394-bf39-5319882f64cb");
+}
+.team-11729 {
+  background-image: url("/avatars/composed/2025/11729_2330c3a3-105d-478a-a142-d1a1ee90102b");
+}
+.team-11770 {
+  background-image: url("/avatars/composed/2025/11770_bb8c6b5e-20b7-410f-8a27-ee7bad3061fe");
+}
+.team-11848 {
+  background-image: url("/avatars/composed/2025/11848_dc28f9b0-1af0-4821-885d-9c7af5630680");
+}
+.team-11866 {
+  background-image: url("/avatars/composed/2025/11866_b09316b4-7075-4221-81cb-2a96d5db0d38");
+}
+.team-11980 {
+  background-image: url("/avatars/composed/2025/11980_fee1c2bd-fce2-45ed-afe0-1ff62fd7192d");
+}
+.team-11986 {
+  background-image: url("/avatars/composed/2025/11986_d1bb67fb-2034-4b2f-a8d2-94d73bd81e5d");
+}
+.team-11990 {
+  background-image: url("/avatars/composed/2025/11990_2a327cdd-3d69-4972-b901-d43e0a72a150");
+}
+.team-12011 {
+  background-image: url("/avatars/composed/2025/12011_91a677ea-fd4f-4179-9350-322688c6cd51");
+}
+.team-12014 {
+  background-image: url("/avatars/composed/2025/12014_b18dd32f-ca73-4086-96b8-2d7c5cfd04fa");
+}
+.team-12016 {
+  background-image: url("/avatars/composed/2025/12016_75d01caa-0598-4dbe-8452-a10f2b0c7ddb");
+}
+.team-12045 {
+  background-image: url("/avatars/composed/2025/12045_40b857a3-a2d3-4384-bd4a-fcc5d8db6ba7");
+}
+.team-12069 {
+  background-image: url("/avatars/composed/2025/12069_cbf0f49b-c71e-45f1-8cb3-cc90f6d4362d");
+}
+.team-12094 {
+  background-image: url("/avatars/composed/2025/12094_330935f9-26dc-4301-aaa6-88ff93254867");
+}
+.team-12096 {
+  background-image: url("/avatars/composed/2025/12096_2d1a54dc-df52-4d48-b5cc-9090cda54abc");
+}
+.team-12099 {
+  background-image: url("/avatars/composed/2025/12099_60d90584-cd16-4314-ac3c-059dd20b233f");
+}
+.team-12130 {
+  background-image: url("/avatars/composed/2025/12130_4c6bdbf3-33d9-44a9-a52a-c16405922187");
+}
+.team-12195 {
+  background-image: url("/avatars/composed/2025/12195_fa14fa6e-9955-4671-ab2b-4431c1d5bac8");
+}
+.team-12209 {
+  background-image: url("/avatars/composed/2025/12209_1d932738-b704-45af-975c-41495041ff04");
+}
+.team-12218 {
+  background-image: url("/avatars/composed/2025/12218_47b11667-3e1d-4897-a84e-cd765945503c");
+}
+.team-12313 {
+  background-image: url("/avatars/composed/2025/12313_bc541359-b149-4346-964c-ccf6867cef94");
+}
+.team-12331 {
+  background-image: url("/avatars/composed/2025/12331_7ba6216b-0746-4264-8e27-83b0064ed490");
+}
+.team-12379 {
+  background-image: url("/avatars/composed/2025/12379_260f70d6-9765-4982-ac8e-d2cbb27cea0e");
+}
+.team-12390 {
+  background-image: url("/avatars/composed/2025/12390_e59ef055-5550-4421-b760-54713baf7fa7");
+}
+.team-12393 {
+  background-image: url("/avatars/composed/2025/12393_8bd7eb6a-0abc-4ef7-88db-4f04a53f411a");
+}
+.team-12394 {
+  background-image: url("/avatars/composed/2025/12394_a6fda3d9-d648-49b7-8a00-9f4db650d96d");
+}
+.team-12395 {
+  background-image: url("/avatars/composed/2025/12395_1425cb0b-786b-4951-8e49-035e5596d6c9");
+}
+.team-12397 {
+  background-image: url("/avatars/composed/2025/12397_2fa185fd-a344-43cc-a406-f0fc67804b35");
+}
+.team-12398 {
+  background-image: url("/avatars/composed/2025/12398_081009f6-b651-4d68-b874-7a989901c7bd");
+}
+.team-12414 {
+  background-image: url("/avatars/composed/2025/12414_c1998c11-4722-476d-8899-06a8bc5b63df");
+}
+.team-12417 {
+  background-image: url("/avatars/composed/2025/12417_083d8d8a-a1b7-45f3-877e-0062ddc33cd3");
+}
+.team-12441 {
+  background-image: url("/avatars/composed/2025/12441_4c668add-a420-4997-9780-0a319b5a75dd");
+}
+.team-12459 {
+  background-image: url("/avatars/composed/2025/12459_6476d945-8a94-4af8-a028-9a7e841d8ead");
+}
+.team-12463 {
+  background-image: url("/avatars/composed/2025/12463_6b84c333-9605-4654-825e-f56d3efbfa15");
+}
+.team-12475 {
+  background-image: url("/avatars/composed/2025/12475_0af1cf61-ff54-4b42-aa2f-bb8311a317f2");
+}
+.team-12499 {
+  background-image: url("/avatars/composed/2025/12499_78b0b6f7-d1c8-4f8c-bc76-1a98b281b02d");
+}
+.team-12517 {
+  background-image: url("/avatars/composed/2025/12517_e2179fa8-36e4-4d51-81af-27ea3ce1d9ad");
+}
+.team-12524 {
+  background-image: url("/avatars/composed/2025/12524_9ac9752c-b7e0-44c6-82c9-b38d56adef2b");
+}
+.team-12527 {
+  background-image: url("/avatars/composed/2025/12527_6aaaa8af-14c5-4a49-9824-bdc110481587");
+}
+.team-12560 {
+  background-image: url("/avatars/composed/2025/12560_ae70685d-235f-4ddb-9336-641298bf1963");
+}
+.team-12565 {
+  background-image: url("/avatars/composed/2025/12565_f0294492-b405-4807-b4e0-8768353e42d4");
+}
+.team-12566 {
+  background-image: url("/avatars/composed/2025/12566_75687422-7d28-4532-94bd-55edc621323d");
+}
+.team-12585 {
+  background-image: url("/avatars/composed/2025/12585_447a336c-1f51-4e77-94ef-dd8932c3b411");
+}
+.team-12599 {
+  background-image: url("/avatars/composed/2025/12599_9ec1fa90-77d3-41ac-95b9-ba7c875c6c3c");
+}
+.team-12611 {
+  background-image: url("/avatars/composed/2025/12611_dc3bab4f-b622-4275-8858-982bb30b24cc");
+}
+.team-12635 {
+  background-image: url("/avatars/composed/2025/12635_fa16575d-0092-47a3-a233-ba0a43323c20");
+}
+.team-12649 {
+  background-image: url("/avatars/composed/2025/12649_63ab0353-c1a6-4f8f-a6db-950e0e2409fc");
+}
+.team-12656 {
+  background-image: url("/avatars/composed/2025/12656_a6ddaad4-bd08-42d8-a96e-94183abf4831");
+}
+.team-12682 {
+  background-image: url("/avatars/composed/2025/12682_4429c8e1-51b1-4390-8a5b-38e0f1abf83d");
+}
+.team-12718 {
+  background-image: url("/avatars/composed/2025/12718_b01c74ca-4a1f-4aeb-97b1-d5d12e769afb");
+}
+.team-12765 {
+  background-image: url("/avatars/composed/2025/12765_38877649-b3b8-48da-9603-36d36e2cb2a6");
+}
+.team-12767 {
+  background-image: url("/avatars/composed/2025/12767_04d42b9b-e0ef-40ee-a117-71f791dd7b12");
+}
+.team-12768 {
+  background-image: url("/avatars/composed/2025/12768_60da14fe-968d-498b-a722-15958df47e3f");
+}
+.team-12783 {
+  background-image: url("/avatars/composed/2025/12783_3b59f8e9-71bd-4431-b9fb-b29af025627f");
+}
+.team-12789 {
+  background-image: url("/avatars/composed/2025/12789_39e79451-634a-453e-b874-ce013952f694");
+}
+.team-12791 {
+  background-image: url("/avatars/composed/2025/12791_f6aa22d4-f8b5-4328-a45f-c625435499a7");
+}
+.team-12808 {
+  background-image: url("/avatars/composed/2025/12808_0be9a95f-83be-4231-865d-4ceab453cd64");
+}
+.team-12819 {
+  background-image: url("/avatars/composed/2025/12819_ce6865b8-0e23-4a73-9991-8e62d0cb7365");
+}
+.team-12820 {
+  background-image: url("/avatars/composed/2025/12820_4efc7392-f2d9-4ab9-9eb2-e945d6cd2a8f");
+}
+.team-12853 {
+  background-image: url("/avatars/composed/2025/12853_7ccd2cb8-0480-4456-af00-b574107dc6ec");
+}
+.team-12857 {
+  background-image: url("/avatars/composed/2025/12857_bd13f9c4-c824-4015-82a4-65966376452a");
+}
+.team-12862 {
+  background-image: url("/avatars/composed/2025/12862_c5813896-2168-4172-b2c9-f6103ad6e560");
+}
+.team-12890 {
+  background-image: url("/avatars/composed/2025/12890_1cd000fc-c3a8-4a2f-8cf6-e576c077ac0e");
+}
+.team-12966 {
+  background-image: url("/avatars/composed/2025/12966_95570e64-74b6-4efb-ad37-69dd7bbb0f1a");
+}
+.team-12971 {
+  background-image: url("/avatars/composed/2025/12971_80d3141c-6ca9-46a8-b017-5f96ced1fc0d");
+}
+.team-12977 {
+  background-image: url("/avatars/composed/2025/12977_2199e8ed-417d-4b8c-b2dc-92f6f2cbf2c9");
+}
+.team-12989 {
+  background-image: url("/avatars/composed/2025/12989_bcc48c99-cc27-4352-802d-ff7cd364d2df");
+}
+.team-12991 {
+  background-image: url("/avatars/composed/2025/12991_f5124d16-382b-4453-8a10-50ec0884479a");
+}
+.team-12993 {
+  background-image: url("/avatars/composed/2025/12993_89f5dd19-5f94-4171-be53-cf2e05b5c3c5");
+}
+.team-13053 {
+  background-image: url("/avatars/composed/2025/13053_bad00c22-711c-4bf9-9322-d9c51ba34fe7");
+}
+.team-13072 {
+  background-image: url("/avatars/composed/2025/13072_c5849d4d-14ec-4fe6-bbfb-16031317f1f2");
+}
+.team-13085 {
+  background-image: url("/avatars/composed/2025/13085_f118eab8-a1a9-41cf-a39a-03d390ab1653");
+}
+.team-13093 {
+  background-image: url("/avatars/composed/2025/13093_a2dbcd6b-f7a9-43c4-9e4a-3e05bb393b58");
+}
+.team-13181 {
+  background-image: url("/avatars/composed/2025/13181_2756072c-b840-479d-833a-0efbcb7c8b08");
+}
+.team-13189 {
+  background-image: url("/avatars/composed/2025/13189_df51e426-ebd0-4088-bea2-e6e7c889edfc");
+}
+.team-13193 {
+  background-image: url("/avatars/composed/2025/13193_a1c2f61c-ba44-4c4e-9f6b-05786ff18561");
+}
+.team-13201 {
+  background-image: url("/avatars/composed/2025/13201_0ba18dea-529c-49d5-9f96-4d1630d361d7");
+}
+.team-13206 {
+  background-image: url("/avatars/composed/2025/13206_36c13817-54ae-4163-a0b5-7efbd62490c7");
+}
+.team-13233 {
+  background-image: url("/avatars/composed/2025/13233_7fe301cb-ce3c-458e-8d8c-fa5826c3a07d");
+}
+.team-13246 {
+  background-image: url("/avatars/composed/2025/13246_09e0a513-a3e1-4045-b172-5e0cb4599555");
+}
+.team-13249 {
+  background-image: url("/avatars/composed/2025/13249_a9acc748-1f6a-44fa-b457-3c86d5c53121");
+}
+.team-13284 {
+  background-image: url("/avatars/composed/2025/13284_1f9199a4-2908-4abe-af70-689ea89c6be3");
+}
+.team-13295 {
+  background-image: url("/avatars/composed/2025/13295_ef7b5146-e3ef-4d6d-bd7b-ea1413e80699");
+}
+.team-13302 {
+  background-image: url("/avatars/composed/2025/13302_bdeb62cd-ad76-4e9d-ac7d-d40e8835faac");
+}
+.team-13312 {
+  background-image: url("/avatars/composed/2025/13312_acbf1c3c-e4bf-482a-9c2a-819cf5ec4879");
+}
+.team-13353 {
+  background-image: url("/avatars/composed/2025/13353_35cf974a-47b8-480e-872a-32018a31318d");
+}
+.team-13357 {
+  background-image: url("/avatars/composed/2025/13357_3f19e273-2f52-487c-af15-f95fb763d5b6");
+}
+.team-13359 {
+  background-image: url("/avatars/composed/2025/13359_0caba3c8-9c44-4e2d-ba51-070a8c64dae3");
+}
+.team-13399 {
+  background-image: url("/avatars/composed/2025/13399_10e7e020-46d9-49e8-91c6-a4131d3cddbc");
+}
+.team-13406 {
+  background-image: url("/avatars/composed/2025/13406_d817620f-a503-4747-84b5-40726e4f75a5");
+}
+.team-13415 {
+  background-image: url("/avatars/composed/2025/13415_2e45850b-0aa1-43d0-a595-8ed67dfc7752");
+}
+.team-13416 {
+  background-image: url("/avatars/composed/2025/13416_3b72dd85-c117-46ef-a16b-d9b4a1ecfe39");
+}
+.team-13433 {
+  background-image: url("/avatars/composed/2025/13433_8527d646-d82c-41ae-b8e9-7d7a9e1a3998");
+}
+.team-13435 {
+  background-image: url("/avatars/composed/2025/13435_e82e8ebc-430c-4aaf-832e-9d7620d0a1ce");
+}
+.team-13452 {
+  background-image: url("/avatars/composed/2025/13452_f051e626-8a8e-4372-8c48-0b95d9cf450f");
+}
+.team-13460 {
+  background-image: url("/avatars/composed/2025/13460_578915ef-e395-4b30-9595-88b1be6212a9");
+}
+.team-13474 {
+  background-image: url("/avatars/composed/2025/13474_05a7e14b-d38f-47a8-85e9-9d6adae87118");
+}
+.team-13537 {
+  background-image: url("/avatars/composed/2025/13537_a5148c06-6d34-4398-8701-37f96e849d6e");
+}
+.team-13542 {
+  background-image: url("/avatars/composed/2025/13542_afd59b89-3ae7-400e-95a9-ff287d4a142e");
+}
+.team-13552 {
+  background-image: url("/avatars/composed/2025/13552_91335c0e-259d-486d-8585-27635f044b16");
+}
+.team-13580 {
+  background-image: url("/avatars/composed/2025/13580_96703cc8-67aa-49d6-98e7-440addb76240");
+}
+.team-13581 {
+  background-image: url("/avatars/composed/2025/13581_9e6b93fd-de41-48b3-94d6-48c9480001e8");
+}
+.team-13582 {
+  background-image: url("/avatars/composed/2025/13582_efe5ac6c-368a-45bf-a454-5a3d9b385a8d");
+}
+.team-13586 {
+  background-image: url("/avatars/composed/2025/13586_263e7929-2843-4d89-a360-15b86b05bf4b");
+}
+.team-13588 {
+  background-image: url("/avatars/composed/2025/13588_36804840-8026-4092-abfd-e81bbc6a5810");
+}
+.team-13590 {
+  background-image: url("/avatars/composed/2025/13590_68452339-bcb3-4512-a9fc-56ffdd9748e6");
+}
+.team-13601 {
+  background-image: url("/avatars/composed/2025/13601_1abf79b9-e627-4b27-baa7-824faf9158d9");
+}
+.team-13617 {
+  background-image: url("/avatars/composed/2025/13617_580429c0-3092-4100-8c88-72868499e63b");
+}
+.team-13684 {
+  background-image: url("/avatars/composed/2025/13684_e1214aea-5e1d-499f-8348-1fc42d86c26e");
+}
+.team-13735 {
+  background-image: url("/avatars/composed/2025/13735_0bfdde0a-c214-41df-b6e0-c4e57866ccb8");
+}
+.team-13737 {
+  background-image: url("/avatars/composed/2025/13737_bb1e8d12-82de-4b91-9817-2bd708d5a88f");
+}
+.team-13750 {
+  background-image: url("/avatars/composed/2025/13750_65b120ad-e814-4be5-9901-866618fea00b");
+}
+.team-13755 {
+  background-image: url("/avatars/composed/2025/13755_90c804e9-6175-475c-8449-6845581be39d");
+}
+.team-13784 {
+  background-image: url("/avatars/composed/2025/13784_fdb3ce30-9d38-4e32-9423-198ec31e1091");
+}
+.team-13811 {
+  background-image: url("/avatars/composed/2025/13811_77433767-f889-4801-964a-675e08686834");
+}
+.team-13829 {
+  background-image: url("/avatars/composed/2025/13829_81f2ca2a-ffc2-49dd-917e-7b0ae3f994aa");
+}
+.team-13883 {
+  background-image: url("/avatars/composed/2025/13883_36564510-b0f2-4b63-8f27-6fb0d408ba6d");
+}
+.team-13896 {
+  background-image: url("/avatars/composed/2025/13896_ef544350-d086-40fa-baa2-1a1d41f3f84d");
+}
+.team-13906 {
+  background-image: url("/avatars/composed/2025/13906_4d5c9c2f-69fd-4ad4-9a2b-905520b6636e");
+}
+.team-14054 {
+  background-image: url("/avatars/composed/2025/14054_c0d9c107-e0e5-4b8d-bf69-e1860e3713d6");
+}
+.team-14126 {
+  background-image: url("/avatars/composed/2025/14126_df18b59b-42df-417e-bb8c-54fbde6c92ee");
+}
+.team-14166 {
+  background-image: url("/avatars/composed/2025/14166_b864840d-cf79-4249-990c-65d27eba91e8");
+}
+.team-14174 {
+  background-image: url("/avatars/composed/2025/14174_063d650e-3bb6-45b2-82e7-1eb462940cc2");
+}
+.team-14179 {
+  background-image: url("/avatars/composed/2025/14179_87e093d4-b0c8-44ed-981b-be7956f7fde7");
+}
+.team-14204 {
+  background-image: url("/avatars/composed/2025/14204_cc8545d5-416b-4788-a6da-dcc03556faa6");
+}
+.team-14226 {
+  background-image: url("/avatars/composed/2025/14226_bcb69571-64b3-4731-a3f3-699527fd1438");
+}
+.team-14254 {
+  background-image: url("/avatars/composed/2025/14254_d79d289d-48c5-4b37-9e8a-5a089591280a");
+}
+.team-14259 {
+  background-image: url("/avatars/composed/2025/14259_24165a5a-3692-47e1-b1e1-edd80c38e950");
+}
+.team-14270 {
+  background-image: url("/avatars/composed/2025/14270_52ef5d55-19c1-4ab5-b830-39648e24e1f1");
+}
+.team-14273 {
+  background-image: url("/avatars/composed/2025/14273_9b0be910-b30e-4f7b-93ef-2a75d943d958");
+}
+.team-14279 {
+  background-image: url("/avatars/composed/2025/14279_fcb7929b-7c33-45e3-b283-1d3631d3a9ac");
+}
+.team-14295 {
+  background-image: url("/avatars/composed/2025/14295_c77171f1-ce64-46af-999f-5116940ffa83");
+}
+.team-14323 {
+  background-image: url("/avatars/composed/2025/14323_7ffc37be-c27c-404f-8cf0-dc534e1ed9f8");
+}
+.team-14338 {
+  background-image: url("/avatars/composed/2025/14338_50dfdf90-3019-4bbc-88c4-b6afbd577b20");
+}
+.team-14343 {
+  background-image: url("/avatars/composed/2025/14343_b4642a7b-364d-4d77-9107-512b5a89cc37");
+}
+.team-14345 {
+  background-image: url("/avatars/composed/2025/14345_d9ab3015-dd15-4d87-a55a-584d3497e0d8");
+}
+.team-14361 {
+  background-image: url("/avatars/composed/2025/14361_c6ee4149-a35f-4d36-bce7-9855e3accef1");
+}
+.team-14365 {
+  background-image: url("/avatars/composed/2025/14365_b4e94fa6-1898-4cbb-9788-0263dd5a9154");
+}
+.team-14371 {
+  background-image: url("/avatars/composed/2025/14371_483f832a-727e-4963-86af-d26883146950");
+}
+.team-14377 {
+  background-image: url("/avatars/composed/2025/14377_ad1032a0-c410-402b-819e-1b96bda9a175");
+}
+.team-14380 {
+  background-image: url("/avatars/composed/2025/14380_aacf846e-42b4-4e84-a736-5b1c1717adb8");
+}
+.team-14391 {
+  background-image: url("/avatars/composed/2025/14391_c4d1aaee-9df8-41e0-83a9-5850cbe675c6");
+}
+.team-14393 {
+  background-image: url("/avatars/composed/2025/14393_ee97a7a4-2d2a-45ab-ae02-6ee454891c57");
+}
+.team-14401 {
+  background-image: url("/avatars/composed/2025/14401_3b81fe80-9a02-40d7-9a18-63a8d909e66e");
+}
+.team-14423 {
+  background-image: url("/avatars/composed/2025/14423_a080f68a-a5ff-4251-8c6a-d332df937344");
+}
+.team-14436 {
+  background-image: url("/avatars/composed/2025/14436_b71fb468-9469-4eab-bfe2-4a36eba4735b");
+}
+.team-14464 {
+  background-image: url("/avatars/composed/2025/14464_c2b6dde5-86cf-43aa-a553-53cddb68bd28");
+}
+.team-14469 {
+  background-image: url("/avatars/composed/2025/14469_77d1cfd8-a6c9-4446-a086-b6bd3959855c");
+}
+.team-14481 {
+  background-image: url("/avatars/composed/2025/14481_8e3eba97-8227-4d6b-abf9-e00dd1bcaf44");
+}
+.team-14518 {
+  background-image: url("/avatars/composed/2025/14518_de0c5dbe-0e4f-4bd6-8858-e2026ad3c4ac");
+}
+.team-14524 {
+  background-image: url("/avatars/composed/2025/14524_6bbc28dd-0a0e-4c2e-b7c0-7e63532b578d");
+}
+.team-14525 {
+  background-image: url("/avatars/composed/2025/14525_9872ea73-ebbe-45e0-9c31-b1f6fe558001");
+}
+.team-14538 {
+  background-image: url("/avatars/composed/2025/14538_a09329fe-ad50-4028-b02c-3bc93eb47b16");
+}
+.team-14568 {
+  background-image: url("/avatars/composed/2025/14568_2eaae9bf-d3e0-4d82-8b07-44e1b0fd80ae");
+}
+.team-14579 {
+  background-image: url("/avatars/composed/2025/14579_8c6f8ad8-9463-45fc-988d-bc10dda44963");
+}
+.team-14584 {
+  background-image: url("/avatars/composed/2025/14584_f89a4b71-2329-49a2-b081-faef90fe624c");
+}
+.team-14596 {
+  background-image: url("/avatars/composed/2025/14596_d6d30237-c15a-4862-ad1d-07dd5c0b3a45");
+}
+.team-14628 {
+  background-image: url("/avatars/composed/2025/14628_750bfd99-f0f1-4751-bdd0-e9f0185a5948");
+}
+.team-14637 {
+  background-image: url("/avatars/composed/2025/14637_ddf49f51-f5d7-4117-9bc4-a76c79f333c6");
+}
+.team-14649 {
+  background-image: url("/avatars/composed/2025/14649_26e51020-7997-4ab4-840f-65db1481ef1d");
+}
+.team-14659 {
+  background-image: url("/avatars/composed/2025/14659_e0cfbc1c-adb3-4293-a097-684dab28aa91");
+}
+.team-14672 {
+  background-image: url("/avatars/composed/2025/14672_162b9542-3491-419a-88e2-8a4e08ff6b28");
+}
+.team-14683 {
+  background-image: url("/avatars/composed/2025/14683_11ab5974-af0b-493d-9a49-a04ee29ea756");
+}
+.team-14687 {
+  background-image: url("/avatars/composed/2025/14687_29adac16-3e78-479f-a26f-c69c19fb18a7");
+}
+.team-14690 {
+  background-image: url("/avatars/composed/2025/14690_d2bb16a4-4c2a-4138-a9bd-82953ec4c495");
+}
+.team-14706 {
+  background-image: url("/avatars/composed/2025/14706_3bd0b068-e707-4b22-a78e-ec6f6f80e6d7");
+}
+.team-14712 {
+  background-image: url("/avatars/composed/2025/14712_609bdbd4-2296-48b7-aa35-bf0bae3f3ef5");
+}
+.team-14713 {
+  background-image: url("/avatars/composed/2025/14713_fd2d73a0-bb98-477a-97a8-72ab39efde69");
+}
+.team-14715 {
+  background-image: url("/avatars/composed/2025/14715_96e09776-b7f5-4224-95b1-350e79a63dc6");
+}
+.team-14717 {
+  background-image: url("/avatars/composed/2025/14717_14b1ae27-f161-489f-869c-6d49fd1b8788");
+}
+.team-14718 {
+  background-image: url("/avatars/composed/2025/14718_34507b80-ade1-4ff5-9b71-0f3234312831");
+}
+.team-14736 {
+  background-image: url("/avatars/composed/2025/14736_5abddac4-0590-4a8e-bcc5-a7476de33e01");
+}
+.team-14739 {
+  background-image: url("/avatars/composed/2025/14739_037bf306-59d1-4d7e-812f-ca07dbe5c1eb");
+}
+.team-14757 {
+  background-image: url("/avatars/composed/2025/14757_18367388-b66b-45ea-8489-4207f11799e8");
+}
+.team-14788 {
+  background-image: url("/avatars/composed/2025/14788_c76b9178-e737-4a1e-8d2c-ad45bdbb7249");
+}
+.team-14791 {
+  background-image: url("/avatars/composed/2025/14791_ed5af032-85bd-47e4-bfcc-e8a8d9194875");
+}
+.team-14825 {
+  background-image: url("/avatars/composed/2025/14825_b2905418-63b1-4dae-9a7f-c31bbcd78e64");
+}
+.team-14835 {
+  background-image: url("/avatars/composed/2025/14835_fdb40197-6f0e-432e-a0b2-afaa2ec6b765");
+}
+.team-14840 {
+  background-image: url("/avatars/composed/2025/14840_357c492f-b718-4c3a-a6cb-93d4cd290808");
+}
+.team-14841 {
+  background-image: url("/avatars/composed/2025/14841_e80bd164-201b-4887-82ec-50a2e997df18");
+}
+.team-14903 {
+  background-image: url("/avatars/composed/2025/14903_f16179d9-5d8d-4c5c-ae76-cdac5d97d5e2");
+}
+.team-14905 {
+  background-image: url("/avatars/composed/2025/14905_2a605f0a-c190-4e86-a4d1-de0b69182e3a");
+}
+.team-14906 {
+  background-image: url("/avatars/composed/2025/14906_d5fbc4a2-d193-47b0-8b03-fc1f2a94d4bf");
+}
+.team-14914 {
+  background-image: url("/avatars/composed/2025/14914_6c601aa9-f2e8-418d-bdd3-520550f82a97");
+}
+.team-14917 {
+  background-image: url("/avatars/composed/2025/14917_ca342ee0-fd65-4350-a1d4-0b4ae53b44e6");
+}
+.team-14952 {
+  background-image: url("/avatars/composed/2025/14952_964d2102-ea0b-4aa5-9dfc-58c6d7ccfc93");
+}
+.team-14954 {
+  background-image: url("/avatars/composed/2025/14954_c1a5dbb1-6aa5-4a15-a62b-938cf9d76d92");
+}
+.team-14968 {
+  background-image: url("/avatars/composed/2025/14968_dff0ab0f-f3ea-4a8c-9c01-7c0ad4936e57");
+}
+.team-14976 {
+  background-image: url("/avatars/composed/2025/14976_3a2a70ec-2ae3-45c3-8777-1ecc4a8d8b29");
+}
+.team-14988 {
+  background-image: url("/avatars/composed/2025/14988_c5721811-dd76-43f2-82ff-22c369ce905b");
+}
+.team-14996 {
+  background-image: url("/avatars/composed/2025/14996_0f88775e-ba18-413d-8918-cb3f673e7133");
+}
+.team-15004 {
+  background-image: url("/avatars/composed/2025/15004_5870f1a0-36e0-4aa8-a8bf-facadbfe77f3");
+}
+.team-15005 {
+  background-image: url("/avatars/composed/2025/15005_3af7fa29-2ed5-4587-be81-76813391603e");
+}
+.team-15010 {
+  background-image: url("/avatars/composed/2025/15010_543cb2b8-53a3-49cc-be99-63416e94a4df");
+}
+.team-15024 {
+  background-image: url("/avatars/composed/2025/15024_46124ef0-cf09-4fa2-ade3-b2356d2338d0");
+}
+.team-15065 {
+  background-image: url("/avatars/composed/2025/15065_4f87e3f7-8be7-498a-8a47-fefa2683b066");
+}
+.team-15071 {
+  background-image: url("/avatars/composed/2025/15071_b871654d-f30a-41bb-a5d1-416d953526bc");
+}
+.team-15073 {
+  background-image: url("/avatars/composed/2025/15073_ee73c708-a1b1-4967-96bf-37f8a68e20bf");
+}
+.team-15083 {
+  background-image: url("/avatars/composed/2025/15083_4931eaee-954e-4728-ad4e-dfa70d53e667");
+}
+.team-15151 {
+  background-image: url("/avatars/composed/2025/15151_a7775b0b-8f46-447b-bdd4-dcbeb297205e");
+}
+.team-15152 {
+  background-image: url("/avatars/composed/2025/15152_169c1cda-65c0-4c88-8517-19dd279f66df");
+}
+.team-15167 {
+  background-image: url("/avatars/composed/2025/15167_55e5c17e-0f7b-4707-b606-461cb5c322fd");
+}
+.team-15191 {
+  background-image: url("/avatars/composed/2025/15191_ebb55d68-b986-45b8-b3e6-13521497e6cf");
+}
+.team-15202 {
+  background-image: url("/avatars/composed/2025/15202_ee37fc69-2b06-4854-99f8-ca6189a7ccf8");
+}
+.team-15205 {
+  background-image: url("/avatars/composed/2025/15205_a9acf6f2-bdfe-4928-bc9c-147d5502e838");
+}
+.team-15210 {
+  background-image: url("/avatars/composed/2025/15210_d8d681e8-8250-4e84-a86d-050d05ea860b");
+}
+.team-15215 {
+  background-image: url("/avatars/composed/2025/15215_ed971ce6-63f6-43be-94c3-c3317ac47f83");
+}
+.team-15259 {
+  background-image: url("/avatars/composed/2025/15259_799766b0-b868-4c0a-b7ac-4b8a0e44fc82");
+}
+.team-15270 {
+  background-image: url("/avatars/composed/2025/15270_dcd56bfb-b703-4b8c-8e5c-8b0305d57fb2");
+}
+.team-15297 {
+  background-image: url("/avatars/composed/2025/15297_f562c0a2-8739-437b-b5de-e3eefbbf6f6c");
+}
+.team-15298 {
+  background-image: url("/avatars/composed/2025/15298_f481d789-f2b8-430f-8c66-b2cf0b9ca1a6");
+}
+.team-15337 {
+  background-image: url("/avatars/composed/2025/15337_af59eba5-3b85-4fcd-816b-2dfe7a55e010");
+}
+.team-15341 {
+  background-image: url("/avatars/composed/2025/15341_ba245424-4deb-4b22-8fff-9840f5f0ded1");
+}
+.team-15358 {
+  background-image: url("/avatars/composed/2025/15358_e26395ae-8442-4839-bdd6-f63696a5c5ce");
+}
+.team-15373 {
+  background-image: url("/avatars/composed/2025/15373_ee22960f-a1f6-44c9-bd9c-b313ef47aa22");
+}
+.team-15374 {
+  background-image: url("/avatars/composed/2025/15374_fbdb28ad-8c27-4322-8adf-74cbbf407604");
+}
+.team-15400 {
+  background-image: url("/avatars/composed/2025/15400_439344d2-04ed-4f28-8aed-17cd4f0f0eee");
+}
+.team-15403 {
+  background-image: url("/avatars/composed/2025/15403_9a26c36c-a95e-4bf2-bd4f-3b37d557b5b4");
+}
+.team-15446 {
+  background-image: url("/avatars/composed/2025/15446_0ebf12b3-de83-42d9-a4e9-e5f7779226fc");
+}
+.team-15455 {
+  background-image: url("/avatars/composed/2025/15455_0541e00b-bf82-47b0-9453-8dd906757540");
+}
+.team-15458 {
+  background-image: url("/avatars/composed/2025/15458_41964acc-1586-4b25-814b-8547d94d6f2f");
+}
+.team-15477 {
+  background-image: url("/avatars/composed/2025/15477_1f1dfd94-731b-498c-b855-728ace9b10b5");
+}
+.team-15534 {
+  background-image: url("/avatars/composed/2025/15534_62d6899e-082e-4ad1-bd72-bfa25871ad48");
+}
+.team-15569 {
+  background-image: url("/avatars/composed/2025/15569_6e0fc3b0-534e-4c36-8dee-ebdce370e8a1");
+}
+.team-15668 {
+  background-image: url("/avatars/composed/2025/15668_fcae6be1-0232-4d05-945f-3f8fa8ff15bf");
+}
+.team-15703 {
+  background-image: url("/avatars/composed/2025/15703_519f80d5-6452-4ad9-aa68-0cf5ec507e3f");
+}
+.team-15707 {
+  background-image: url("/avatars/composed/2025/15707_8cbf4e3b-1511-43c7-8736-799b98b280e1");
+}
+.team-15715 {
+  background-image: url("/avatars/composed/2025/15715_180061d5-a466-4213-9476-37652c62dca2");
+}
+.team-15786 {
+  background-image: url("/avatars/composed/2025/15786_6bdaf2d9-fab1-4ef9-a47a-2c4bee677f0a");
+}
+.team-15815 {
+  background-image: url("/avatars/composed/2025/15815_9a80cdde-11a9-42f9-ac7c-93f078d68e81");
+}
+.team-15877 {
+  background-image: url("/avatars/composed/2025/15877_997015c0-a5bd-4b9a-88d5-a887b09a56be");
+}
+.team-15889 {
+  background-image: url("/avatars/composed/2025/15889_0d734bd7-9021-4faf-ba92-a6b96f13c8ff");
+}
+.team-15909 {
+  background-image: url("/avatars/composed/2025/15909_d14ba715-9718-4931-ac7e-fe98c507e094");
+}
+.team-15972 {
+  background-image: url("/avatars/composed/2025/15972_4238da23-6a88-4378-90ea-5aee01eb3952");
+}
+.team-15975 {
+  background-image: url("/avatars/composed/2025/15975_28172a1c-4258-4b19-8794-e9ff704d41bb");
+}
+.team-15989 {
+  background-image: url("/avatars/composed/2025/15989_e4823b46-9435-422f-b906-e388addbc493");
+}
+.team-15991 {
+  background-image: url("/avatars/composed/2025/15991_edf723b2-63e8-411e-88a5-6da7e210e34a");
+}
+.team-15993 {
+  background-image: url("/avatars/composed/2025/15993_3faefcb4-6e69-4c88-a29c-8767db7762c6");
+}
+.team-15996 {
+  background-image: url("/avatars/composed/2025/15996_238750e0-0993-4f0a-8997-72fbab5bd2dd");
+}
+.team-16008 {
+  background-image: url("/avatars/composed/2025/16008_cf04aff5-269e-4803-971e-81d880b0870e");
+}
+.team-16021 {
+  background-image: url("/avatars/composed/2025/16021_c9d647a4-819f-4db1-9b7c-a977fda18f57");
+}
+.team-16028 {
+  background-image: url("/avatars/composed/2025/16028_46c65dc5-6457-471a-a015-732768d322c3");
+}
+.team-16054 {
+  background-image: url("/avatars/composed/2025/16054_51b92fcb-2f43-4cd2-8cae-f72ddd8f4457");
+}
+.team-16055 {
+  background-image: url("/avatars/composed/2025/16055_30b43517-c576-400b-927a-be0251d6f0bc");
+}
+.team-16072 {
+  background-image: url("/avatars/composed/2025/16072_a68c77f9-c709-4ced-8594-86709e39be15");
+}
+.team-16095 {
+  background-image: url("/avatars/composed/2025/16095_a3731e08-4fc1-40ca-b2f0-527c86fa47a4");
+}
+.team-16102 {
+  background-image: url("/avatars/composed/2025/16102_c8c4dc36-ac7e-4b21-95a0-e8fb16f1b219");
+}
+.team-16158 {
+  background-image: url("/avatars/composed/2025/16158_86a35679-8122-4afb-a4e5-4ebc3709b937");
+}
+.team-16166 {
+  background-image: url("/avatars/composed/2025/16166_309aaef4-c62f-4f62-b956-581d87a5cd6e");
+}
+.team-16221 {
+  background-image: url("/avatars/composed/2025/16221_46631ed7-01a9-4f88-8eae-515902fed072");
+}
+.team-16236 {
+  background-image: url("/avatars/composed/2025/16236_d6406b83-5c3c-496e-aaea-b3a0461629bb");
+}
+.team-16244 {
+  background-image: url("/avatars/composed/2025/16244_701f32a1-30d4-49a1-87f0-3b0c8c388b5c");
+}
+.team-16249 {
+  background-image: url("/avatars/composed/2025/16249_8a094a35-b5de-43c0-a616-73ca7dbb9fec");
+}
+.team-16269 {
+  background-image: url("/avatars/composed/2025/16269_5ae1258e-7a18-4ab6-8c0c-2d59b9fbcd4c");
+}
+.team-16312 {
+  background-image: url("/avatars/composed/2025/16312_86adfce5-ca2a-48a9-950c-c0b54e762100");
+}
+.team-16328 {
+  background-image: url("/avatars/composed/2025/16328_812f35c3-dd40-4ad3-bacf-8c65c87bbc70");
+}
+.team-16346 {
+  background-image: url("/avatars/composed/2025/16346_083eaba0-2fda-43a2-86f0-5d62512c3021");
+}
+.team-16353 {
+  background-image: url("/avatars/composed/2025/16353_4713f8fe-f768-4ebd-9a3e-2fd8fecb9e4f");
+}
+.team-16377 {
+  background-image: url("/avatars/composed/2025/16377_11aba018-3c83-4ef1-8c6d-ce62021ab65f");
+}
+.team-16402 {
+  background-image: url("/avatars/composed/2025/16402_102b4e97-d076-44d9-9ab2-f7d62ba9efff");
+}
+.team-16409 {
+  background-image: url("/avatars/composed/2025/16409_4bd99bf7-263f-4fe1-88fa-8070668a2981");
+}
+.team-16417 {
+  background-image: url("/avatars/composed/2025/16417_b484ddb4-1178-49b8-b151-4a3534d28810");
+}
+.team-16424 {
+  background-image: url("/avatars/composed/2025/16424_ae5e5e64-aaaa-41db-9f6b-0e7c7fb62578");
+}
+.team-16436 {
+  background-image: url("/avatars/composed/2025/16436_b78a9dab-c011-46d1-af8c-2fc1382d1c34");
+}
+.team-16458 {
+  background-image: url("/avatars/composed/2025/16458_83a68092-4ed8-4aad-ac88-7be9cdfc7a6d");
+}
+.team-16461 {
+  background-image: url("/avatars/composed/2025/16461_7e700eef-e9f3-470f-9b0c-023b0af81e9a");
+}
+.team-16466 {
+  background-image: url("/avatars/composed/2025/16466_12cee663-61e3-4185-b990-1a7a7d743ba6");
+}
+.team-16468 {
+  background-image: url("/avatars/composed/2025/16468_b098988a-bfc8-4fa3-a107-793ddec28a4b");
+}
+.team-16484 {
+  background-image: url("/avatars/composed/2025/16484_7989d73c-b058-4385-8c45-34303ed251c2");
+}
+.team-16498 {
+  background-image: url("/avatars/composed/2025/16498_94898a59-3e7b-4ad3-beca-e88657047d8d");
+}
+.team-16523 {
+  background-image: url("/avatars/composed/2025/16523_0114dad3-3549-4fdb-aded-0347fd3f98b5");
+}
+.team-16542 {
+  background-image: url("/avatars/composed/2025/16542_cea833bc-dabe-4df2-80ee-4e6cc206f80a");
+}
+.team-16557 {
+  background-image: url("/avatars/composed/2025/16557_327efca0-592c-48b4-affe-ad217a56e57f");
+}
+.team-16596 {
+  background-image: url("/avatars/composed/2025/16596_1a3041e0-9352-4e4a-ba0c-63ed61017d9d");
+}
+.team-16626 {
+  background-image: url("/avatars/composed/2025/16626_a43d03da-de4b-4cd0-9683-d0319d888bf6");
+}
+.team-16646 {
+  background-image: url("/avatars/composed/2025/16646_d0b66bdb-72ff-4e8b-9ed9-14e12f8210a9");
+}
+.team-16655 {
+  background-image: url("/avatars/composed/2025/16655_7051b7d4-1ded-45ea-93d7-54f16519f927");
+}
+.team-16657 {
+  background-image: url("/avatars/composed/2025/16657_d953cae7-3913-4bd9-b20f-f3c7f1e6a32e");
+}
+.team-16700 {
+  background-image: url("/avatars/composed/2025/16700_e93e7f9a-e210-4a7e-9b8c-a14284d99446");
+}
+.team-16708 {
+  background-image: url("/avatars/composed/2025/16708_36831bf8-f845-4da6-8a0f-19e98fd61d38");
+}
+.team-16736 {
+  background-image: url("/avatars/composed/2025/16736_b737be70-ec4b-44c9-b179-f9fa6bbf7ac7");
+}
+.team-16748 {
+  background-image: url("/avatars/composed/2025/16748_bf7b0471-7f09-4e1e-9c4b-79dd54ed72fc");
+}
+.team-16751 {
+  background-image: url("/avatars/composed/2025/16751_af4df848-ef7d-4ab4-b96e-e09637c862f1");
+}
+.team-16757 {
+  background-image: url("/avatars/composed/2025/16757_8dd3fc70-e17f-4684-b521-196818c27d98");
+}
+.team-16764 {
+  background-image: url("/avatars/composed/2025/16764_f4760d16-100e-44ce-8a9b-a4239c111cb7");
+}
+.team-16785 {
+  background-image: url("/avatars/composed/2025/16785_c239d7e1-d4bc-4079-a692-1ae163a7f510");
+}
+.team-16786 {
+  background-image: url("/avatars/composed/2025/16786_29ea62f6-bf4f-4da8-9931-6f003c36801d");
+}
+.team-16817 {
+  background-image: url("/avatars/composed/2025/16817_46a46d4b-efa4-4516-8015-cfacd500199e");
+}
+.team-16818 {
+  background-image: url("/avatars/composed/2025/16818_a65d41bd-5c86-43d0-8774-51f265f9490d");
+}
+.team-16871 {
+  background-image: url("/avatars/composed/2025/16871_4b966c1c-2dd4-406f-bd9c-fdbe34d48529");
+}
+.team-16914 {
+  background-image: url("/avatars/composed/2025/16914_b8608068-3d43-4b73-ab04-05985e998c37");
+}
+.team-16917 {
+  background-image: url("/avatars/composed/2025/16917_268e62d1-d292-4b45-a294-f4f557ad5e62");
+}
+.team-16932 {
+  background-image: url("/avatars/composed/2025/16932_1eaa2b6a-7290-4a7a-91f4-b9408b2e87e3");
+}
+.team-16939 {
+  background-image: url("/avatars/composed/2025/16939_941b3fdc-fe5f-4a58-94fc-b25f1973c9e6");
+}
+.team-16961 {
+  background-image: url("/avatars/composed/2025/16961_abc1434b-4d5b-48a7-b792-66b10d58327a");
+}
+.team-16989 {
+  background-image: url("/avatars/composed/2025/16989_a27901e8-f3f4-495d-b562-71267fe0b070");
+}
+.team-17009 {
+  background-image: url("/avatars/composed/2025/17009_4544343a-37d5-4c63-ad02-5bdb6c209f2d");
+}
+.team-17035 {
+  background-image: url("/avatars/composed/2025/17035_2acfd859-59ab-4ea2-98b5-bb51807889c3");
+}
+.team-17036 {
+  background-image: url("/avatars/composed/2025/17036_398e05b6-6a30-48c5-804b-00a2b1be1156");
+}
+.team-17056 {
+  background-image: url("/avatars/composed/2025/17056_e0faf6f5-a557-4d4e-a10f-9c6550819779");
+}
+.team-17062 {
+  background-image: url("/avatars/composed/2025/17062_56b05a26-2e58-41be-b2d5-479cc7a5347d");
+}
+.team-17063 {
+  background-image: url("/avatars/composed/2025/17063_86253dc3-af27-40ed-ab5d-0afa75d15996");
+}
+.team-17077 {
+  background-image: url("/avatars/composed/2025/17077_1ffccbeb-94ad-48c1-ac8b-0b1da23e0be4");
+}
+.team-17086 {
+  background-image: url("/avatars/composed/2025/17086_ad086aaf-80b6-4bf2-8908-3529fe875ec6");
+}
+.team-17094 {
+  background-image: url("/avatars/composed/2025/17094_02a9533e-4d49-499d-a1a3-9cf964c966ad");
+}
+.team-17097 {
+  background-image: url("/avatars/composed/2025/17097_977c57aa-502a-4843-814e-d36d134030ac");
+}
+.team-17106 {
+  background-image: url("/avatars/composed/2025/17106_0a7d6198-dd56-4432-aaa2-bd5f98c2c00e");
+}
+.team-17113 {
+  background-image: url("/avatars/composed/2025/17113_335ca932-b629-411c-a707-eea614eca5da");
+}
+.team-17129 {
+  background-image: url("/avatars/composed/2025/17129_80d30ce2-5aca-4d72-aa78-d2dba161fc07");
+}
+.team-17181 {
+  background-image: url("/avatars/composed/2025/17181_0a412118-e047-412c-a5af-5c2511cc349f");
+}
+.team-17207 {
+  background-image: url("/avatars/composed/2025/17207_3ed69d9d-12a6-43f6-87ee-a458c1c4bd08");
+}
+.team-17214 {
+  background-image: url("/avatars/composed/2025/17214_a7e28f48-3748-41dd-bc54-6c2be486bb3f");
+}
+.team-17240 {
+  background-image: url("/avatars/composed/2025/17240_02c82070-9d3f-40ce-a911-2efd9f23615f");
+}
+.team-17253 {
+  background-image: url("/avatars/composed/2025/17253_9f8dc13e-b9f9-495f-877b-98b4d8cc2b46");
+}
+.team-17257 {
+  background-image: url("/avatars/composed/2025/17257_355c36ad-04fa-4b26-92df-af2f063afcbd");
+}
+.team-17294 {
+  background-image: url("/avatars/composed/2025/17294_5652b429-59be-4393-bfdf-c8271be5c7f8");
+}
+.team-17305 {
+  background-image: url("/avatars/composed/2025/17305_e0431967-9f21-48da-a304-1d5f7d09ac0b");
+}
+.team-17315 {
+  background-image: url("/avatars/composed/2025/17315_6cdefce7-b219-4f67-86fd-9b002d692dbd");
+}
+.team-17324 {
+  background-image: url("/avatars/composed/2025/17324_d8bb4112-d35a-45e3-afc1-7ebd4d09b519");
+}
+.team-17346 {
+  background-image: url("/avatars/composed/2025/17346_f8b831b1-6377-44ab-8d0d-dac0d204ad49");
+}
+.team-17384 {
+  background-image: url("/avatars/composed/2025/17384_1ea15c17-3468-4504-bdb5-a79dcf310a63");
+}
+.team-17385 {
+  background-image: url("/avatars/composed/2025/17385_4348337f-ac6a-471c-b9e6-423edfbf4acf");
+}
+.team-17388 {
+  background-image: url("/avatars/composed/2025/17388_f78fcf24-5459-4617-ad55-173ce0fbf487");
+}
+.team-17403 {
+  background-image: url("/avatars/composed/2025/17403_205b0561-357f-4baf-9a6b-6b8d71c8a88b");
+}
+.team-17426 {
+  background-image: url("/avatars/composed/2025/17426_a2e61b26-835e-45b7-bf2c-9e27c42e816f");
+}
+.team-17483 {
+  background-image: url("/avatars/composed/2025/17483_1f4006f5-7093-4b35-9db9-40c10c4808e5");
+}
+.team-17517 {
+  background-image: url("/avatars/composed/2025/17517_7d7d645b-a101-4c46-abf2-8cecd8a1f4b5");
+}
+.team-17556 {
+  background-image: url("/avatars/composed/2025/17556_d0d32552-4100-4a50-8a95-9a1627198ef0");
+}
+.team-17595 {
+  background-image: url("/avatars/composed/2025/17595_dbcb16ca-364b-44c9-b857-597a3a802cbc");
+}
+.team-17600 {
+  background-image: url("/avatars/composed/2025/17600_1fa3497d-931d-44a5-941c-f036fa333249");
+}
+.team-17632 {
+  background-image: url("/avatars/composed/2025/17632_9457361b-6cba-4400-b431-b9e4dc657b1b");
+}
+.team-17670 {
+  background-image: url("/avatars/composed/2025/17670_0dfa6931-d174-47dc-a89c-0ca2963cb538");
+}
+.team-17713 {
+  background-image: url("/avatars/composed/2025/17713_3847d13f-6e63-4b61-b981-ae9ead3e861b");
+}
+.team-17730 {
+  background-image: url("/avatars/composed/2025/17730_9c66d879-359d-4b9b-99e6-320efb37e997");
+}
+.team-17731 {
+  background-image: url("/avatars/composed/2025/17731_c0255c77-c979-412a-9b4f-093f3e1f2508");
+}
+.team-17768 {
+  background-image: url("/avatars/composed/2025/17768_055ff865-95cb-438d-9375-b05f52a1c4ee");
+}
+.team-17774 {
+  background-image: url("/avatars/composed/2025/17774_9ec36338-b7d1-4f37-a558-45da985e028c");
+}
+.team-17844 {
+  background-image: url("/avatars/composed/2025/17844_f7096193-82b0-49ce-913d-e44cbe04d654");
+}
+.team-17847 {
+  background-image: url("/avatars/composed/2025/17847_d0f007f5-98c1-4383-b911-a3e8db4b7be9");
+}
+.team-17860 {
+  background-image: url("/avatars/composed/2025/17860_5218d841-cccc-4bf0-82f9-d1b8009fd66e");
+}
+.team-17861 {
+  background-image: url("/avatars/composed/2025/17861_6865c834-109d-4b11-9fbd-7d9ba3e750b8");
+}
+.team-17870 {
+  background-image: url("/avatars/composed/2025/17870_20a5bb8e-6b6a-45b0-991b-4ea2b08f1094");
+}
+.team-17873 {
+  background-image: url("/avatars/composed/2025/17873_577d584b-c0e1-484a-b064-a56ea7a2aebd");
+}
+.team-17875 {
+  background-image: url("/avatars/composed/2025/17875_09587b02-58ed-4fbc-a6f1-b712a2fad14e");
+}
+.team-17969 {
+  background-image: url("/avatars/composed/2025/17969_4f357123-5826-4001-8a76-818ba7248e6e");
+}
+.team-17975 {
+  background-image: url("/avatars/composed/2025/17975_1e977915-e917-49a5-905d-8dbb8032abf2");
+}
+.team-17978 {
+  background-image: url("/avatars/composed/2025/17978_3d84e126-5676-444d-803b-216619c3099d");
+}
+.team-17986 {
+  background-image: url("/avatars/composed/2025/17986_84fa7f80-9ab3-4209-ad40-1db412ebcdb7");
+}
+.team-18035 {
+  background-image: url("/avatars/composed/2025/18035_c9be274b-e54f-4700-9c66-e9fc1394fc2c");
+}
+.team-18045 {
+  background-image: url("/avatars/composed/2025/18045_4c34dfcf-c835-4e28-ba01-76fa0e1f4cb7");
+}
+.team-18050 {
+  background-image: url("/avatars/composed/2025/18050_4d0eab43-6af2-403b-9fad-393c88654e41");
+}
+.team-18061 {
+  background-image: url("/avatars/composed/2025/18061_39f66ea6-f89f-4e49-84ad-282699a7dfa0");
+}
+.team-18064 {
+  background-image: url("/avatars/composed/2025/18064_0f052f97-7f10-4ae4-be14-87f6044ddf76");
+}
+.team-18065 {
+  background-image: url("/avatars/composed/2025/18065_1dae230c-87e9-45f3-a8c3-c59802fe57bd");
+}
+.team-18079 {
+  background-image: url("/avatars/composed/2025/18079_ce7ff35a-1a18-4e95-a5d7-45889cce8838");
+}
+.team-18092 {
+  background-image: url("/avatars/composed/2025/18092_984c59e7-defe-443f-a3e7-fdae20a97dfb");
+}
+.team-18094 {
+  background-image: url("/avatars/composed/2025/18094_a4b103cc-c3c0-4c31-822f-8b59415e4bee");
+}
+.team-18108 {
+  background-image: url("/avatars/composed/2025/18108_598d3ba6-fbc9-4106-ac2e-37ea723760a0");
+}
+.team-18119 {
+  background-image: url("/avatars/composed/2025/18119_9a18ee31-bad0-4f00-9211-fc50f8495ae1");
+}
+.team-18127 {
+  background-image: url("/avatars/composed/2025/18127_7d80ef2b-1c9a-485f-a333-61be649dfd70");
+}
+.team-18139 {
+  background-image: url("/avatars/composed/2025/18139_11e638d9-0b20-4897-a5a6-c011207afe79");
+}
+.team-18140 {
+  background-image: url("/avatars/composed/2025/18140_bfc066b0-9613-4f3b-b383-db570351fc9b");
+}
+.team-18142 {
+  background-image: url("/avatars/composed/2025/18142_ae68bea7-223e-41bf-b587-b1df94165596");
+}
+.team-18147 {
+  background-image: url("/avatars/composed/2025/18147_d61a0ea6-c8c1-4ac6-82c7-e8a72975c95b");
+}
+.team-18160 {
+  background-image: url("/avatars/composed/2025/18160_537d5ee3-a56f-4013-84ae-d7b657faaf66");
+}
+.team-18174 {
+  background-image: url("/avatars/composed/2025/18174_758fd30f-5659-48f7-9901-38f87b77c1e5");
+}
+.team-18185 {
+  background-image: url("/avatars/composed/2025/18185_1c391b99-99a8-48f9-9a06-2c4ca3e729f6");
+}
+.team-18191 {
+  background-image: url("/avatars/composed/2025/18191_992d81ea-62fe-43e6-892a-ec890346ffca");
+}
+.team-18215 {
+  background-image: url("/avatars/composed/2025/18215_a24f1110-7ff2-492c-b5a1-15f0982a671f");
+}
+.team-18221 {
+  background-image: url("/avatars/composed/2025/18221_627e5337-97b6-47dd-874e-3a0f5110decd");
+}
+.team-18224 {
+  background-image: url("/avatars/composed/2025/18224_177f983f-9c9e-4ff6-b909-c25a8dc471ec");
+}
+.team-18225 {
+  background-image: url("/avatars/composed/2025/18225_4ddfce8a-fa1f-4ace-b542-e8aecd312097");
+}
+.team-18227 {
+  background-image: url("/avatars/composed/2025/18227_749b9737-3b9a-409a-8f2e-259c5df5ce4c");
+}
+.team-18228 {
+  background-image: url("/avatars/composed/2025/18228_9fb38b08-9eef-4980-a57a-db18955effb9");
+}
+.team-18239 {
+  background-image: url("/avatars/composed/2025/18239_defb3454-2c46-478a-a39d-3e5a230ee212");
+}
+.team-18240 {
+  background-image: url("/avatars/composed/2025/18240_f1e03847-2ba9-4220-9ba1-0f4ea4ab26dd");
+}
+.team-18241 {
+  background-image: url("/avatars/composed/2025/18241_94d8f9b7-932c-49c3-8e52-13745266e2ec");
+}
+.team-18249 {
+  background-image: url("/avatars/composed/2025/18249_43f77517-cba1-4e9f-83d9-daa6320103a4");
+}
+.team-18255 {
+  background-image: url("/avatars/composed/2025/18255_12d21317-5d7d-4bb3-a92c-dddae310922d");
+}
+.team-18270 {
+  background-image: url("/avatars/composed/2025/18270_bb53010b-ce1e-4fbf-8270-269ba0a23a43");
+}
+.team-18291 {
+  background-image: url("/avatars/composed/2025/18291_5fd88168-ddac-4071-8320-5cf80f718c76");
+}
+.team-18306 {
+  background-image: url("/avatars/composed/2025/18306_8f9f2df9-7d50-458b-a209-b834c8447a4e");
+}
+.team-18312 {
+  background-image: url("/avatars/composed/2025/18312_62fef76b-f76c-45e0-8cf8-650e6b2a0bfe");
+}
+.team-18338 {
+  background-image: url("/avatars/composed/2025/18338_932b358d-82d4-480b-96df-6c3b4c7d4255");
+}
+.team-18341 {
+  background-image: url("/avatars/composed/2025/18341_3525533f-8696-4cda-8acb-e9f90c49e7f6");
+}
+.team-18365 {
+  background-image: url("/avatars/composed/2025/18365_dda8fec1-33b0-4665-a8ab-bdace6b47e94");
+}
+.team-18397 {
+  background-image: url("/avatars/composed/2025/18397_d545932e-8dbe-40b7-a4af-462f3074892f");
+}
+.team-18420 {
+  background-image: url("/avatars/composed/2025/18420_e31cbd99-da33-4678-8266-d5479766e0b9");
+}
+.team-18421 {
+  background-image: url("/avatars/composed/2025/18421_4a67de73-ffa7-4247-912d-8b09293622d6");
+}
+.team-18438 {
+  background-image: url("/avatars/composed/2025/18438_af43214d-1e26-43f6-a8a0-fcd4e346e002");
+}
+.team-18442 {
+  background-image: url("/avatars/composed/2025/18442_083e0462-532d-45ed-b639-25f33ff98005");
+}
+.team-18443 {
+  background-image: url("/avatars/composed/2025/18443_06a6ee84-2498-4ed9-976b-6abd70d353a5");
+}
+.team-18444 {
+  background-image: url("/avatars/composed/2025/18444_6c18f4a6-c61c-4eba-9548-b1d1b25b4f58");
+}
+.team-18445 {
+  background-image: url("/avatars/composed/2025/18445_73c517b1-b452-4911-89aa-eb870b9881c3");
+}
+.team-18450 {
+  background-image: url("/avatars/composed/2025/18450_8dcb7245-bbb6-4995-992b-675355734d92");
+}
+.team-18460 {
+  background-image: url("/avatars/composed/2025/18460_6516ec43-a408-4bf3-8856-379517b22e6a");
+}
+.team-18482 {
+  background-image: url("/avatars/composed/2025/18482_ecf3c2b0-0800-40c0-a47b-a15f7b3a13af");
+}
+.team-18483 {
+  background-image: url("/avatars/composed/2025/18483_3c358015-367a-478b-b5b6-1402bda0a305");
+}
+.team-18498 {
+  background-image: url("/avatars/composed/2025/18498_be6d91d1-c763-46fb-a675-c9907d0afd4f");
+}
+.team-18502 {
+  background-image: url("/avatars/composed/2025/18502_7b8500c4-5017-470c-b30e-9ce392a069f0");
+}
+.team-18505 {
+  background-image: url("/avatars/composed/2025/18505_b200a807-8eba-41cb-8fb6-657bd270e4a9");
+}
+.team-18535 {
+  background-image: url("/avatars/composed/2025/18535_83bceec8-60a0-491d-954a-196d1dfd7cdd");
+}
+.team-18538 {
+  background-image: url("/avatars/composed/2025/18538_22bc7917-80ae-43f9-8d5e-36df779878e6");
+}
+.team-18589 {
+  background-image: url("/avatars/composed/2025/18589_92140150-e4e9-483b-9348-f1bd72e43a31");
+}
+.team-18600 {
+  background-image: url("/avatars/composed/2025/18600_652ca22d-e7ab-4076-9d41-a4a0827344ae");
+}
+.team-18603 {
+  background-image: url("/avatars/composed/2025/18603_e45e6741-e659-40a3-8406-34d785a1130c");
+}
+.team-18625 {
+  background-image: url("/avatars/composed/2025/18625_7bd15989-ef2f-4cf9-b85b-b004b0fbf3f4");
+}
+.team-18630 {
+  background-image: url("/avatars/composed/2025/18630_59d92734-447f-4e7f-be7d-a8c5fed14a98");
+}
+.team-18634 {
+  background-image: url("/avatars/composed/2025/18634_c0096a74-a2d2-4c9c-979b-38745641179c");
+}
+.team-18671 {
+  background-image: url("/avatars/composed/2025/18671_cd113bca-c4bd-4ade-85a1-2db60581d45a");
+}
+.team-18697 {
+  background-image: url("/avatars/composed/2025/18697_f7cbdd1f-a288-4ffd-8f49-46aeb7d543bd");
+}
+.team-18735 {
+  background-image: url("/avatars/composed/2025/18735_12f57fa4-591a-4d70-a3e9-c23423ca351c");
+}
+.team-18742 {
+  background-image: url("/avatars/composed/2025/18742_6f61ee65-c8c9-4588-ae52-b6c27c9983f8");
+}
+.team-18763 {
+  background-image: url("/avatars/composed/2025/18763_108b953e-cef0-489d-a4f3-9ecff9dc8281");
+}
+.team-18799 {
+  background-image: url("/avatars/composed/2025/18799_7a0c0e55-1995-454f-abf5-d251aa0d2c6b");
+}
+.team-18801 {
+  background-image: url("/avatars/composed/2025/18801_ebf8aeee-e3d3-4424-8954-18cb4a6ebac6");
+}
+.team-18802 {
+  background-image: url("/avatars/composed/2025/18802_e21d8b87-5d12-4483-9fd8-542b3742d693");
+}
+.team-18806 {
+  background-image: url("/avatars/composed/2025/18806_56787591-61d5-4bda-836e-fcf0b6d25498");
+}
+.team-18840 {
+  background-image: url("/avatars/composed/2025/18840_23b4db4d-0475-405e-8e2b-ea21035521c2");
+}
+.team-18843 {
+  background-image: url("/avatars/composed/2025/18843_702cdc3e-90cf-47d6-8395-b2cd2ece9c62");
+}
+.team-18844 {
+  background-image: url("/avatars/composed/2025/18844_396831da-38cb-4f8e-b791-c424d11c9b12");
+}
+.team-18846 {
+  background-image: url("/avatars/composed/2025/18846_2ac80243-e143-45ec-8a1f-9daa94e7ae55");
+}
+.team-18861 {
+  background-image: url("/avatars/composed/2025/18861_03270e89-4ce9-4b62-946f-e44c787634e8");
+}
+.team-18871 {
+  background-image: url("/avatars/composed/2025/18871_e7eccd3a-7aa0-47f0-a547-03721ede64ea");
+}
+.team-18886 {
+  background-image: url("/avatars/composed/2025/18886_7d58320d-5519-4e32-a2bb-7644d696b2c6");
+}
+.team-18900 {
+  background-image: url("/avatars/composed/2025/18900_cbcefda7-cfac-4c2b-90d7-842b86d47008");
+}
+.team-18908 {
+  background-image: url("/avatars/composed/2025/18908_6671a7a2-fb7a-4d52-8bf7-244a482ea805");
+}
+.team-18964 {
+  background-image: url("/avatars/composed/2025/18964_6e1c030e-ed0b-4c58-a91c-6eb138f2af52");
+}
+.team-18965 {
+  background-image: url("/avatars/composed/2025/18965_65b839fd-9e23-4bbd-a6e4-06d717602388");
+}
+.team-18966 {
+  background-image: url("/avatars/composed/2025/18966_77b6e579-391f-473a-96b4-abe47389ad96");
+}
+.team-18967 {
+  background-image: url("/avatars/composed/2025/18967_71bacce3-77cd-41fd-8831-dd3cdedd8983");
+}
+.team-18968 {
+  background-image: url("/avatars/composed/2025/18968_0b71093e-4a9a-404a-a77b-2c465d725b22");
+}
+.team-18969 {
+  background-image: url("/avatars/composed/2025/18969_ec5d9ee3-86d0-4300-a33c-d503d43371cd");
+}
+.team-18978 {
+  background-image: url("/avatars/composed/2025/18978_85c09819-5ebc-4ee3-8672-cb1992568ad7");
+}
+.team-19013 {
+  background-image: url("/avatars/composed/2025/19013_7c0e2de3-18ed-4034-9340-5e26db73bb99");
+}
+.team-19043 {
+  background-image: url("/avatars/composed/2025/19043_0c52d02b-e0d5-44d6-abda-baf8d8030420");
+}
+.team-19044 {
+  background-image: url("/avatars/composed/2025/19044_e4be5d45-9372-4dc9-bdb7-d5b4e22863ca");
+}
+.team-19047 {
+  background-image: url("/avatars/composed/2025/19047_a52d33f4-423b-4755-826b-e862d3d9ddcc");
+}
+.team-19048 {
+  background-image: url("/avatars/composed/2025/19048_eafc751b-7f74-4580-afcf-d139f95969f4");
+}
+.team-19049 {
+  background-image: url("/avatars/composed/2025/19049_95fc3590-f150-4513-a0aa-c27b580882e9");
+}
+.team-19055 {
+  background-image: url("/avatars/composed/2025/19055_4192d47e-433d-43bf-8b4c-d2054d700b34");
+}
+.team-19058 {
+  background-image: url("/avatars/composed/2025/19058_d6adbdbe-a9e5-418d-b2d9-94aa6c3c7cdb");
+}
+.team-19061 {
+  background-image: url("/avatars/composed/2025/19061_64747c77-7075-4af9-a2ac-cd32fcdb3289");
+}
+.team-19062 {
+  background-image: url("/avatars/composed/2025/19062_b1b01ec8-2e8e-4a41-85e0-883cd4c9cf24");
+}
+.team-19064 {
+  background-image: url("/avatars/composed/2025/19064_6ed874c4-7903-4c8f-a5cf-8acd29cff895");
+}
+.team-19067 {
+  background-image: url("/avatars/composed/2025/19067_5e50d167-170f-4c83-a3ee-e94c982727fc");
+}
+.team-19068 {
+  background-image: url("/avatars/composed/2025/19068_84396409-6dba-4a76-9475-c5eb9da5d4c0");
+}
+.team-19074 {
+  background-image: url("/avatars/composed/2025/19074_1e05db1f-547a-4cb1-b168-d52ad55c8e05");
+}
+.team-19075 {
+  background-image: url("/avatars/composed/2025/19075_b0bd2185-ffe6-4aa1-bcc2-5c8cbd9181cf");
+}
+.team-19076 {
+  background-image: url("/avatars/composed/2025/19076_2533a11d-53d7-4aaf-9f70-62d40acb9f28");
+}
+.team-19079 {
+  background-image: url("/avatars/composed/2025/19079_bf05f922-aa6d-42fb-9e45-511c90255a88");
+}
+.team-19081 {
+  background-image: url("/avatars/composed/2025/19081_3f8f0c0a-19ee-4eb5-9ee1-dd521feba61b");
+}
+.team-19082 {
+  background-image: url("/avatars/composed/2025/19082_851ab7ef-e9fa-4700-9b30-c7426ea09213");
+}
+.team-19084 {
+  background-image: url("/avatars/composed/2025/19084_cf70a5bd-81b5-4956-bcf3-f3ebc29ce586");
+}
+.team-19085 {
+  background-image: url("/avatars/composed/2025/19085_ca176c79-ac92-4c25-aa0d-882bbcf7ad72");
+}
+.team-19088 {
+  background-image: url("/avatars/composed/2025/19088_0a95012c-a224-4872-b720-4b057d89b1e0");
+}
+.team-19090 {
+  background-image: url("/avatars/composed/2025/19090_e41a4385-c52b-4015-9751-fcd150a3c164");
+}
+.team-19091 {
+  background-image: url("/avatars/composed/2025/19091_40c0c153-9174-48c9-9f0b-4f37ea592b27");
+}
+.team-19093 {
+  background-image: url("/avatars/composed/2025/19093_78b6b769-d64a-4f9d-aa7b-0cf3c1185930");
+}
+.team-19094 {
+  background-image: url("/avatars/composed/2025/19094_2726c831-7b2a-4474-a018-98c818189982");
+}
+.team-19095 {
+  background-image: url("/avatars/composed/2025/19095_1151e18c-6447-4369-af2d-1c6dce52b7f6");
+}
+.team-19097 {
+  background-image: url("/avatars/composed/2025/19097_11f8b62c-1831-4d84-a366-f37a24737a48");
+}
+.team-19098 {
+  background-image: url("/avatars/composed/2025/19098_6128634b-3b87-40cb-b27a-81ba48663816");
+}
+.team-19099 {
+  background-image: url("/avatars/composed/2025/19099_a40b2c4c-0af7-4278-9c75-55f62325db74");
+}
+.team-19101 {
+  background-image: url("/avatars/composed/2025/19101_79011936-0d95-4898-a5d3-632c71440316");
+}
+.team-19103 {
+  background-image: url("/avatars/composed/2025/19103_bb432399-a9c1-4b5a-b255-c9223a7ff912");
+}
+.team-19104 {
+  background-image: url("/avatars/composed/2025/19104_c50f38b5-a9d7-4843-a7d3-13c26c60b5fb");
+}
+.team-19105 {
+  background-image: url("/avatars/composed/2025/19105_fb3780aa-33e3-45f5-a8d9-dd30f2124886");
+}
+.team-19109 {
+  background-image: url("/avatars/composed/2025/19109_959463f8-ab26-4dd6-b1e0-9fe5a73cc1fd");
+}
+.team-19112 {
+  background-image: url("/avatars/composed/2025/19112_333be2c9-3b01-468d-80fa-bc9f4fcce276");
+}
+.team-19115 {
+  background-image: url("/avatars/composed/2025/19115_c1789982-ad21-44a5-9782-995f78584e7b");
+}
+.team-19116 {
+  background-image: url("/avatars/composed/2025/19116_93a3e071-f639-4107-b603-e6bf2c5c4538");
+}
+.team-19117 {
+  background-image: url("/avatars/composed/2025/19117_4bfdd0ab-6cb7-4871-a686-b9082b363b09");
+}
+.team-19119 {
+  background-image: url("/avatars/composed/2025/19119_8ac57e8d-06e8-4cbe-be5d-b7b2ef18e810");
+}
+.team-19120 {
+  background-image: url("/avatars/composed/2025/19120_f33b9f1d-4ae4-468d-b085-5b7e2756973d");
+}
+.team-19121 {
+  background-image: url("/avatars/composed/2025/19121_35deaa19-1433-4745-bf7b-f0fa813ab2b6");
+}
+.team-19131 {
+  background-image: url("/avatars/composed/2025/19131_2b917e52-2383-41e5-b9b5-dadf53e022df");
+}
+.team-19139 {
+  background-image: url("/avatars/composed/2025/19139_a69311b2-a6bd-4e94-ab49-db524b2eb36c");
+}
+.team-19141 {
+  background-image: url("/avatars/composed/2025/19141_5ebe2f4f-5816-4fa2-bbbf-0211722cab11");
+}
+.team-19143 {
+  background-image: url("/avatars/composed/2025/19143_a23e4c3f-bb73-4d78-9887-d2bb008ddbeb");
+}
+.team-19152 {
+  background-image: url("/avatars/composed/2025/19152_5a8b4cda-35ae-46ba-9606-fccd503053c9");
+}
+.team-19163 {
+  background-image: url("/avatars/composed/2025/19163_52576680-711b-4155-a73c-e43a89119849");
+}
+.team-19164 {
+  background-image: url("/avatars/composed/2025/19164_176c3953-84e2-410c-b8fa-cd37e706e6f7");
+}
+.team-19176 {
+  background-image: url("/avatars/composed/2025/19176_a3f9bfb9-4179-48d0-a87d-6549f6205644");
+}
+.team-19191 {
+  background-image: url("/avatars/composed/2025/19191_7ee91c47-7845-4db2-b0f2-6e67fc5a6c7b");
+}
+.team-19192 {
+  background-image: url("/avatars/composed/2025/19192_4e86be21-6311-4c43-a1cf-b00ea83c538c");
+}
+.team-19194 {
+  background-image: url("/avatars/composed/2025/19194_a2bba348-4e16-4963-bed1-0d3ccfef26fd");
+}
+.team-19211 {
+  background-image: url("/avatars/composed/2025/19211_22fd3d86-18ed-4e4f-83c1-202ffb8925f7");
+}
+.team-19234 {
+  background-image: url("/avatars/composed/2025/19234_f67e84f9-07b9-4d49-8b49-01a0092bcf62");
+}
+.team-19256 {
+  background-image: url("/avatars/composed/2025/19256_5208406b-c1f8-4f31-a446-2dcc0a188fa6");
+}
+.team-19257 {
+  background-image: url("/avatars/composed/2025/19257_c3abfe53-785f-4472-9faf-47d7580913c7");
+}
+.team-19280 {
+  background-image: url("/avatars/composed/2025/19280_a5a76389-cef2-4785-b756-a134582ccf65");
+}
+.team-19366 {
+  background-image: url("/avatars/composed/2025/19366_7b4f9b71-89c4-4d50-884c-b0d6d483a491");
+}
+.team-19377 {
+  background-image: url("/avatars/composed/2025/19377_77c59f79-62db-45be-8a9e-b2e7d2fce697");
+}
+.team-19389 {
+  background-image: url("/avatars/composed/2025/19389_3f7295b0-ccb1-4c9c-bf1c-8764f2f95334");
+}
+.team-19410 {
+  background-image: url("/avatars/composed/2025/19410_4dd88e18-5982-4609-bf0f-72787f95167a");
+}
+.team-19417 {
+  background-image: url("/avatars/composed/2025/19417_b5b71a50-03a8-411c-9877-43f1e76cd546");
+}
+.team-19427 {
+  background-image: url("/avatars/composed/2025/19427_3e2b302d-bfce-4e9e-ac70-0f2300cb956a");
+}
+.team-19439 {
+  background-image: url("/avatars/composed/2025/19439_8dda8844-49c3-4664-9bc2-ba064249b6d0");
+}
+.team-19448 {
+  background-image: url("/avatars/composed/2025/19448_67a6f558-04d1-4f42-af32-801be8ac1b86");
+}
+.team-19450 {
+  background-image: url("/avatars/composed/2025/19450_79b37433-050b-4a9d-a56b-1adc0a96b1c0");
+}
+.team-19498 {
+  background-image: url("/avatars/composed/2025/19498_6c865c43-c401-440f-af79-9299bd2782d2");
+}
+.team-19500 {
+  background-image: url("/avatars/composed/2025/19500_0537f165-fdd0-414c-a8d8-a4a664b3379e");
+}
+.team-19502 {
+  background-image: url("/avatars/composed/2025/19502_7ab0e0b4-dab3-4bd2-a3d1-f53fb2ec1aa0");
+}
+.team-19508 {
+  background-image: url("/avatars/composed/2025/19508_ca56b86d-0196-4036-9eed-94f6844ae6ec");
+}
+.team-19516 {
+  background-image: url("/avatars/composed/2025/19516_35488875-dca9-4500-a89d-10d0f376dbec");
+}
+.team-19541 {
+  background-image: url("/avatars/composed/2025/19541_1bbbb898-66d3-4a21-8e52-6ef4363b78b7");
+}
+.team-19561 {
+  background-image: url("/avatars/composed/2025/19561_870f8e0b-f12d-446c-adbc-eb12867d7673");
+}
+.team-19563 {
+  background-image: url("/avatars/composed/2025/19563_bd8e6ba1-482a-40b5-88ad-f9f1397cf6d3");
+}
+.team-19564 {
+  background-image: url("/avatars/composed/2025/19564_39754206-5f44-413c-a649-49342da056a4");
+}
+.team-19587 {
+  background-image: url("/avatars/composed/2025/19587_6db4b19b-fc37-4446-9f4e-ee98f258c7ea");
+}
+.team-19600 {
+  background-image: url("/avatars/composed/2025/19600_4e5e59a9-aa82-4a51-a335-ca0792a13968");
+}
+.team-19605 {
+  background-image: url("/avatars/composed/2025/19605_f1046b29-c98d-459d-b4a4-7ef1ad0be98a");
+}
+.team-19652 {
+  background-image: url("/avatars/composed/2025/19652_446057c0-a3bf-4bed-baa3-387c076164c1");
+}
+.team-19666 {
+  background-image: url("/avatars/composed/2025/19666_52cd478e-dab7-45dc-b70b-2e19045241d8");
+}
+.team-19675 {
+  background-image: url("/avatars/composed/2025/19675_6d5bc727-b150-4714-8868-8cfae6643d84");
+}
+.team-19705 {
+  background-image: url("/avatars/composed/2025/19705_c85c92ac-773a-4429-af71-2f31335ba7f2");
+}
+.team-19706 {
+  background-image: url("/avatars/composed/2025/19706_91a0f4fc-8b42-4cf8-8263-ed49b6b066ee");
+}
+.team-19708 {
+  background-image: url("/avatars/composed/2025/19708_79618b70-ee0b-41e4-99ce-fa721fb53e2f");
+}
+.team-19735 {
+  background-image: url("/avatars/composed/2025/19735_8c6c35fa-3776-44c8-bced-1fe343203660");
+}
+.team-19743 {
+  background-image: url("/avatars/composed/2025/19743_2a693e42-16c5-4ce9-b988-2bee679d8b21");
+}
+.team-19757 {
+  background-image: url("/avatars/composed/2025/19757_637f39d4-b83f-4c7d-aaf8-35815adb6bbe");
+}
+.team-19770 {
+  background-image: url("/avatars/composed/2025/19770_f7f59188-c2cc-4b1b-ba73-a59915e975c8");
+}
+.team-19772 {
+  background-image: url("/avatars/composed/2025/19772_e01433d2-73b4-4946-a62e-d329b7637c49");
+}
+.team-19779 {
+  background-image: url("/avatars/composed/2025/19779_81b50a13-127f-4148-8dbf-b262599a7ace");
+}
+.team-19782 {
+  background-image: url("/avatars/composed/2025/19782_60ecaaa2-a568-4a6c-9d8b-280207d4aae8");
+}
+.team-19792 {
+  background-image: url("/avatars/composed/2025/19792_03373f80-7349-488c-b375-fc79720a37db");
+}
+.team-19797 {
+  background-image: url("/avatars/composed/2025/19797_edb675a9-6bfe-403e-b8ff-e72a65f07ee8");
+}
+.team-19824 {
+  background-image: url("/avatars/composed/2025/19824_5c5bd618-c834-45b4-bb2d-04d19e936ae1");
+}
+.team-19834 {
+  background-image: url("/avatars/composed/2025/19834_0d462141-dec3-4ec3-82ab-35801ad63570");
+}
+.team-19836 {
+  background-image: url("/avatars/composed/2025/19836_2f1b99c2-85c9-4c02-bc6b-f6e66dad53d3");
+}
+.team-19838 {
+  background-image: url("/avatars/composed/2025/19838_e70ef427-e771-4e5b-867a-29cac5dccff2");
+}
+.team-19856 {
+  background-image: url("/avatars/composed/2025/19856_8a3fad81-5a8b-48f0-b815-0db0e4b6def2");
+}
+.team-19862 {
+  background-image: url("/avatars/composed/2025/19862_9b534861-c394-4dda-83ee-d7a5234c9c6f");
+}
+.team-19866 {
+  background-image: url("/avatars/composed/2025/19866_c4f40f20-ccb5-4101-b171-c52ed444c444");
+}
+.team-19876 {
+  background-image: url("/avatars/composed/2025/19876_309549bf-fc0e-4f8d-92ec-716fe9580b9d");
+}
+.team-19887 {
+  background-image: url("/avatars/composed/2025/19887_cd6ec489-71ba-4ed1-91c3-09cfc437057b");
+}
+.team-19892 {
+  background-image: url("/avatars/composed/2025/19892_44c18fe9-cb73-4eaf-8c49-88d30ec65f2c");
+}
+.team-19921 {
+  background-image: url("/avatars/composed/2025/19921_a58078f0-79f6-4cd7-b877-a2ca5d088107");
+}
+.team-19922 {
+  background-image: url("/avatars/composed/2025/19922_1da65991-3d91-497a-90fd-90aec727b45f");
+}
+.team-19938 {
+  background-image: url("/avatars/composed/2025/19938_8cf45b3c-4600-42f3-88a8-ac9c9e65881e");
+}
+.team-19953 {
+  background-image: url("/avatars/composed/2025/19953_cf4ebb5d-39b1-4a9c-98d8-e3a72ed8c523");
+}
+.team-19954 {
+  background-image: url("/avatars/composed/2025/19954_33e3e6a6-4450-4a19-b2f1-42d99f6a2816");
+}
+.team-19955 {
+  background-image: url("/avatars/composed/2025/19955_66e0e7b7-3707-4883-941d-517eeb8f30cb");
+}
+.team-19956 {
+  background-image: url("/avatars/composed/2025/19956_8ce3c8de-1eca-4927-8bc9-2847881c7b90");
+}
+.team-19961 {
+  background-image: url("/avatars/composed/2025/19961_e5faed0c-ba65-4cc6-82a0-a4c07cd52783");
+}
+.team-19970 {
+  background-image: url("/avatars/composed/2025/19970_6a915bb2-4e06-4396-80f1-66ed4c2c4c1d");
+}
+.team-20025 {
+  background-image: url("/avatars/composed/2025/20025_ee93b84e-dea2-418e-9783-d6f93065f27e");
+}
+.team-20032 {
+  background-image: url("/avatars/composed/2025/20032_2aa1e949-4564-41c1-870b-a5640f3ed272");
+}
+.team-20077 {
+  background-image: url("/avatars/composed/2025/20077_c613e599-2732-46ba-9a25-c5957dc26041");
+}
+.team-20087 {
+  background-image: url("/avatars/composed/2025/20087_0906f00f-cb5d-4f5f-b82e-b5bc6a84bf35");
+}
+.team-20092 {
+  background-image: url("/avatars/composed/2025/20092_d8a4bd00-02f6-4085-ab64-8053c8e27bb9");
+}
+.team-20123 {
+  background-image: url("/avatars/composed/2025/20123_4b2e6a7d-94db-4f07-b64e-e2e99f958c8a");
+}
+.team-20125 {
+  background-image: url("/avatars/composed/2025/20125_fc956d66-fd78-4e7e-8a62-ad1128e4f4a3");
+}
+.team-20129 {
+  background-image: url("/avatars/composed/2025/20129_56a0c0d0-fb77-4db6-b830-be403224c465");
+}
+.team-20130 {
+  background-image: url("/avatars/composed/2025/20130_f1a0f526-56ab-4147-af97-4eddc0de8fa0");
+}
+.team-20131 {
+  background-image: url("/avatars/composed/2025/20131_5a5de45b-f7c3-4de1-b518-b7aa859624b1");
+}
+.team-20135 {
+  background-image: url("/avatars/composed/2025/20135_711a8705-2b42-4dbc-a36b-6ab007bf5c2b");
+}
+.team-20139 {
+  background-image: url("/avatars/composed/2025/20139_8c258bc5-a097-4892-b290-800d0bcbcf4b");
+}
+.team-20153 {
+  background-image: url("/avatars/composed/2025/20153_33aa505a-e9f1-4fd1-a82a-7c3ccb97dcc5");
+}
+.team-20168 {
+  background-image: url("/avatars/composed/2025/20168_6ca0f836-3a66-4d5d-94d2-8748571f7231");
+}
+.team-20182 {
+  background-image: url("/avatars/composed/2025/20182_daca3edb-b8bd-49b5-b445-c7b9177da69f");
+}
+.team-20203 {
+  background-image: url("/avatars/composed/2025/20203_4a46981c-ab39-4449-ae90-c31ca008d547");
+}
+.team-20204 {
+  background-image: url("/avatars/composed/2025/20204_8651bc0e-7904-4079-92af-4ec76307fa52");
+}
+.team-20205 {
+  background-image: url("/avatars/composed/2025/20205_0045b076-7c92-4f70-9f3b-f93f3bc70b97");
+}
+.team-20223 {
+  background-image: url("/avatars/composed/2025/20223_00f7e177-ee71-4025-9e5a-7a33592bb6e0");
+}
+.team-20228 {
+  background-image: url("/avatars/composed/2025/20228_cc1e7484-6bd1-487a-873d-5546ef2ed9f0");
+}
+.team-20233 {
+  background-image: url("/avatars/composed/2025/20233_8e910d0c-2b00-4886-8142-e65bc83c5161");
+}
+.team-20240 {
+  background-image: url("/avatars/composed/2025/20240_417727ce-e8cb-420f-a659-2c586aa2a2bc");
+}
+.team-20265 {
+  background-image: url("/avatars/composed/2025/20265_ce4dfb1f-ea31-4255-9661-72c91eaa5b2a");
+}
+.team-20267 {
+  background-image: url("/avatars/composed/2025/20267_4d38ae08-877a-425b-bc2c-a9e7e2eac064");
+}
+.team-20278 {
+  background-image: url("/avatars/composed/2025/20278_8b6cc5d3-819d-4c2f-9ca3-6c03819edf70");
+}
+.team-20279 {
+  background-image: url("/avatars/composed/2025/20279_7895ba45-6ce0-4c43-b990-8b7f24b12b60");
+}
+.team-20288 {
+  background-image: url("/avatars/composed/2025/20288_323efffe-5abb-419f-8954-80fbe2f2c586");
+}
+.team-20297 {
+  background-image: url("/avatars/composed/2025/20297_a8d4b67e-e347-4f25-8811-2a44a1e5527b");
+}
+.team-20309 {
+  background-image: url("/avatars/composed/2025/20309_7439f948-cad5-49c6-b9c2-8dcee45d5944");
+}
+.team-20313 {
+  background-image: url("/avatars/composed/2025/20313_dfed9de8-a7bf-4e15-baf4-5bcbcf4abfa0");
+}
+.team-20331 {
+  background-image: url("/avatars/composed/2025/20331_6d11dc53-06cf-49de-af34-8613a5308b4e");
+}
+.team-20332 {
+  background-image: url("/avatars/composed/2025/20332_7b274312-7257-4411-8f48-661b4a6a9fea");
+}
+.team-20353 {
+  background-image: url("/avatars/composed/2025/20353_31323953-6894-4e38-b499-190157ecb06b");
+}
+.team-20404 {
+  background-image: url("/avatars/composed/2025/20404_946c6ea4-4514-4b37-bc97-a2f17c430298");
+}
+.team-20406 {
+  background-image: url("/avatars/composed/2025/20406_15e6867d-3169-4e78-a957-a35473490f97");
+}
+.team-20410 {
+  background-image: url("/avatars/composed/2025/20410_3fe2ac9b-067b-464c-9b12-d5a6746c117e");
+}
+.team-20420 {
+  background-image: url("/avatars/composed/2025/20420_e3875a99-3c1e-445d-95f0-d2d751fb5fc9");
+}
+.team-20422 {
+  background-image: url("/avatars/composed/2025/20422_ac54437f-c737-4a17-be8c-a3201d71f6b1");
+}
+.team-20515 {
+  background-image: url("/avatars/composed/2025/20515_90a0cac5-6a90-4e8a-81dc-6cc5c5c5a683");
+}
+.team-20669 {
+  background-image: url("/avatars/composed/2025/20669_c5097274-16ee-40d0-8359-c97766e480ec");
+}
+.team-20674 {
+  background-image: url("/avatars/composed/2025/20674_d00f730e-8224-4f9b-82cc-2075ca8e55b0");
+}
+.team-20681 {
+  background-image: url("/avatars/composed/2025/20681_f7c2dce0-5d79-4430-8cfa-073cb5b30009");
+}
+.team-20689 {
+  background-image: url("/avatars/composed/2025/20689_bb66907c-c79d-46a8-a289-f3b4b919f7c1");
+}
+.team-20701 {
+  background-image: url("/avatars/composed/2025/20701_fa0db192-b82e-4d11-8735-c50f819db7ce");
+}
+.team-20718 {
+  background-image: url("/avatars/composed/2025/20718_f595274c-0cc0-4529-bed8-bf4d2de3fd2d");
+}
+.team-20744 {
+  background-image: url("/avatars/composed/2025/20744_f5e04b4b-0873-4086-87c1-0f857f4fd40f");
+}
+.team-20754 {
+  background-image: url("/avatars/composed/2025/20754_9f6eca1d-48d1-4cd2-b771-bee3a9699d92");
+}
+.team-20771 {
+  background-image: url("/avatars/composed/2025/20771_8713f41c-d935-4740-94a3-41a2b085a436");
+}
+.team-20790 {
+  background-image: url("/avatars/composed/2025/20790_f9948049-a371-4c83-b19b-8a512c812017");
+}
+.team-20803 {
+  background-image: url("/avatars/composed/2025/20803_87404e06-40aa-4d16-856f-155f9dca1a03");
+}
+.team-20804 {
+  background-image: url("/avatars/composed/2025/20804_a781b16f-cfa0-434e-b1ad-535d4882b1d8");
+}
+.team-20824 {
+  background-image: url("/avatars/composed/2025/20824_bc41ca84-86da-43e4-89ac-48211ed82a61");
+}
+.team-20858 {
+  background-image: url("/avatars/composed/2025/20858_5c145d5e-214c-4a71-a3cb-b816808f7d41");
+}
+.team-20936 {
+  background-image: url("/avatars/composed/2025/20936_17c813e2-8176-4c13-957e-01f083fd9373");
+}
+.team-20954 {
+  background-image: url("/avatars/composed/2025/20954_7349b268-602f-4515-abaa-c8b69c0ec8d8");
+}
+.team-20965 {
+  background-image: url("/avatars/composed/2025/20965_1b539c0e-806a-4398-9877-966e56a0580f");
+}
+.team-20972 {
+  background-image: url("/avatars/composed/2025/20972_0511fd1f-2940-4bd4-a18d-fd2f38b7b7d0");
+}
+.team-20974 {
+  background-image: url("/avatars/composed/2025/20974_645ec471-0c8f-4e19-9dcd-f53b276920c6");
+}
+.team-20985 {
+  background-image: url("/avatars/composed/2025/20985_e984d7a8-36f5-4d1f-a5f2-c5b24c0540e4");
+}
+.team-20989 {
+  background-image: url("/avatars/composed/2025/20989_d41b6494-b277-4003-9d3f-e9de4f40404b");
+}
+.team-20990 {
+  background-image: url("/avatars/composed/2025/20990_5a3fd45a-b456-4a48-b800-31e035e9bee9");
+}
+.team-20991 {
+  background-image: url("/avatars/composed/2025/20991_911d9adf-7fa7-4ab3-b4f1-aa063b996296");
+}
+.team-21028 {
+  background-image: url("/avatars/composed/2025/21028_67948078-6de0-4f80-ab82-d0abb645d770");
+}
+.team-21031 {
+  background-image: url("/avatars/composed/2025/21031_3eeeaf7e-827d-435f-977c-bb852d9b2f5d");
+}
+.team-21036 {
+  background-image: url("/avatars/composed/2025/21036_7ecb4123-426c-469b-9d5c-7384cf5de04f");
+}
+.team-21050 {
+  background-image: url("/avatars/composed/2025/21050_0d2be726-d3ca-4121-84ce-721d753c2919");
+}
+.team-21059 {
+  background-image: url("/avatars/composed/2025/21059_333a9a82-0e54-43c7-ba34-128d0f9030ab");
+}
+.team-21069 {
+  background-image: url("/avatars/composed/2025/21069_cc258686-a7be-42bb-9274-e40da5cba816");
+}
+.team-21071 {
+  background-image: url("/avatars/composed/2025/21071_d1b18578-5c8d-4be7-850f-fb3d77b8db3f");
+}
+.team-21085 {
+  background-image: url("/avatars/composed/2025/21085_0171ecb6-ee88-4f3e-8812-11fd03f394e8");
+}
+.team-21086 {
+  background-image: url("/avatars/composed/2025/21086_2ee75258-8d3c-4516-9fe7-84157a123a62");
+}
+.team-21087 {
+  background-image: url("/avatars/composed/2025/21087_e7d83c1c-7e74-48da-a4ab-622c68d101b4");
+}
+.team-21088 {
+  background-image: url("/avatars/composed/2025/21088_497165a0-9508-48ff-8623-520f4d45afa9");
+}
+.team-21116 {
+  background-image: url("/avatars/composed/2025/21116_6d223158-d130-4566-8510-4ff0420a2847");
+}
+.team-21127 {
+  background-image: url("/avatars/composed/2025/21127_63e10c9e-0a47-4847-84ac-7172dd97fbb5");
+}
+.team-21171 {
+  background-image: url("/avatars/composed/2025/21171_38b78ed1-8997-47ec-bcfe-7f353546255f");
+}
+.team-21196 {
+  background-image: url("/avatars/composed/2025/21196_4a2a89f1-4015-41b0-9c6c-45f7a1724fd8");
+}
+.team-21222 {
+  background-image: url("/avatars/composed/2025/21222_c5dec80a-0f60-470b-8273-041d040caf61");
+}
+.team-21225 {
+  background-image: url("/avatars/composed/2025/21225_ab7a21b0-4a5b-42d0-9f8f-9b5601d414b6");
+}
+.team-21227 {
+  background-image: url("/avatars/composed/2025/21227_43b207e5-b29c-4cd8-be5c-20a73f10a544");
+}
+.team-21229 {
+  background-image: url("/avatars/composed/2025/21229_a36aed07-9747-40d3-b192-4fc764744a6d");
+}
+.team-21235 {
+  background-image: url("/avatars/composed/2025/21235_14da6d38-0403-42cf-9e9d-da722e91c566");
+}
+.team-21238 {
+  background-image: url("/avatars/composed/2025/21238_ad434808-a2de-4114-9338-8244a54e8386");
+}
+.team-21239 {
+  background-image: url("/avatars/composed/2025/21239_2a5ae6c1-e73f-4486-bffc-95c7db9a90d6");
+}
+.team-21305 {
+  background-image: url("/avatars/composed/2025/21305_05c21002-704f-4f2f-a467-f3a4a203fd3a");
+}
+.team-21311 {
+  background-image: url("/avatars/composed/2025/21311_cf5bffd8-074b-4914-aa78-9beac5b68fde");
+}
+.team-21323 {
+  background-image: url("/avatars/composed/2025/21323_60f848df-2479-46ca-b9c3-63300e9e9c23");
+}
+.team-21324 {
+  background-image: url("/avatars/composed/2025/21324_3658d3a9-3259-4855-87d4-3bea0be8bd1b");
+}
+.team-21333 {
+  background-image: url("/avatars/composed/2025/21333_889e7e02-5676-4b97-8e99-5a2265f13be7");
+}
+.team-21336 {
+  background-image: url("/avatars/composed/2025/21336_f475e863-d879-4eb5-9d29-ed5cb26ebf7e");
+}
+.team-21346 {
+  background-image: url("/avatars/composed/2025/21346_641d6174-5963-40b0-818c-d95b361f42b8");
+}
+.team-21350 {
+  background-image: url("/avatars/composed/2025/21350_b4c0eca7-9832-4bfb-86a6-3ee1961c20e5");
+}
+.team-21351 {
+  background-image: url("/avatars/composed/2025/21351_e1e81e91-7605-429a-9178-8d79d8869ace");
+}
+.team-21354 {
+  background-image: url("/avatars/composed/2025/21354_15629a7a-06fa-44b2-8416-d2c30db525c8");
+}
+.team-21355 {
+  background-image: url("/avatars/composed/2025/21355_aeb60e34-1828-4e28-bfe5-179a32cd64fc");
+}
+.team-21358 {
+  background-image: url("/avatars/composed/2025/21358_8ff1932c-6611-44e5-9fa0-c9b65facfb52");
+}
+.team-21364 {
+  background-image: url("/avatars/composed/2025/21364_0b0e5fa5-dc44-4d37-bcab-e201f1e6bc32");
+}
+.team-21380 {
+  background-image: url("/avatars/composed/2025/21380_e1527b11-a955-49a3-b3f2-784619ee9b11");
+}
+.team-21394 {
+  background-image: url("/avatars/composed/2025/21394_e870f528-ed7c-4125-be22-8d8d1ae9eb36");
+}
+.team-21418 {
+  background-image: url("/avatars/composed/2025/21418_c8c4289c-082b-47e7-847e-120caf41974b");
+}
+.team-21430 {
+  background-image: url("/avatars/composed/2025/21430_893bd42b-f2f1-4614-868c-224c12523b56");
+}
+.team-21455 {
+  background-image: url("/avatars/composed/2025/21455_39b039b4-33e0-42f8-a4d8-811c621889c4");
+}
+.team-21457 {
+  background-image: url("/avatars/composed/2025/21457_bf745c87-59c0-4e10-9643-b9f8a81132df");
+}
+.team-21485 {
+  background-image: url("/avatars/composed/2025/21485_7cc6bb2f-cbfc-4214-8b83-5100234699fc");
+}
+.team-21501 {
+  background-image: url("/avatars/composed/2025/21501_2486c4ae-11af-45e5-80a5-a8e7f364ccb8");
+}
+.team-21502 {
+  background-image: url("/avatars/composed/2025/21502_9d1bb445-f283-4e97-97c3-d5246b453f34");
+}
+.team-21510 {
+  background-image: url("/avatars/composed/2025/21510_8912b643-c625-4140-b546-254773f6be19");
+}
+.team-21533 {
+  background-image: url("/avatars/composed/2025/21533_5bd55bb3-f3d9-4fb6-9de5-68a22b3776b9");
+}
+.team-21537 {
+  background-image: url("/avatars/composed/2025/21537_16cd8422-26a0-4e2e-afc4-b96c8f20cfdf");
+}
+.team-21577 {
+  background-image: url("/avatars/composed/2025/21577_45895552-04aa-4814-93ae-c6974f15fe6b");
+}
+.team-21579 {
+  background-image: url("/avatars/composed/2025/21579_f00273cc-e91f-47fa-b563-07a907c5c043");
+}
+.team-21580 {
+  background-image: url("/avatars/composed/2025/21580_0a3c6561-ddb7-4fe7-bbc1-fbd4f1b217a7");
+}
+.team-21592 {
+  background-image: url("/avatars/composed/2025/21592_b92a6a53-a3a7-4069-a332-7cc62096be15");
+}
+.team-21593 {
+  background-image: url("/avatars/composed/2025/21593_6a2b6a70-fbc8-489e-add1-c70c008c3db1");
+}
+.team-21594 {
+  background-image: url("/avatars/composed/2025/21594_81b7e071-3c85-4660-887d-7241bba2b29b");
+}
+.team-21595 {
+  background-image: url("/avatars/composed/2025/21595_0c322b13-d181-4590-8a45-820cd53369f5");
+}
+.team-21607 {
+  background-image: url("/avatars/composed/2025/21607_e86b9be4-44e6-4cf0-8374-29c19da1cf3b");
+}
+.team-21612 {
+  background-image: url("/avatars/composed/2025/21612_ddf1b085-d8c3-4209-b3bd-f97089c66a39");
+}
+.team-21615 {
+  background-image: url("/avatars/composed/2025/21615_61f195bf-928e-468e-86c7-814208323ee0");
+}
+.team-21616 {
+  background-image: url("/avatars/composed/2025/21616_3e39b9c6-9e67-4e24-a5a2-db8666d1fb5a");
+}
+.team-21624 {
+  background-image: url("/avatars/composed/2025/21624_026b4e9d-a34c-4ce0-8b23-6cd152844590");
+}
+.team-21632 {
+  background-image: url("/avatars/composed/2025/21632_a39d67a3-7cc8-4ed8-88ae-93cfa404ddab");
+}
+.team-21684 {
+  background-image: url("/avatars/composed/2025/21684_3fa1a43e-d0ff-4df1-89f8-221f799bf564");
+}
+.team-21704 {
+  background-image: url("/avatars/composed/2025/21704_ae8d0b27-bd17-4c15-a9ac-7f363b0d8c77");
+}
+.team-21707 {
+  background-image: url("/avatars/composed/2025/21707_2cc76880-1427-4aa3-8a92-1bc8e286da56");
+}
+.team-21724 {
+  background-image: url("/avatars/composed/2025/21724_18f764bc-6fd3-465f-a890-125a014547bb");
+}
+.team-21735 {
+  background-image: url("/avatars/composed/2025/21735_3b5aa53d-081e-4a69-8612-195154344d6e");
+}
+.team-21770 {
+  background-image: url("/avatars/composed/2025/21770_d59e1e7d-3aa5-4956-b0c0-62a85da60b17");
+}
+.team-21779 {
+  background-image: url("/avatars/composed/2025/21779_a41d1d4e-9151-494f-be62-7aaa51dfdee1");
+}
+.team-21803 {
+  background-image: url("/avatars/composed/2025/21803_0c2b52e5-c9b1-4f3a-8fec-b8074ec8ba30");
+}
+.team-21827 {
+  background-image: url("/avatars/composed/2025/21827_985d6945-fa0a-4816-b8d6-033bae6aa0b4");
+}
+.team-21829 {
+  background-image: url("/avatars/composed/2025/21829_5ee6e7ea-97bc-4194-b4b1-ba80f9e43750");
+}
+.team-21834 {
+  background-image: url("/avatars/composed/2025/21834_29b955a2-8e7c-47ce-873e-7f4d45e630fc");
+}
+.team-21836 {
+  background-image: url("/avatars/composed/2025/21836_b9ba3981-1689-4d1b-8749-ab22e2877cfe");
+}
+.team-21858 {
+  background-image: url("/avatars/composed/2025/21858_a2c1d5b6-0b26-42af-89f6-6aff482e67e9");
+}
+.team-21865 {
+  background-image: url("/avatars/composed/2025/21865_b7aa4461-7708-41c3-8780-c873a289acf4");
+}
+.team-21868 {
+  background-image: url("/avatars/composed/2025/21868_30cc3cc2-8932-4941-9f80-a87e724b7abf");
+}
+.team-21874 {
+  background-image: url("/avatars/composed/2025/21874_7b04d46b-06ae-472b-9549-2e3e3ad8917d");
+}
+.team-21902 {
+  background-image: url("/avatars/composed/2025/21902_5d10b999-3989-48e3-8dce-c0b9f5afaa8c");
+}
+.team-21921 {
+  background-image: url("/avatars/composed/2025/21921_05d33c05-4bad-425d-a0d6-3920cdf0d163");
+}
+.team-21922 {
+  background-image: url("/avatars/composed/2025/21922_44dec38e-85c1-42c0-b6bd-18d9acc599e9");
+}
+.team-21932 {
+  background-image: url("/avatars/composed/2025/21932_520a2b47-ce77-48f6-97ed-2a18f3b683be");
+}
+.team-21936 {
+  background-image: url("/avatars/composed/2025/21936_5046f235-40a8-4527-b8b4-bdf965088759");
+}
+.team-21945 {
+  background-image: url("/avatars/composed/2025/21945_5c6011a3-13a7-4ec2-b088-6497b713b3eb");
+}
+.team-21950 {
+  background-image: url("/avatars/composed/2025/21950_dc0517aa-8b66-4592-bf0a-fe76accfd994");
+}
+.team-21971 {
+  background-image: url("/avatars/composed/2025/21971_09fe931a-71a5-4d21-a42f-c1dfb362dcd2");
+}
+.team-21982 {
+  background-image: url("/avatars/composed/2025/21982_a80a4ee7-1e7c-4990-bc4f-869351d7fa3d");
+}
+.team-21996 {
+  background-image: url("/avatars/composed/2025/21996_7e306927-dcad-4e22-a674-17e0e7cded27");
+}
+.team-22005 {
+  background-image: url("/avatars/composed/2025/22005_6f44ceac-3d4f-41f5-af59-7172c058ee1e");
+}
+.team-22008 {
+  background-image: url("/avatars/composed/2025/22008_7630b2b5-304e-4205-b5f0-c5ee467f9d63");
+}
+.team-22017 {
+  background-image: url("/avatars/composed/2025/22017_99b6cb91-d6d3-48a4-8bb8-46e14493a462");
+}
+.team-22029 {
+  background-image: url("/avatars/composed/2025/22029_5cf1b959-408c-4608-8a6e-9ac0be2787a8");
+}
+.team-22043 {
+  background-image: url("/avatars/composed/2025/22043_365bc3ec-0c0f-4122-a4b4-bad854b10f26");
+}
+.team-22044 {
+  background-image: url("/avatars/composed/2025/22044_60ad862b-1067-4e23-a545-ad1b0685bc62");
+}
+.team-22049 {
+  background-image: url("/avatars/composed/2025/22049_b342ffde-f693-431a-b53d-65f3102ef6f2");
+}
+.team-22053 {
+  background-image: url("/avatars/composed/2025/22053_ee32bc97-2aba-4b3e-882b-74b9a1fe7f74");
+}
+.team-22055 {
+  background-image: url("/avatars/composed/2025/22055_71b3f549-9e31-4edb-9f5a-6750bf7453b2");
+}
+.team-22056 {
+  background-image: url("/avatars/composed/2025/22056_a047c167-9e63-4707-887e-222c7704d3a5");
+}
+.team-22066 {
+  background-image: url("/avatars/composed/2025/22066_5dcd0aa9-eb07-43cb-b65b-aac9e2bd333e");
+}
+.team-22067 {
+  background-image: url("/avatars/composed/2025/22067_5fd3b5ee-c7ed-424d-8c59-81d014121ef2");
+}
+.team-22068 {
+  background-image: url("/avatars/composed/2025/22068_0e303021-e598-4032-916f-d707a166303c");
+}
+.team-22069 {
+  background-image: url("/avatars/composed/2025/22069_500f2db3-3f46-4e9c-bed1-0850a5b0c971");
+}
+.team-22082 {
+  background-image: url("/avatars/composed/2025/22082_caff87ce-e0cd-4416-a6ab-b1f928a019d7");
+}
+.team-22087 {
+  background-image: url("/avatars/composed/2025/22087_851f0ae6-60db-4f6e-a4bd-eea02e7651c8");
+}
+.team-22092 {
+  background-image: url("/avatars/composed/2025/22092_1b8008f6-a11e-4b5a-a560-a4dd5b6f7422");
+}
+.team-22110 {
+  background-image: url("/avatars/composed/2025/22110_526ac713-90a6-43ab-ada1-88722fb4bdcf");
+}
+.team-22111 {
+  background-image: url("/avatars/composed/2025/22111_411da347-9ce4-41f2-b271-a55ba9f01b3a");
+}
+.team-22156 {
+  background-image: url("/avatars/composed/2025/22156_2249fff1-eb8a-4fd1-8abe-d681344ed39f");
+}
+.team-22168 {
+  background-image: url("/avatars/composed/2025/22168_2ab3a2c0-8f59-49fa-bdf7-bc3ecedcd3d4");
+}
+.team-22173 {
+  background-image: url("/avatars/composed/2025/22173_91601970-5d16-429d-b4e9-4b45703ab560");
+}
+.team-22187 {
+  background-image: url("/avatars/composed/2025/22187_3ba2ace6-1c59-4a0f-868c-688f683261e0");
+}
+.team-22189 {
+  background-image: url("/avatars/composed/2025/22189_85ce2684-fa39-4c81-b822-de7ac9302061");
+}
+.team-22192 {
+  background-image: url("/avatars/composed/2025/22192_ce611337-9446-400d-8ae7-90fefb004e0c");
+}
+.team-22222 {
+  background-image: url("/avatars/composed/2025/22222_7385a67d-a817-42aa-9154-ef456a0e75d5");
+}
+.team-22244 {
+  background-image: url("/avatars/composed/2025/22244_1a75f2e6-1eaa-467d-a674-a212e3950da9");
+}
+.team-22261 {
+  background-image: url("/avatars/composed/2025/22261_9af5daf9-d625-41a1-be5f-86656afd5d08");
+}
+.team-22266 {
+  background-image: url("/avatars/composed/2025/22266_b9355b48-6e3c-45c9-93d6-3c9c84b9bb5e");
+}
+.team-22271 {
+  background-image: url("/avatars/composed/2025/22271_448a3dca-432a-46a6-9392-3a5a51d48fe5");
+}
+.team-22284 {
+  background-image: url("/avatars/composed/2025/22284_3fbc6c67-2edb-4f8c-8de5-4cf92793cc02");
+}
+.team-22302 {
+  background-image: url("/avatars/composed/2025/22302_80a274c8-4193-4261-ad62-0f8a6319812b");
+}
+.team-22303 {
+  background-image: url("/avatars/composed/2025/22303_b3fe6a58-18f4-45d8-bab0-605716a1de33");
+}
+.team-22305 {
+  background-image: url("/avatars/composed/2025/22305_1bb2e726-a354-45c6-8c01-9447e5f60f11");
+}
+.team-22307 {
+  background-image: url("/avatars/composed/2025/22307_f46192ba-fcab-40f0-ba67-30974955b5f8");
+}
+.team-22308 {
+  background-image: url("/avatars/composed/2025/22308_d1ef556b-9802-4e7b-aab0-1a55b0914af8");
+}
+.team-22312 {
+  background-image: url("/avatars/composed/2025/22312_47e81a34-563d-4b8f-b9a9-f0a0ad166dd4");
+}
+.team-22331 {
+  background-image: url("/avatars/composed/2025/22331_bb778b69-ca8f-4a68-b544-d008b7bfd420");
+}
+.team-22335 {
+  background-image: url("/avatars/composed/2025/22335_d50194f6-2cd5-4f18-9263-b9b35d61bba8");
+}
+.team-22342 {
+  background-image: url("/avatars/composed/2025/22342_e66fed60-fd51-4318-aef3-fcaacdb6bd6c");
+}
+.team-22344 {
+  background-image: url("/avatars/composed/2025/22344_b86c7a9c-7df4-4f32-af8b-21648af0d103");
+}
+.team-22351 {
+  background-image: url("/avatars/composed/2025/22351_178c91e4-ac59-4e63-b0d2-bd5e1d7c43d1");
+}
+.team-22377 {
+  background-image: url("/avatars/composed/2025/22377_4ae0c698-53e9-4afb-9c57-2d315430e906");
+}
+.team-22407 {
+  background-image: url("/avatars/composed/2025/22407_eb52e17b-aa73-43e7-93d6-57dbc5a921b6");
+}
+.team-22448 {
+  background-image: url("/avatars/composed/2025/22448_eb60f5a7-d177-4271-8605-626a87577b12");
+}
+.team-22456 {
+  background-image: url("/avatars/composed/2025/22456_be9a4d0e-d64c-4da6-9152-23a74838d96f");
+}
+.team-22457 {
+  background-image: url("/avatars/composed/2025/22457_e6a6942e-18b7-49ad-a4c5-6fe88d4a45b1");
+}
+.team-22471 {
+  background-image: url("/avatars/composed/2025/22471_e0b3a240-85d1-4e95-95e1-8051240d13be");
+}
+.team-22484 {
+  background-image: url("/avatars/composed/2025/22484_7434cd4b-e45a-4a57-935e-2153ddacd721");
+}
+.team-22485 {
+  background-image: url("/avatars/composed/2025/22485_cd1372a9-97f4-4f75-970d-e4423b5097a1");
+}
+.team-22489 {
+  background-image: url("/avatars/composed/2025/22489_cc4c6ed0-63c3-4a9a-903d-b077bf8e3861");
+}
+.team-22492 {
+  background-image: url("/avatars/composed/2025/22492_478f45a0-8479-433c-937f-b3d8f202736e");
+}
+.team-22523 {
+  background-image: url("/avatars/composed/2025/22523_4bf711e6-869e-401f-a647-a616a48ec2a4");
+}
+.team-22526 {
+  background-image: url("/avatars/composed/2025/22526_0160ad8f-31e0-4946-b9c0-2b89a6c4331a");
+}
+.team-22529 {
+  background-image: url("/avatars/composed/2025/22529_ac5c998f-0c52-44bd-b61d-db147e3e7d78");
+}
+.team-22531 {
+  background-image: url("/avatars/composed/2025/22531_c41a53bf-8189-4381-8b8f-dcbd6d3285ea");
+}
+.team-22548 {
+  background-image: url("/avatars/composed/2025/22548_6d99be34-dd4b-4b1c-8038-52f258951b41");
+}
+.team-22563 {
+  background-image: url("/avatars/composed/2025/22563_15327037-1c9c-4a9e-9442-3d91f2ef351b");
+}
+.team-22567 {
+  background-image: url("/avatars/composed/2025/22567_b3445a5c-d575-4d70-86a3-edd79a8ae463");
+}
+.team-22570 {
+  background-image: url("/avatars/composed/2025/22570_a65db6b0-cdec-414e-89fd-640f1fcecc3a");
+}
+.team-22586 {
+  background-image: url("/avatars/composed/2025/22586_dc79ee38-05b0-48e8-86a3-a4ce18b1d126");
+}
+.team-22590 {
+  background-image: url("/avatars/composed/2025/22590_34abd0c6-b9ce-4803-ba5a-6840d850cf60");
+}
+.team-22603 {
+  background-image: url("/avatars/composed/2025/22603_c2b6ad2a-fe59-407d-858e-27461a352a1e");
+}
+.team-22690 {
+  background-image: url("/avatars/composed/2025/22690_608820a6-8004-41a1-ac3e-9dd940776a4f");
+}
+.team-22692 {
+  background-image: url("/avatars/composed/2025/22692_dc3d7957-270a-44e2-9190-18ffb8d4ca06");
+}
+.team-22697 {
+  background-image: url("/avatars/composed/2025/22697_d274bda4-3386-4523-a4b3-1ca1bf3e5e6b");
+}
+.team-22760 {
+  background-image: url("/avatars/composed/2025/22760_9c62d152-07a1-4d8a-a7fb-b43f1bdcfdb6");
+}
+.team-22774 {
+  background-image: url("/avatars/composed/2025/22774_a156167d-c22d-47e0-a768-d49edde6c83b");
+}
+.team-22801 {
+  background-image: url("/avatars/composed/2025/22801_10b052a2-2f09-4bc9-99ef-33bd96045c9d");
+}
+.team-22811 {
+  background-image: url("/avatars/composed/2025/22811_b431e83c-0a77-4423-b29c-06b3ac79b82c");
+}
+.team-22828 {
+  background-image: url("/avatars/composed/2025/22828_03f29bf6-0ad1-4127-9aef-d7acb11c7028");
+}
+.team-22837 {
+  background-image: url("/avatars/composed/2025/22837_1b04758f-a78e-4b41-851f-a1c8505729f2");
+}
+.team-22857 {
+  background-image: url("/avatars/composed/2025/22857_8b58a3d4-11f6-42d8-b69a-bb8580a24e4f");
+}
+.team-22903 {
+  background-image: url("/avatars/composed/2025/22903_cb196ffb-9544-4470-8474-b7d6ca28d2eb");
+}
+.team-22911 {
+  background-image: url("/avatars/composed/2025/22911_55ce02b0-0d5c-4411-a8d0-25efa961aa20");
+}
+.team-22941 {
+  background-image: url("/avatars/composed/2025/22941_b3439b9f-2d92-4424-bd07-870c725adc89");
+}
+.team-22993 {
+  background-image: url("/avatars/composed/2025/22993_aaae18a3-d40d-4153-87b3-12b77b82c780");
+}
+.team-22998 {
+  background-image: url("/avatars/composed/2025/22998_b859fd9a-dfc8-4ebe-b080-e22a55f881c1");
+}
+.team-23014 {
+  background-image: url("/avatars/composed/2025/23014_95449cd1-495d-4bba-a4f0-e4bdf8e7863a");
+}
+.team-23015 {
+  background-image: url("/avatars/composed/2025/23015_533773a2-134b-402f-8b19-48dff8fc0b3d");
+}
+.team-23050 {
+  background-image: url("/avatars/composed/2025/23050_3f09fab8-fb92-4ffa-97f3-78128ba32319");
+}
+.team-23052 {
+  background-image: url("/avatars/composed/2025/23052_8382719c-e1ce-4ad9-a0c7-ae07947201a3");
+}
+.team-23055 {
+  background-image: url("/avatars/composed/2025/23055_4ecd19bd-9f2f-49ff-8558-b7aa1ddd2bd4");
+}
+.team-23060 {
+  background-image: url("/avatars/composed/2025/23060_5df554b1-e2ba-43e7-a6d7-1b7c5a12ca60");
+}
+.team-23069 {
+  background-image: url("/avatars/composed/2025/23069_cc6d1052-b595-4a2f-a9ed-304a676e413d");
+}
+.team-23095 {
+  background-image: url("/avatars/composed/2025/23095_1d8edc05-cced-42f1-b394-f9e5db73dd99");
+}
+.team-23161 {
+  background-image: url("/avatars/composed/2025/23161_e8ac8b93-deb5-49ee-b071-a0ef3209186e");
+}
+.team-23168 {
+  background-image: url("/avatars/composed/2025/23168_780b59c9-abdc-4816-a83d-78f95a5b194e");
+}
+.team-23203 {
+  background-image: url("/avatars/composed/2025/23203_429341af-ce48-4152-b70f-3175d7b571a1");
+}
+.team-23205 {
+  background-image: url("/avatars/composed/2025/23205_ec64836c-eb4b-41ff-952b-1b63c46704e9");
+}
+.team-23206 {
+  background-image: url("/avatars/composed/2025/23206_9b78189e-81d8-4094-91af-6725fd67921f");
+}
+.team-23207 {
+  background-image: url("/avatars/composed/2025/23207_95e0dce3-ae2a-4b31-be1b-54870198c778");
+}
+.team-23213 {
+  background-image: url("/avatars/composed/2025/23213_baec3bc6-6a38-4999-8526-4e8b4dc9d987");
+}
+.team-23214 {
+  background-image: url("/avatars/composed/2025/23214_74127c20-81f2-451f-ba4a-ae61aca1ca83");
+}
+.team-23216 {
+  background-image: url("/avatars/composed/2025/23216_35fc4852-6b2e-4c62-ac76-9d5a1138defa");
+}
+.team-23224 {
+  background-image: url("/avatars/composed/2025/23224_d63252e1-d7ef-45ac-bf12-99ed7fd6745a");
+}
+.team-23237 {
+  background-image: url("/avatars/composed/2025/23237_6fc261c8-cbc7-4e37-9457-70b871a0c4e9");
+}
+.team-23240 {
+  background-image: url("/avatars/composed/2025/23240_a75e2783-38e0-4c5b-ab18-db57031a75dd");
+}
+.team-23248 {
+  background-image: url("/avatars/composed/2025/23248_68035aa1-bb3c-4030-9d96-b69373fdf108");
+}
+.team-23250 {
+  background-image: url("/avatars/composed/2025/23250_14831523-3046-43d9-ace7-a08b2b4067c3");
+}
+.team-23251 {
+  background-image: url("/avatars/composed/2025/23251_6d0160cf-7006-40de-90d2-cea9c04db499");
+}
+.team-23256 {
+  background-image: url("/avatars/composed/2025/23256_0462620f-9083-4b6b-b7db-83015797f8a0");
+}
+.team-23258 {
+  background-image: url("/avatars/composed/2025/23258_8d1d28f5-28e1-4fa4-b2a5-3efe48465ad4");
+}
+.team-23264 {
+  background-image: url("/avatars/composed/2025/23264_9dc3a14a-5fd1-44f5-b016-5725fc59b6bc");
+}
+.team-23268 {
+  background-image: url("/avatars/composed/2025/23268_ba77da2a-b3fc-4772-949a-d486d83b3c4c");
+}
+.team-23270 {
+  background-image: url("/avatars/composed/2025/23270_460bcaf9-445e-4aea-b12e-3aed1e12344a");
+}
+.team-23277 {
+  background-image: url("/avatars/composed/2025/23277_bb4de25c-83c4-4807-949b-0a43906b1874");
+}
+.team-23278 {
+  background-image: url("/avatars/composed/2025/23278_f1d59408-07ac-4e12-91ee-f0503b1225e2");
+}
+.team-23284 {
+  background-image: url("/avatars/composed/2025/23284_0b61d334-b4c1-46d1-a950-051b56ba6c64");
+}
+.team-23286 {
+  background-image: url("/avatars/composed/2025/23286_cb5349a4-3f33-47aa-9701-a8bb249f6bc8");
+}
+.team-23301 {
+  background-image: url("/avatars/composed/2025/23301_900f1cdf-1901-4eec-9b05-fe2bca49c972");
+}
+.team-23305 {
+  background-image: url("/avatars/composed/2025/23305_e7895e6b-9860-49c6-a0d3-d1b00ea84500");
+}
+.team-23312 {
+  background-image: url("/avatars/composed/2025/23312_2c6fd9ea-2aa6-401a-9741-0f02b5c64c35");
+}
+.team-23314 {
+  background-image: url("/avatars/composed/2025/23314_99e5d27d-6b9d-4780-965e-d73280fcd29c");
+}
+.team-23321 {
+  background-image: url("/avatars/composed/2025/23321_18622827-fb1b-4b75-b493-246b5a4c46cc");
+}
+.team-23335 {
+  background-image: url("/avatars/composed/2025/23335_cabeeac1-9103-430c-96a2-90a8fde28f8f");
+}
+.team-23343 {
+  background-image: url("/avatars/composed/2025/23343_d03cbe68-3a17-442d-a809-3746a4a68e59");
+}
+.team-23344 {
+  background-image: url("/avatars/composed/2025/23344_778b7f40-6d5d-46ab-8f3f-a3b1dbb9bce1");
+}
+.team-23350 {
+  background-image: url("/avatars/composed/2025/23350_9a736e23-4886-4062-84db-45d0905c788f");
+}
+.team-23361 {
+  background-image: url("/avatars/composed/2025/23361_71b78d57-f5bd-49d6-ba41-b55933b34150");
+}
+.team-23362 {
+  background-image: url("/avatars/composed/2025/23362_19fb16bb-63e8-4aa0-8964-94a6f19025c7");
+}
+.team-23366 {
+  background-image: url("/avatars/composed/2025/23366_7781a26a-c6e4-47dc-804a-204ed3118e8b");
+}
+.team-23367 {
+  background-image: url("/avatars/composed/2025/23367_53187511-00ba-47c6-8dec-7e0eb7720cf3");
+}
+.team-23375 {
+  background-image: url("/avatars/composed/2025/23375_850b2947-9eab-456c-a4dd-4a02780b5c90");
+}
+.team-23390 {
+  background-image: url("/avatars/composed/2025/23390_141dc644-078f-49b7-b4d2-021fdcd007fe");
+}
+.team-23391 {
+  background-image: url("/avatars/composed/2025/23391_c2dc8dd5-e002-4b82-9873-5cb1d851e173");
+}
+.team-23392 {
+  background-image: url("/avatars/composed/2025/23392_44663a8e-4ed0-4d07-b709-85eac48800ba");
+}
+.team-23396 {
+  background-image: url("/avatars/composed/2025/23396_782b0704-0a07-4a18-8718-8c398c43238e");
+}
+.team-23414 {
+  background-image: url("/avatars/composed/2025/23414_92a109b5-45a4-4877-b7da-704fba5fbba8");
+}
+.team-23417 {
+  background-image: url("/avatars/composed/2025/23417_c86cc144-4673-4393-84a3-5cc05d064686");
+}
+.team-23418 {
+  background-image: url("/avatars/composed/2025/23418_70a0b1a9-0914-4c91-9cc7-f561d924bc45");
+}
+.team-23423 {
+  background-image: url("/avatars/composed/2025/23423_b3e9962b-2cb0-4819-929d-a7d161cbbf3a");
+}
+.team-23424 {
+  background-image: url("/avatars/composed/2025/23424_1b7cce19-8bbf-4510-a2c1-f5b2387d9541");
+}
+.team-23430 {
+  background-image: url("/avatars/composed/2025/23430_d7958779-72eb-445c-8ea6-7c070fc16c6e");
+}
+.team-23435 {
+  background-image: url("/avatars/composed/2025/23435_63d8ce3d-2cce-460c-bd9b-da15fdc8f7d0");
+}
+.team-23443 {
+  background-image: url("/avatars/composed/2025/23443_cf2778f5-9228-4140-b610-dac1d1d6e924");
+}
+.team-23446 {
+  background-image: url("/avatars/composed/2025/23446_f98be182-2d67-47f7-95f2-54cc117dcecf");
+}
+.team-23452 {
+  background-image: url("/avatars/composed/2025/23452_32753adf-7bbf-4909-8c7b-8fa37d0ac8dc");
+}
+.team-23461 {
+  background-image: url("/avatars/composed/2025/23461_766764b1-0c9c-4ce4-bddd-858ad7d9a70b");
+}
+.team-23465 {
+  background-image: url("/avatars/composed/2025/23465_83e2e2a2-92b0-4c2f-8e52-e22159173ea1");
+}
+.team-23467 {
+  background-image: url("/avatars/composed/2025/23467_63f16f2c-3080-4b57-b873-0428ffe4999c");
+}
+.team-23469 {
+  background-image: url("/avatars/composed/2025/23469_1af818ea-c926-45b8-ae35-3cba66c7315a");
+}
+.team-23472 {
+  background-image: url("/avatars/composed/2025/23472_cd0b9d7b-55e5-4996-83cf-8eaa0a4bcc45");
+}
+.team-23476 {
+  background-image: url("/avatars/composed/2025/23476_c7dcf686-f046-4465-8c92-5ea8d3c6e86c");
+}
+.team-23486 {
+  background-image: url("/avatars/composed/2025/23486_8a0606e2-e529-4491-a9fc-f9c7d56d83bc");
+}
+.team-23490 {
+  background-image: url("/avatars/composed/2025/23490_00a310f7-e6f6-479a-8f05-ed754287f4d8");
+}
+.team-23493 {
+  background-image: url("/avatars/composed/2025/23493_e5ab88d3-b5ae-487a-82ce-810122efdfe0");
+}
+.team-23504 {
+  background-image: url("/avatars/composed/2025/23504_f5195219-cda1-4698-97c8-1b466c7ddba3");
+}
+.team-23509 {
+  background-image: url("/avatars/composed/2025/23509_452c8725-96b8-424a-a899-6e2420aaa50a");
+}
+.team-23511 {
+  background-image: url("/avatars/composed/2025/23511_d8e5138c-e303-40e1-bf52-866a4d54ab6f");
+}
+.team-23513 {
+  background-image: url("/avatars/composed/2025/23513_3f52dbb5-eb5b-4dac-92f9-e3a4cba38d39");
+}
+.team-23521 {
+  background-image: url("/avatars/composed/2025/23521_84e5db46-a386-490f-a834-5fb36a17e7b1");
+}
+.team-23524 {
+  background-image: url("/avatars/composed/2025/23524_b5bcfb85-8820-483e-8399-efc5788f6c5e");
+}
+.team-23533 {
+  background-image: url("/avatars/composed/2025/23533_7d452f55-eb59-47bd-9c21-441fe88e6302");
+}
+.team-23535 {
+  background-image: url("/avatars/composed/2025/23535_33cf175e-f053-4573-b952-edb26e719347");
+}
+.team-23542 {
+  background-image: url("/avatars/composed/2025/23542_9075252e-2554-4f26-a408-30ae55690dd2");
+}
+.team-23562 {
+  background-image: url("/avatars/composed/2025/23562_5c5671ee-865b-4057-a67e-3bcb6ff606bb");
+}
+.team-23569 {
+  background-image: url("/avatars/composed/2025/23569_eab6f46a-be52-41ac-91a4-c2f1a34aa295");
+}
+.team-23570 {
+  background-image: url("/avatars/composed/2025/23570_9ac2c6dd-18f6-4ef1-b307-9e5635e8ae7f");
+}
+.team-23600 {
+  background-image: url("/avatars/composed/2025/23600_3b32a9d1-8bf7-4ab8-9c3d-d5e48d559915");
+}
+.team-23608 {
+  background-image: url("/avatars/composed/2025/23608_576bd4e1-6198-4b37-91ce-f8482adf64ee");
+}
+.team-23615 {
+  background-image: url("/avatars/composed/2025/23615_8460e8c6-3bad-46ec-8197-4036a300afaa");
+}
+.team-23623 {
+  background-image: url("/avatars/composed/2025/23623_f1f8d550-be64-46b8-b64a-4b7524656ec4");
+}
+.team-23650 {
+  background-image: url("/avatars/composed/2025/23650_f70c2324-0e44-49ea-8931-3a1233fd0f1c");
+}
+.team-23651 {
+  background-image: url("/avatars/composed/2025/23651_6a5ae6b5-8f19-4529-aa53-ce0808f4d97e");
+}
+.team-23652 {
+  background-image: url("/avatars/composed/2025/23652_838cbbe6-cf19-4799-84fb-e92aa509d5d5");
+}
+.team-23658 {
+  background-image: url("/avatars/composed/2025/23658_04950622-e35b-4df8-88af-399ca09aa119");
+}
+.team-23659 {
+  background-image: url("/avatars/composed/2025/23659_57f2db4b-8d8f-49c2-86bf-0b9d22efff73");
+}
+.team-23661 {
+  background-image: url("/avatars/composed/2025/23661_37fcfc08-f41c-4a03-b8dc-35f9bf53a405");
+}
+.team-23665 {
+  background-image: url("/avatars/composed/2025/23665_0d204c08-7e5a-44b5-9a76-cc6c4a884941");
+}
+.team-23666 {
+  background-image: url("/avatars/composed/2025/23666_91bc16a3-c5d5-4221-8331-692d05047daa");
+}
+.team-23667 {
+  background-image: url("/avatars/composed/2025/23667_7d1b7667-e114-4d82-a8af-fb5975f3562d");
+}
+.team-23676 {
+  background-image: url("/avatars/composed/2025/23676_1fc1db4f-3812-4590-a952-757a75b25a59");
+}
+.team-23677 {
+  background-image: url("/avatars/composed/2025/23677_d92ce1c2-7030-4541-83fd-65fb26a72806");
+}
+.team-23684 {
+  background-image: url("/avatars/composed/2025/23684_d9770458-5b21-459c-98c6-0ece5ce9638f");
+}
+.team-23695 {
+  background-image: url("/avatars/composed/2025/23695_a768224a-335a-45ef-8ac0-09c23a58be0a");
+}
+.team-23697 {
+  background-image: url("/avatars/composed/2025/23697_6ca76b27-4fbf-4c37-a4d0-e31eb1f61cf8");
+}
+.team-23698 {
+  background-image: url("/avatars/composed/2025/23698_b5d6d40c-811d-4d4c-941e-adf8168d57d5");
+}
+.team-23709 {
+  background-image: url("/avatars/composed/2025/23709_bfbd70f1-32ba-4813-b14d-5e3e12f17f00");
+}
+.team-23710 {
+  background-image: url("/avatars/composed/2025/23710_ef3ae93b-06c2-44c5-924d-3047b0102e42");
+}
+.team-23711 {
+  background-image: url("/avatars/composed/2025/23711_37a1a028-3f4b-4c75-b733-7404d6451424");
+}
+.team-23735 {
+  background-image: url("/avatars/composed/2025/23735_ef4195b8-0c89-4ae5-84ed-525890aa3ed0");
+}
+.team-23739 {
+  background-image: url("/avatars/composed/2025/23739_37ff44b0-8b43-47db-9e66-5e3fae181121");
+}
+.team-23741 {
+  background-image: url("/avatars/composed/2025/23741_06f2f4db-bd14-4299-a7cd-0c3a04b2ebbd");
+}
+.team-23743 {
+  background-image: url("/avatars/composed/2025/23743_5880cc19-a0bd-4e19-8494-f31dbbf44a94");
+}
+.team-23766 {
+  background-image: url("/avatars/composed/2025/23766_8a3887ea-ecca-4ae5-b27f-c6325bedae18");
+}
+.team-23775 {
+  background-image: url("/avatars/composed/2025/23775_a6fe4b2e-9ae3-4318-811c-17b20aef5811");
+}
+.team-23778 {
+  background-image: url("/avatars/composed/2025/23778_cbc07e66-a322-41f5-86d6-d4f282f17408");
+}
+.team-23785 {
+  background-image: url("/avatars/composed/2025/23785_48ee1cba-99f5-467f-9086-c7aee1224328");
+}
+.team-23786 {
+  background-image: url("/avatars/composed/2025/23786_ed1517a8-0716-4974-b773-f2addcd70016");
+}
+.team-23790 {
+  background-image: url("/avatars/composed/2025/23790_74f35b7f-0f99-4f51-b91c-1dce7c7b44bb");
+}
+.team-23791 {
+  background-image: url("/avatars/composed/2025/23791_e6e71b13-4a9d-46dc-aefe-fcdcc4b057c6");
+}
+.team-23799 {
+  background-image: url("/avatars/composed/2025/23799_10f3cbcf-6a36-44d1-ae8d-5f99762f90c2");
+}
+.team-23800 {
+  background-image: url("/avatars/composed/2025/23800_e95089c3-f4bf-4cde-adf8-1996d8b9e1b5");
+}
+.team-23806 {
+  background-image: url("/avatars/composed/2025/23806_d602ddbe-4e56-417a-8da0-89f30e232ee0");
+}
+.team-23809 {
+  background-image: url("/avatars/composed/2025/23809_520d2073-eef3-4abc-92e8-2a14f587d025");
+}
+.team-23829 {
+  background-image: url("/avatars/composed/2025/23829_eddebdf1-d4b4-4e35-9852-70aa3799a9fb");
+}
+.team-23838 {
+  background-image: url("/avatars/composed/2025/23838_e1ea2c39-a2e4-49ca-b67a-334f6be32e61");
+}
+.team-23854 {
+  background-image: url("/avatars/composed/2025/23854_ca786d80-1d22-4732-9a6a-5d70ab654017");
+}
+.team-23856 {
+  background-image: url("/avatars/composed/2025/23856_3ab58301-6b14-4a7b-8c55-8373d3bfbb40");
+}
+.team-23859 {
+  background-image: url("/avatars/composed/2025/23859_287c4dd5-01d5-4520-b815-4b6cb787f19e");
+}
+.team-23872 {
+  background-image: url("/avatars/composed/2025/23872_fcfba464-7682-4a05-863b-0d19c307a1ec");
+}
+.team-23877 {
+  background-image: url("/avatars/composed/2025/23877_f3f393aa-4f35-4479-a1d8-f6cc9d78fa3c");
+}
+.team-23916 {
+  background-image: url("/avatars/composed/2025/23916_5350c726-f247-4b41-9807-782583b4d995");
+}
+.team-23956 {
+  background-image: url("/avatars/composed/2025/23956_5e062a7d-d45c-4114-9f0c-38ef61546563");
+}
+.team-23963 {
+  background-image: url("/avatars/composed/2025/23963_49bbdd77-bf21-41cd-9189-d3bbae06bd8a");
+}
+.team-23964 {
+  background-image: url("/avatars/composed/2025/23964_2de1274c-9e0f-4f05-851f-a7bfb8f5a711");
+}
+.team-23971 {
+  background-image: url("/avatars/composed/2025/23971_9afb477e-dcea-4bbd-a480-68489718b486");
+}
+.team-23974 {
+  background-image: url("/avatars/composed/2025/23974_9b136875-d47f-4f6e-9b83-5f072a7f8a8d");
+}
+.team-23975 {
+  background-image: url("/avatars/composed/2025/23975_86ded203-b04e-45b7-8454-d764cd09aee1");
+}
+.team-23997 {
+  background-image: url("/avatars/composed/2025/23997_b4a31866-25b7-4e2c-bcb3-ba07e4634325");
+}
+.team-23999 {
+  background-image: url("/avatars/composed/2025/23999_1b69959f-0f3b-4c80-a493-c4a33207ef3c");
+}
+.team-24000 {
+  background-image: url("/avatars/composed/2025/24000_7fa12def-02d0-4304-8fee-b3da77070689");
+}
+.team-24006 {
+  background-image: url("/avatars/composed/2025/24006_be0722ad-6a37-4ab3-acb7-fb4731031c23");
+}
+.team-24018 {
+  background-image: url("/avatars/composed/2025/24018_0c632881-f383-4a42-890d-504339027785");
+}
+.team-24026 {
+  background-image: url("/avatars/composed/2025/24026_2c24fb78-7361-4181-9527-94751c70cd12");
+}
+.team-24030 {
+  background-image: url("/avatars/composed/2025/24030_73a321ec-7a8a-4e73-ad76-96d142f77a4c");
+}
+.team-24032 {
+  background-image: url("/avatars/composed/2025/24032_0861a732-8686-4ebe-808d-8274da7593bf");
+}
+.team-24033 {
+  background-image: url("/avatars/composed/2025/24033_9cb14828-3b0d-4fb8-a5d4-1c75c85ffcdc");
+}
+.team-24037 {
+  background-image: url("/avatars/composed/2025/24037_eb919500-84ab-43c0-82eb-a63f1c18dc7c");
+}
+.team-24053 {
+  background-image: url("/avatars/composed/2025/24053_ff81952a-5bd1-40ca-b111-5c85ef4b766b");
+}
+.team-24062 {
+  background-image: url("/avatars/composed/2025/24062_79381201-c4a8-4411-9704-9d75d0ff8c76");
+}
+.team-24064 {
+  background-image: url("/avatars/composed/2025/24064_fb557f3f-0bf6-4c61-8bd2-bd744143782a");
+}
+.team-24070 {
+  background-image: url("/avatars/composed/2025/24070_1320e30d-5e4e-4528-9368-bc0f980eb75e");
+}
+.team-24078 {
+  background-image: url("/avatars/composed/2025/24078_97a83616-cdd0-41e4-950c-f05a75c2b444");
+}
+.team-24089 {
+  background-image: url("/avatars/composed/2025/24089_accb8101-d485-48a7-bdd5-5eb7870453d0");
+}
+.team-24104 {
+  background-image: url("/avatars/composed/2025/24104_2b0e0ea5-7f3a-4ecf-b651-49c77d850ed3");
+}
+.team-24107 {
+  background-image: url("/avatars/composed/2025/24107_b15de988-f211-44c7-81d4-24ff22211543");
+}
+.team-24121 {
+  background-image: url("/avatars/composed/2025/24121_4833f88f-0960-4cfb-8a85-addf44564e20");
+}
+.team-24124 {
+  background-image: url("/avatars/composed/2025/24124_589e48f7-fa30-4fb2-baaa-0c24c26d79fa");
+}
+.team-24135 {
+  background-image: url("/avatars/composed/2025/24135_e249e5d1-e0a0-44d5-9af1-550a013bc05c");
+}
+.team-24149 {
+  background-image: url("/avatars/composed/2025/24149_7ce3f1d6-5122-4805-8d52-6055e78b5796");
+}
+.team-24155 {
+  background-image: url("/avatars/composed/2025/24155_6595a930-555c-4f84-92ba-10d45ef0e062");
+}
+.team-24168 {
+  background-image: url("/avatars/composed/2025/24168_c91d2997-5a05-4873-977f-1b4c34540504");
+}
+.team-24176 {
+  background-image: url("/avatars/composed/2025/24176_523de53d-1e22-4c82-b832-67dc84996c95");
+}
+.team-24180 {
+  background-image: url("/avatars/composed/2025/24180_5cc53d91-f562-455c-b0d6-3d523431f485");
+}
+.team-24194 {
+  background-image: url("/avatars/composed/2025/24194_e10d10d9-fb6e-40b5-a350-4bd41732037d");
+}
+.team-24197 {
+  background-image: url("/avatars/composed/2025/24197_3cd14c70-06ab-492a-8e88-2bc865c3aeef");
+}
+.team-24214 {
+  background-image: url("/avatars/composed/2025/24214_2fe6ea01-b528-4169-ad0f-64fddfacbc42");
+}
+.team-24221 {
+  background-image: url("/avatars/composed/2025/24221_99f316c3-ac70-4d12-9710-bedb16373fff");
+}
+.team-24222 {
+  background-image: url("/avatars/composed/2025/24222_d1c89d4f-b05d-4444-910e-0505f5622aaf");
+}
+.team-24230 {
+  background-image: url("/avatars/composed/2025/24230_003ad6f3-e4ba-4e70-bf08-3a5e98d2bec2");
+}
+.team-24232 {
+  background-image: url("/avatars/composed/2025/24232_d3e16198-5960-4c46-8741-7244c12791cb");
+}
+.team-24239 {
+  background-image: url("/avatars/composed/2025/24239_9475790c-2448-4d2b-a426-350eed41e2ec");
+}
+.team-24257 {
+  background-image: url("/avatars/composed/2025/24257_3d00dace-d156-4097-986c-a8182db24909");
+}
+.team-24260 {
+  background-image: url("/avatars/composed/2025/24260_789a0f8b-811c-4519-976f-99870f937131");
+}
+.team-24261 {
+  background-image: url("/avatars/composed/2025/24261_0a09cf35-c236-4c40-8d4f-4e15a0d53df8");
+}
+.team-24265 {
+  background-image: url("/avatars/composed/2025/24265_59280e4c-b546-46f3-8a06-1b1a28e26fa9");
+}
+.team-24289 {
+  background-image: url("/avatars/composed/2025/24289_d8f11007-062a-46ad-b1ff-a9e0f37d83a6");
+}
+.team-24297 {
+  background-image: url("/avatars/composed/2025/24297_b91cdcec-db07-43e5-bf74-899375fd2bba");
+}
+.team-24310 {
+  background-image: url("/avatars/composed/2025/24310_b6cbfe7f-8414-42c0-9c50-7ff35477ec56");
+}
+.team-24321 {
+  background-image: url("/avatars/composed/2025/24321_3d28fb0f-a60f-4e66-b6ae-3aef82d8cd25");
+}
+.team-24324 {
+  background-image: url("/avatars/composed/2025/24324_23a62425-02f3-4cba-8b88-ce894f2025e9");
+}
+.team-24342 {
+  background-image: url("/avatars/composed/2025/24342_dd843f73-d439-43c7-a9ad-14bc9dd4123b");
+}
+.team-24346 {
+  background-image: url("/avatars/composed/2025/24346_575d11c0-da72-4da3-ae3a-54bf76cb14b5");
+}
+.team-24349 {
+  background-image: url("/avatars/composed/2025/24349_b3148b0c-1acd-4410-8747-424db78492aa");
+}
+.team-24358 {
+  background-image: url("/avatars/composed/2025/24358_b4a06b31-9503-4b37-8887-b7db85cdd16d");
+}
+.team-24368 {
+  background-image: url("/avatars/composed/2025/24368_e4972527-0560-4acd-ac87-080909aeb4fa");
+}
+.team-24372 {
+  background-image: url("/avatars/composed/2025/24372_30468433-d082-4fb8-a6c4-78e366f8e7a3");
+}
+.team-24375 {
+  background-image: url("/avatars/composed/2025/24375_de869836-6d58-4740-9f90-31811c815228");
+}
+.team-24376 {
+  background-image: url("/avatars/composed/2025/24376_ae9c45ce-0b7c-4dc9-a620-290423521f06");
+}
+.team-24438 {
+  background-image: url("/avatars/composed/2025/24438_7646ca83-1cbc-401e-bfe1-50d557d4cebb");
+}
+.team-24443 {
+  background-image: url("/avatars/composed/2025/24443_550cbe00-836f-4c01-a296-07875734c7c4");
+}
+.team-24446 {
+  background-image: url("/avatars/composed/2025/24446_544d541a-08de-4796-bfc0-d535b06fcfd7");
+}
+.team-24447 {
+  background-image: url("/avatars/composed/2025/24447_5ed9efee-b594-4291-a9b7-9d79b0b0467c");
+}
+.team-24457 {
+  background-image: url("/avatars/composed/2025/24457_36e87310-f284-4f03-b9ba-945af64376f9");
+}
+.team-24474 {
+  background-image: url("/avatars/composed/2025/24474_d5c09512-658e-480a-9681-da079e5de9c4");
+}
+.team-24475 {
+  background-image: url("/avatars/composed/2025/24475_2040d44a-f81e-44bf-b6e0-b6b57d69263e");
+}
+.team-24476 {
+  background-image: url("/avatars/composed/2025/24476_807a12e1-a42a-4558-acf9-edaa73756271");
+}
+.team-24477 {
+  background-image: url("/avatars/composed/2025/24477_0995fd2e-0ae4-48af-916c-289c5b1cebaa");
+}
+.team-24478 {
+  background-image: url("/avatars/composed/2025/24478_5327c854-9650-4aa6-94e7-c6fdb8cbaf9e");
+}
+.team-24483 {
+  background-image: url("/avatars/composed/2025/24483_30a1d429-dcd6-4d22-a30b-31669efef3be");
+}
+.team-24492 {
+  background-image: url("/avatars/composed/2025/24492_bb7e2f98-7107-44b2-8a25-b2b35ceb793f");
+}
+.team-24500 {
+  background-image: url("/avatars/composed/2025/24500_c0b30d75-c7a5-419c-b443-a9e749e2bcc7");
+}
+.team-24541 {
+  background-image: url("/avatars/composed/2025/24541_faf9f169-7b90-4fef-b2d4-e6c55888dda4");
+}
+.team-24557 {
+  background-image: url("/avatars/composed/2025/24557_08cb7f13-c42b-4b66-bfc7-0211c2fc3cff");
+}
+.team-24558 {
+  background-image: url("/avatars/composed/2025/24558_6780c446-9b34-49d7-9204-e120aa2e7f22");
+}
+.team-24563 {
+  background-image: url("/avatars/composed/2025/24563_53487e3e-7d02-486d-a9ff-d5fd08fb7e5b");
+}
+.team-24619 {
+  background-image: url("/avatars/composed/2025/24619_c22bdb78-cc31-495d-a952-79bc6eb43cfe");
+}
+.team-24637 {
+  background-image: url("/avatars/composed/2025/24637_70036196-e216-4618-83eb-39687793c372");
+}
+.team-24664 {
+  background-image: url("/avatars/composed/2025/24664_77e4d1c0-6d37-41a1-b56d-4247145335cb");
+}
+.team-24670 {
+  background-image: url("/avatars/composed/2025/24670_f2c8b80e-1c30-4c55-b3cc-c6e1013a616c");
+}
+.team-24683 {
+  background-image: url("/avatars/composed/2025/24683_06a429dc-6400-486c-86f3-1dc98fb3b3b6");
+}
+.team-24697 {
+  background-image: url("/avatars/composed/2025/24697_08825750-3d01-4f27-9af0-86b68a93d332");
+}
+.team-24702 {
+  background-image: url("/avatars/composed/2025/24702_43b6f56e-429d-4391-8c1e-b284048b5e43");
+}
+.team-24733 {
+  background-image: url("/avatars/composed/2025/24733_020526d8-7849-451e-b2b6-6524e5f44c59");
+}
+.team-24736 {
+  background-image: url("/avatars/composed/2025/24736_e047a3ae-35d8-4e6a-aaf6-c0f77a9dad42");
+}
+.team-24751 {
+  background-image: url("/avatars/composed/2025/24751_ee781515-4611-47f6-a1ee-3aa4e1d49570");
+}
+.team-24759 {
+  background-image: url("/avatars/composed/2025/24759_00293faa-e004-45a9-821c-30d0e3817d92");
+}
+.team-24782 {
+  background-image: url("/avatars/composed/2025/24782_2bd55f18-549d-4b55-854c-d5fd1b402fbb");
+}
+.team-24783 {
+  background-image: url("/avatars/composed/2025/24783_bf3fce88-60ef-4bf5-aff1-8bd70741703f");
+}
+.team-24797 {
+  background-image: url("/avatars/composed/2025/24797_29a55623-4619-4be7-9891-1daebd0a04ba");
+}
+.team-24804 {
+  background-image: url("/avatars/composed/2025/24804_8dae7f44-d344-4dc3-8f3f-91149a066e40");
+}
+.team-24809 {
+  background-image: url("/avatars/composed/2025/24809_8acf3d2a-6332-4054-b9e8-0b298c320c78");
+}
+.team-24819 {
+  background-image: url("/avatars/composed/2025/24819_04d96e10-7cc2-4b14-98a5-4baf1e1c32ec");
+}
+.team-24828 {
+  background-image: url("/avatars/composed/2025/24828_ff9077fc-b15d-4f79-89b4-f13b743d8883");
+}
+.team-24847 {
+  background-image: url("/avatars/composed/2025/24847_3e18cd26-6907-4170-817f-a4980547230d");
+}
+.team-24881 {
+  background-image: url("/avatars/composed/2025/24881_8b418657-259e-4801-91a2-5f032f7f8777");
+}
+.team-24893 {
+  background-image: url("/avatars/composed/2025/24893_8cf8ca8e-d2a5-4efd-b114-b3a9bfd8692a");
+}
+.team-24909 {
+  background-image: url("/avatars/composed/2025/24909_5219ebef-e17b-4874-8f36-5c5c95faf1e0");
+}
+.team-24966 {
+  background-image: url("/avatars/composed/2025/24966_e3f67797-7eb4-4455-aa59-91ea56eccbee");
+}
+.team-24976 {
+  background-image: url("/avatars/composed/2025/24976_54c9df96-30cb-47bd-b7aa-9f1935bde0b9");
+}
+.team-24986 {
+  background-image: url("/avatars/composed/2025/24986_ff6773a5-0441-4baa-b8d6-7bb1f4f26b6d");
+}
+.team-25069 {
+  background-image: url("/avatars/composed/2025/25069_c463b27c-97dd-448e-85aa-aeac8990484f");
+}
+.team-25070 {
+  background-image: url("/avatars/composed/2025/25070_ad7e3b91-01ba-4d1d-bf23-edcbb67835b9");
+}
+.team-25078 {
+  background-image: url("/avatars/composed/2025/25078_556be866-c24a-495d-92af-7e06666a0ac3");
+}
+.team-25079 {
+  background-image: url("/avatars/composed/2025/25079_eda4d665-909e-4d85-9601-c91d1408fa5a");
+}
+.team-25080 {
+  background-image: url("/avatars/composed/2025/25080_9857d181-8f46-4268-831e-66bf143ca59a");
+}
+.team-25081 {
+  background-image: url("/avatars/composed/2025/25081_0965445b-b931-41f9-a736-d65f87be9d3b");
+}
+.team-25082 {
+  background-image: url("/avatars/composed/2025/25082_cac57c72-c68b-4aae-885e-068878431354");
+}
+.team-25083 {
+  background-image: url("/avatars/composed/2025/25083_cd1a3178-8280-4731-9c2f-a71839b7a9ce");
+}
+.team-25084 {
+  background-image: url("/avatars/composed/2025/25084_b3c6074b-4472-4d05-8bb0-dce4141b6e8c");
+}
+.team-25085 {
+  background-image: url("/avatars/composed/2025/25085_85b2f449-0f04-4e61-ae5b-890b569e5ec1");
+}
+.team-25086 {
+  background-image: url("/avatars/composed/2025/25086_6fb77dfb-c4bb-4abe-a146-c5626627b802");
+}
+.team-25087 {
+  background-image: url("/avatars/composed/2025/25087_bd7dd8e3-555d-4105-ad83-403b5174d482");
+}
+.team-25088 {
+  background-image: url("/avatars/composed/2025/25088_05885708-d45d-4abf-9b7a-e337ea265cca");
+}
+.team-25089 {
+  background-image: url("/avatars/composed/2025/25089_2c267078-d7fd-40d1-8df0-106f6721fd25");
+}
+.team-25090 {
+  background-image: url("/avatars/composed/2025/25090_b2fd6ab9-45f3-4bf6-b3f5-3270ddb6b27f");
+}
+.team-25091 {
+  background-image: url("/avatars/composed/2025/25091_64fd37a4-afd6-48e0-9e0a-269e77823446");
+}
+.team-25092 {
+  background-image: url("/avatars/composed/2025/25092_8496e058-ad0f-4a40-afa5-ace66e035190");
+}
+.team-25093 {
+  background-image: url("/avatars/composed/2025/25093_a3e7d4d6-3074-4941-af68-20b7b7b352b7");
+}
+.team-25094 {
+  background-image: url("/avatars/composed/2025/25094_20efcfd3-bb71-4353-acd2-acc14cb12c9e");
+}
+.team-25098 {
+  background-image: url("/avatars/composed/2025/25098_22ca2c3d-6c69-434f-90bb-36ee2561b1cd");
+}
+.team-25099 {
+  background-image: url("/avatars/composed/2025/25099_9c7beadf-dc52-4758-8cc2-981c1db4cf88");
+}
+.team-25100 {
+  background-image: url("/avatars/composed/2025/25100_13206a1a-8909-41d2-bcc9-e5a3c1775516");
+}
+.team-25102 {
+  background-image: url("/avatars/composed/2025/25102_e918e666-5056-4018-acb0-c2d27b37af36");
+}
+.team-25105 {
+  background-image: url("/avatars/composed/2025/25105_a4ed86e5-0624-4afd-98fd-610796a649ae");
+}
+.team-25153 {
+  background-image: url("/avatars/composed/2025/25153_86952a4a-5640-4def-9615-d344a430c3ae");
+}
+.team-25163 {
+  background-image: url("/avatars/composed/2025/25163_5e3f6c2c-fbfb-46d7-98c4-0cc9993e22fb");
+}
+.team-25209 {
+  background-image: url("/avatars/composed/2025/25209_a1a14e61-464e-42fb-a1a3-89431060926a");
+}
+.team-25225 {
+  background-image: url("/avatars/composed/2025/25225_1398b8c5-cb2e-4242-a559-b456b0ee1fcb");
+}
+.team-25241 {
+  background-image: url("/avatars/composed/2025/25241_1a5fb589-2224-4237-a797-a0a723470fa0");
+}
+.team-25248 {
+  background-image: url("/avatars/composed/2025/25248_2d2216d1-4b2e-47d2-9e1c-61ec8d458e69");
+}
+.team-25268 {
+  background-image: url("/avatars/composed/2025/25268_c1c99d77-90df-4801-b44e-308bbf450100");
+}
+.team-25300 {
+  background-image: url("/avatars/composed/2025/25300_240f7b69-cad5-4728-b52e-63ba8f835ee7");
+}
+.team-25443 {
+  background-image: url("/avatars/composed/2025/25443_775b3a08-82f2-4a16-b6a2-e28ea946c8e4");
+}
+.team-25473 {
+  background-image: url("/avatars/composed/2025/25473_9325e716-da76-47e7-a174-08de51d4dd10");
+}
+.team-25475 {
+  background-image: url("/avatars/composed/2025/25475_c83ea2db-547e-437e-8cf4-34dd5cba4135");
+}
+.team-25482 {
+  background-image: url("/avatars/composed/2025/25482_442d8436-7543-4b70-bbef-7a0df88f5dd3");
+}
+.team-25483 {
+  background-image: url("/avatars/composed/2025/25483_7d8922f7-a9e1-4838-9c47-fc84b5d78e52");
+}
+.team-25491 {
+  background-image: url("/avatars/composed/2025/25491_09b17266-19eb-4202-bc5c-ea905176a79c");
+}
+.team-25508 {
+  background-image: url("/avatars/composed/2025/25508_9e6412ec-ea76-4245-9e34-4cf658ef8419");
+}
+.team-25538 {
+  background-image: url("/avatars/composed/2025/25538_f53a004d-021b-4b08-a89d-3c5cf39a1f1b");
+}
+.team-25556 {
+  background-image: url("/avatars/composed/2025/25556_a4f49025-fb7a-44c9-acc4-b366c60e7be5");
+}
+.team-25561 {
+  background-image: url("/avatars/composed/2025/25561_bf3ae905-3f2d-4d9d-a5a9-7a6d8f695866");
+}
+.team-25576 {
+  background-image: url("/avatars/composed/2025/25576_6bce703c-14e0-4fd0-b2df-e11b3df71b0b");
+}
+.team-25584 {
+  background-image: url("/avatars/composed/2025/25584_e2964823-e2d3-4ee7-9e61-eca7e2491fe2");
+}
+.team-25590 {
+  background-image: url("/avatars/composed/2025/25590_b46c6fa7-16b9-4cb2-b8aa-aefce1626da1");
+}
+.team-25609 {
+  background-image: url("/avatars/composed/2025/25609_053fa7a0-63d4-4f91-a8f8-cb5f8d543907");
+}
+.team-25619 {
+  background-image: url("/avatars/composed/2025/25619_355741e1-e70f-4f4f-8625-29f9c19faad3");
+}
+.team-25620 {
+  background-image: url("/avatars/composed/2025/25620_8e66e65e-37fe-4cf0-b6e8-f02747077e63");
+}
+.team-25625 {
+  background-image: url("/avatars/composed/2025/25625_9d022c01-859d-4575-b39c-3bc0fc85ef87");
+}
+.team-25631 {
+  background-image: url("/avatars/composed/2025/25631_945b12c6-48f3-45ad-8df8-31cd737feb4f");
+}
+.team-25636 {
+  background-image: url("/avatars/composed/2025/25636_e79f285c-2e35-4700-901e-924afbcdc95a");
+}
+.team-25637 {
+  background-image: url("/avatars/composed/2025/25637_a8c3077d-77dd-42cc-a7a8-42e4329c7b8b");
+}
+.team-25638 {
+  background-image: url("/avatars/composed/2025/25638_2be39e83-ae7d-4027-adcf-1ffc2b9ecbd3");
+}
+.team-25642 {
+  background-image: url("/avatars/composed/2025/25642_3531070a-2d6f-4a66-810c-fb27a2429fd2");
+}
+.team-25644 {
+  background-image: url("/avatars/composed/2025/25644_8a768d45-f64d-4564-91dd-fa752e8313fc");
+}
+.team-25650 {
+  background-image: url("/avatars/composed/2025/25650_9dabf805-0daa-4816-b685-f4af5a813301");
+}
+.team-25655 {
+  background-image: url("/avatars/composed/2025/25655_ebaf353b-8256-42be-9d69-fcb7d35d76f3");
+}
+.team-25656 {
+  background-image: url("/avatars/composed/2025/25656_1f582010-dd10-46bf-b198-13ca8d9556d6");
+}
+.team-25668 {
+  background-image: url("/avatars/composed/2025/25668_d5df09bc-1494-4480-909e-f647341395e1");
+}
+.team-25678 {
+  background-image: url("/avatars/composed/2025/25678_2dbcb901-7cd1-4efd-95da-cde4ba1234f4");
+}
+.team-25679 {
+  background-image: url("/avatars/composed/2025/25679_8a1c7073-f1c4-4118-9823-de1d84c11ed0");
+}
+.team-25700 {
+  background-image: url("/avatars/composed/2025/25700_a478605e-c60e-4a7f-9f86-64c6de9c1026");
+}
+.team-25706 {
+  background-image: url("/avatars/composed/2025/25706_f2e1a061-c3ae-4cee-90ba-bd16ec9fa4bb");
+}
+.team-25709 {
+  background-image: url("/avatars/composed/2025/25709_95f60c34-ea28-48bb-b44e-9e7bb85204ce");
+}
+.team-25717 {
+  background-image: url("/avatars/composed/2025/25717_a4a9b5da-3cf9-462f-957a-5a798de9b74e");
+}
+.team-25721 {
+  background-image: url("/avatars/composed/2025/25721_2f009370-268f-4c82-b578-8850ef4d9670");
+}
+.team-25731 {
+  background-image: url("/avatars/composed/2025/25731_92202355-77b3-4094-9cd4-ed2fcf0652c1");
+}
+.team-25733 {
+  background-image: url("/avatars/composed/2025/25733_550b14b3-a99e-41b8-a643-4a93ee75c0b9");
+}
+.team-25734 {
+  background-image: url("/avatars/composed/2025/25734_11739cf5-404e-4503-a544-5647135bc007");
+}
+.team-25742 {
+  background-image: url("/avatars/composed/2025/25742_987ba381-56b7-4b56-8ebd-e1ccb9c310b7");
+}
+.team-25746 {
+  background-image: url("/avatars/composed/2025/25746_fcd913e5-380e-4e5a-bef3-ae830e4f472b");
+}
+.team-25751 {
+  background-image: url("/avatars/composed/2025/25751_14f4d89b-3a45-4d24-b7e3-72ec045975b4");
+}
+.team-25753 {
+  background-image: url("/avatars/composed/2025/25753_4e9dfa55-be41-401f-91d7-08f3123286fc");
+}
+.team-25772 {
+  background-image: url("/avatars/composed/2025/25772_1fc83020-b623-45bc-a279-d08a6bc12c29");
+}
+.team-25776 {
+  background-image: url("/avatars/composed/2025/25776_64a0125e-71ee-4064-ba59-ce76c26cbd15");
+}
+.team-25779 {
+  background-image: url("/avatars/composed/2025/25779_f0608738-a41a-4511-b51d-ed1f14f4cbf8");
+}
+.team-25782 {
+  background-image: url("/avatars/composed/2025/25782_2c28c96a-4db5-4733-a986-d17c53445070");
+}
+.team-25783 {
+  background-image: url("/avatars/composed/2025/25783_c8faa2e7-0043-4b32-b243-c3f51db8030b");
+}
+.team-25787 {
+  background-image: url("/avatars/composed/2025/25787_ed373828-4447-462a-8730-e5f6f20f488c");
+}
+.team-25788 {
+  background-image: url("/avatars/composed/2025/25788_a3e50d48-505a-4728-a910-20bdd58f5482");
+}
+.team-25790 {
+  background-image: url("/avatars/composed/2025/25790_d7990d2f-f699-415c-bc75-28157d7d37f1");
+}
+.team-25792 {
+  background-image: url("/avatars/composed/2025/25792_a7150d75-5860-4762-99fb-2c4b7996f6ea");
+}
+.team-25811 {
+  background-image: url("/avatars/composed/2025/25811_2cd70979-4f41-4121-a8e5-6c0122c475fb");
+}
+.team-25816 {
+  background-image: url("/avatars/composed/2025/25816_c4ff789c-ca5f-4062-96ed-27fa167af08e");
+}
+.team-25825 {
+  background-image: url("/avatars/composed/2025/25825_5185db91-a8a7-4c07-a10d-e94c2530329b");
+}
+.team-25836 {
+  background-image: url("/avatars/composed/2025/25836_5866b105-7897-464e-ac03-1f967d883f0e");
+}
+.team-25849 {
+  background-image: url("/avatars/composed/2025/25849_9b2549ff-bc17-4cdc-a8e6-9c479bc7248f");
+}
+.team-25865 {
+  background-image: url("/avatars/composed/2025/25865_c49f815b-b74a-4afc-ba15-b2620f5830b3");
+}
+.team-25871 {
+  background-image: url("/avatars/composed/2025/25871_c2ed1f17-82bc-4d7b-ad08-c61a15f0a3d3");
+}
+.team-25893 {
+  background-image: url("/avatars/composed/2025/25893_3bad32f9-b2a6-4be1-a43f-69e14cab02e1");
+}
+.team-25897 {
+  background-image: url("/avatars/composed/2025/25897_e73c4a51-9f8a-4082-bb55-f5a7ad488445");
+}
+.team-25905 {
+  background-image: url("/avatars/composed/2025/25905_fc2ae6a4-4923-4954-bb3d-20d226f9696b");
+}
+.team-25916 {
+  background-image: url("/avatars/composed/2025/25916_e1f4a894-8e1b-466d-925f-210828b94ea7");
+}
+.team-25929 {
+  background-image: url("/avatars/composed/2025/25929_410d30ac-7171-442e-9241-bbcb3984c5e5");
+}
+.team-25943 {
+  background-image: url("/avatars/composed/2025/25943_f6be52a8-56e0-405b-a437-b03e1f89ab13");
+}
+.team-25946 {
+  background-image: url("/avatars/composed/2025/25946_4a419349-6a14-47db-8f7b-9c120ef63145");
+}
+.team-25952 {
+  background-image: url("/avatars/composed/2025/25952_8a3a0e91-b260-4ebf-afd1-3d3fdc620568");
+}
+.team-25956 {
+  background-image: url("/avatars/composed/2025/25956_d3054928-832f-4324-a5d4-69e5a2a42f9e");
+}
+.team-25959 {
+  background-image: url("/avatars/composed/2025/25959_6fd38a0e-bdf3-4848-9313-16d456678e47");
+}
+.team-25971 {
+  background-image: url("/avatars/composed/2025/25971_164a6449-4548-44e9-9d19-92060a7550da");
+}
+.team-25978 {
+  background-image: url("/avatars/composed/2025/25978_477ff67f-bfa7-4f3f-a785-d4b484110dac");
+}
+.team-25993 {
+  background-image: url("/avatars/composed/2025/25993_6eeb3769-5838-4cb6-877f-10502d90c21e");
+}
+.team-26000 {
+  background-image: url("/avatars/composed/2025/26000_36f708c6-a4a4-4285-9132-e31ee3517f5a");
+}
+.team-26001 {
+  background-image: url("/avatars/composed/2025/26001_2e4b88d0-e722-400f-b335-86d87a10caed");
+}
+.team-26032 {
+  background-image: url("/avatars/composed/2025/26032_33150798-5750-4d2f-950b-9c396e1f4c95");
+}
+.team-26037 {
+  background-image: url("/avatars/composed/2025/26037_01778395-93f0-4d51-87df-be6df1742050");
+}
+.team-26044 {
+  background-image: url("/avatars/composed/2025/26044_eba64b5d-dbee-48dd-b498-d4fff4fa821a");
+}
+.team-26049 {
+  background-image: url("/avatars/composed/2025/26049_870fca36-b969-43af-81a9-f5e91de62896");
+}
+.team-26050 {
+  background-image: url("/avatars/composed/2025/26050_5210ddaf-82cd-43c1-9101-532870ce5639");
+}
+.team-26065 {
+  background-image: url("/avatars/composed/2025/26065_5b530204-1378-411c-b154-2b5fc493ef2b");
+}
+.team-26075 {
+  background-image: url("/avatars/composed/2025/26075_f827a7bf-0bd9-4e96-8fbb-7dc7159bd989");
+}
+.team-26079 {
+  background-image: url("/avatars/composed/2025/26079_b21832fa-ef44-4652-b8f5-6308532ce9cb");
+}
+.team-26089 {
+  background-image: url("/avatars/composed/2025/26089_6ac41886-b1e7-499c-8aae-ea734987c834");
+}
+.team-26100 {
+  background-image: url("/avatars/composed/2025/26100_7efb9d67-c69e-4627-944d-bf0ea10ee1dd");
+}
+.team-26101 {
+  background-image: url("/avatars/composed/2025/26101_23a7cd48-a7cb-4071-8cbf-2ac8fa41177f");
+}
+.team-26110 {
+  background-image: url("/avatars/composed/2025/26110_b9e0bb77-afbf-4912-b91e-529064c9f60b");
+}
+.team-26128 {
+  background-image: url("/avatars/composed/2025/26128_76d88918-b2a0-4642-91c6-bc29f9d64a6f");
+}
+.team-26145 {
+  background-image: url("/avatars/composed/2025/26145_7b8b82a2-1701-468c-b44b-85d9b27d4785");
+}
+.team-26160 {
+  background-image: url("/avatars/composed/2025/26160_9fc01a27-1b1b-4964-b3e2-4fa9596651d2");
+}
+.team-26166 {
+  background-image: url("/avatars/composed/2025/26166_647bc018-e3b9-40d4-be9f-3daaf8684eec");
+}
+.team-26170 {
+  background-image: url("/avatars/composed/2025/26170_76f81d31-e1c1-49c4-bc38-50c5739f50f9");
+}
+.team-26171 {
+  background-image: url("/avatars/composed/2025/26171_4c8885a0-0978-4103-acd0-17c90c09f299");
+}
+.team-26193 {
+  background-image: url("/avatars/composed/2025/26193_82f3c794-244d-4052-9f71-1bcb7d28e5db");
+}
+.team-26233 {
+  background-image: url("/avatars/composed/2025/26233_0ee6b95d-2004-48a7-9685-1b41176b724c");
+}
+.team-26235 {
+  background-image: url("/avatars/composed/2025/26235_10a8fd8c-9644-4e9a-a092-c9914f29f5b7");
+}
+.team-26239 {
+  background-image: url("/avatars/composed/2025/26239_95082f67-3462-45ba-ac33-056f61a6228b");
+}
+.team-26242 {
+  background-image: url("/avatars/composed/2025/26242_f96c06a0-0f5e-4ace-825f-fb3339c61a57");
+}
+.team-26245 {
+  background-image: url("/avatars/composed/2025/26245_2cd33279-b1a7-4440-a5f0-b54ebfa6d0d9");
+}
+.team-26248 {
+  background-image: url("/avatars/composed/2025/26248_bc064954-17f5-4ff2-9a35-6b49766dee85");
+}
+.team-26249 {
+  background-image: url("/avatars/composed/2025/26249_c9b1163b-ec0f-42b8-90e4-1f979f7d039f");
+}
+.team-26270 {
+  background-image: url("/avatars/composed/2025/26270_3ea87146-801a-44ff-8295-0d44659f1959");
+}
+.team-26276 {
+  background-image: url("/avatars/composed/2025/26276_0d81302b-a1fa-4e2d-8885-7622fd11288f");
+}
+.team-26300 {
+  background-image: url("/avatars/composed/2025/26300_a5db2a22-7181-47fd-97eb-104def2551fe");
+}
+.team-26339 {
+  background-image: url("/avatars/composed/2025/26339_f07adb4c-0bd8-45ff-bd5f-abf8dd99361f");
+}
+.team-26358 {
+  background-image: url("/avatars/composed/2025/26358_ea0554a7-98ad-46fe-af43-b6e2086655c4");
+}
+.team-26425 {
+  background-image: url("/avatars/composed/2025/26425_defda23c-dc8b-4707-ad7d-6af49f36b60f");
+}
+.team-26433 {
+  background-image: url("/avatars/composed/2025/26433_6471f3d2-2724-481d-b125-82057c0488f3");
+}
+.team-26438 {
+  background-image: url("/avatars/composed/2025/26438_230b0d68-c907-4589-a503-4eafccd2da6e");
+}
+.team-26448 {
+  background-image: url("/avatars/composed/2025/26448_0deac3ab-27ea-458b-8f92-9d57f46a166a");
+}
+.team-26459 {
+  background-image: url("/avatars/composed/2025/26459_2e800c51-3f3f-42ca-a451-0ecbdf0d7639");
+}
+.team-26462 {
+  background-image: url("/avatars/composed/2025/26462_0b005827-6949-4a26-8fe7-aef80b7303c4");
+}
+.team-26467 {
+  background-image: url("/avatars/composed/2025/26467_417c83a4-1325-460c-9cd9-e49124cb3bb0");
+}
+.team-26515 {
+  background-image: url("/avatars/composed/2025/26515_e5ebbaba-45d8-434e-9ced-be79f199a50e");
+}
+.team-26518 {
+  background-image: url("/avatars/composed/2025/26518_1cdff4dd-a00d-4b8e-ac2a-06b2e8cd32be");
+}
+.team-26519 {
+  background-image: url("/avatars/composed/2025/26519_29106b55-b6cb-4c45-8c22-eb33929252b9");
+}
+.team-26528 {
+  background-image: url("/avatars/composed/2025/26528_b76fd403-6826-45df-88c5-d9f9aa5001a4");
+}
+.team-26529 {
+  background-image: url("/avatars/composed/2025/26529_c616eb98-bbeb-4346-b6ac-926a2a7cd0d0");
+}
+.team-26530 {
+  background-image: url("/avatars/composed/2025/26530_5e513cb0-9339-4202-88a3-dba075427979");
+}
+.team-26538 {
+  background-image: url("/avatars/composed/2025/26538_85024eb3-4023-4172-9abe-6984c1afe5e8");
+}
+.team-26550 {
+  background-image: url("/avatars/composed/2025/26550_1899e2cc-c744-47fc-b6d1-b8f952f78e13");
+}
+.team-26553 {
+  background-image: url("/avatars/composed/2025/26553_2ec963cb-964f-4fad-a01c-ed3a20a7eadc");
+}
+.team-26575 {
+  background-image: url("/avatars/composed/2025/26575_8719babf-05da-48f2-8b69-337ebf9afb7f");
+}
+.team-26577 {
+  background-image: url("/avatars/composed/2025/26577_5980b58b-3d31-48b7-991b-47eb4397517c");
+}
+.team-26602 {
+  background-image: url("/avatars/composed/2025/26602_43ce58f1-8b36-4a35-b96d-d197fd21a0ec");
+}
+.team-26603 {
+  background-image: url("/avatars/composed/2025/26603_ed6547cf-86c2-464c-89a0-e5acc40ba7f8");
+}
+.team-26606 {
+  background-image: url("/avatars/composed/2025/26606_b471930f-5ee2-4d31-b9b0-31b0a83c97ef");
+}
+.team-26616 {
+  background-image: url("/avatars/composed/2025/26616_d7095356-b75f-431f-b9b4-25e102c8edd4");
+}
+.team-26617 {
+  background-image: url("/avatars/composed/2025/26617_7724fe01-a24e-4286-b65a-78026c19ffa6");
+}
+.team-26630 {
+  background-image: url("/avatars/composed/2025/26630_1fee517b-c92c-40be-ab66-f49437e729b7");
+}
+.team-26660 {
+  background-image: url("/avatars/composed/2025/26660_4ba4ca69-36df-4a62-9ab0-e635acacee4b");
+}
+.team-26689 {
+  background-image: url("/avatars/composed/2025/26689_2421e39b-2e91-4ca0-9e89-d121c7e5a6ee");
+}
+.team-26691 {
+  background-image: url("/avatars/composed/2025/26691_3b70f52f-5e4c-4f12-a740-eebe76a430db");
+}
+.team-26708 {
+  background-image: url("/avatars/composed/2025/26708_0280450b-3126-4122-9cbd-9219522a6c8b");
+}
+.team-26712 {
+  background-image: url("/avatars/composed/2025/26712_398f9741-e4b8-48bc-8ec7-031e64326801");
+}
+.team-26713 {
+  background-image: url("/avatars/composed/2025/26713_ac4abae1-9258-4de5-a283-f767d4344cc8");
+}
+.team-26717 {
+  background-image: url("/avatars/composed/2025/26717_14b03608-0096-4aba-9096-eb11477a04e3");
+}
+.team-26744 {
+  background-image: url("/avatars/composed/2025/26744_d06f6712-fbdd-4cd8-a06a-ee58ee647a02");
+}
+.team-26820 {
+  background-image: url("/avatars/composed/2025/26820_a4571593-fcf5-4e24-a6aa-aa84f05db850");
+}
+.team-26856 {
+  background-image: url("/avatars/composed/2025/26856_328994df-5684-4272-8b1a-29d7f84cedb1");
+}
+.team-26857 {
+  background-image: url("/avatars/composed/2025/26857_fef79cdd-02e0-467c-8c59-ce0a543c6815");
+}
+.team-26858 {
+  background-image: url("/avatars/composed/2025/26858_63bee939-a32a-4435-87d8-5877fa17cdca");
+}
+.team-26876 {
+  background-image: url("/avatars/composed/2025/26876_1e41e057-e5b2-4106-baf3-b936a4b8a626");
+}
+.team-26878 {
+  background-image: url("/avatars/composed/2025/26878_8102c3fe-2c42-484f-b0ce-ccfe3c191465");
+}
+.team-26897 {
+  background-image: url("/avatars/composed/2025/26897_bac4ab7d-13b6-4a1a-ac59-00df1b3adc0e");
+}
+.team-26903 {
+  background-image: url("/avatars/composed/2025/26903_01d44576-b742-4e47-ac8c-23e5ded655a3");
+}
+.team-26922 {
+  background-image: url("/avatars/composed/2025/26922_ea346132-6dd4-47bc-aa98-5db10c23d0b6");
+}
+.team-26923 {
+  background-image: url("/avatars/composed/2025/26923_02009b77-f759-4f68-8e0f-9e13a5eee436");
+}
+.team-26929 {
+  background-image: url("/avatars/composed/2025/26929_16cc652f-8981-4610-8cef-4027f736dd87");
+}
+.team-26948 {
+  background-image: url("/avatars/composed/2025/26948_30f1927a-5128-46ce-b5f4-5f1424c983c3");
+}
+.team-26949 {
+  background-image: url("/avatars/composed/2025/26949_8a22a455-f954-48fa-a6bb-1ec9f7e4a4cb");
+}
+.team-26963 {
+  background-image: url("/avatars/composed/2025/26963_0c08b665-6066-4816-b511-9aa2dd1b8752");
+}
+.team-26980 {
+  background-image: url("/avatars/composed/2025/26980_de3e6714-8b29-4de0-a510-e6007a98f0f3");
+}
+.team-27015 {
+  background-image: url("/avatars/composed/2025/27015_3585c0c3-45ca-4219-abb7-e4da7aa6bcfb");
+}
+.team-27029 {
+  background-image: url("/avatars/composed/2025/27029_621904df-d17b-4b2c-a61f-c16c9e1a5ef2");
+}
+.team-27050 {
+  background-image: url("/avatars/composed/2025/27050_9a0e18e3-c229-45c9-8d74-bef9e15e18fc");
+}
+.team-27054 {
+  background-image: url("/avatars/composed/2025/27054_ffeb5fe3-4d83-46e2-9651-26d39b56cedc");
+}
+.team-27055 {
+  background-image: url("/avatars/composed/2025/27055_54d92f04-bac3-42f1-85cf-5739217ba174");
+}
+.team-27060 {
+  background-image: url("/avatars/composed/2025/27060_3dc7c2c1-a646-4f16-aa2c-6ac014bff9b0");
+}
+.team-27072 {
+  background-image: url("/avatars/composed/2025/27072_b6f18a40-5ba9-4b48-97dd-a4ddde345fed");
+}
+.team-27093 {
+  background-image: url("/avatars/composed/2025/27093_a6d4e258-b48a-43c7-963e-5b51f44a167e");
+}
+.team-27095 {
+  background-image: url("/avatars/composed/2025/27095_c7d44eb5-2fb2-4864-b8b1-ea5f0f3fe508");
+}
+.team-27105 {
+  background-image: url("/avatars/composed/2025/27105_541f0f4b-fe3e-4627-a789-9c8f2dabebfe");
+}
+.team-27121 {
+  background-image: url("/avatars/composed/2025/27121_d2967804-3e40-45bf-9e3e-57ddeced0652");
+}
+.team-27133 {
+  background-image: url("/avatars/composed/2025/27133_50b133a6-ffae-43c6-9c21-b59a3ab474d8");
+}
+.team-27163 {
+  background-image: url("/avatars/composed/2025/27163_5b54a9ee-b80f-41d3-b502-5754467e52d7");
+}
+.team-27187 {
+  background-image: url("/avatars/composed/2025/27187_b4967378-3508-4576-9fb1-40830bc6cdbb");
+}
+.team-27191 {
+  background-image: url("/avatars/composed/2025/27191_f72de9bb-cd68-479a-a708-afeee02b7194");
+}
+.team-27194 {
+  background-image: url("/avatars/composed/2025/27194_aaab79ee-5cbb-4dda-8f10-75b7c824924a");
+}
+.team-27202 {
+  background-image: url("/avatars/composed/2025/27202_4c875fb2-7db8-4ee8-8baf-f1d9253a1458");
+}
+.team-27203 {
+  background-image: url("/avatars/composed/2025/27203_82ea0e6c-5b3c-4a1f-9800-b63e07554222");
+}
+.team-27204 {
+  background-image: url("/avatars/composed/2025/27204_177206f5-8143-418f-af4f-996363bfbdb3");
+}
+.team-27234 {
+  background-image: url("/avatars/composed/2025/27234_0c28cf98-7de7-4500-827d-c13bc8b13bde");
+}
+.team-27238 {
+  background-image: url("/avatars/composed/2025/27238_938d124e-d3cc-4f31-8506-f69a56714e52");
+}
+.team-27242 {
+  background-image: url("/avatars/composed/2025/27242_da6b6812-3d3a-4104-96fe-50cad8d4b7cf");
+}
+.team-27248 {
+  background-image: url("/avatars/composed/2025/27248_37045fbe-9a95-4c2c-b510-46d102135b3e");
+}
+.team-27253 {
+  background-image: url("/avatars/composed/2025/27253_3ac4b3ae-a4e2-498d-8b1e-9e52a7135070");
+}
+.team-27261 {
+  background-image: url("/avatars/composed/2025/27261_98e24318-99ee-4249-8d8c-14ac79af9b1c");
+}
+.team-27268 {
+  background-image: url("/avatars/composed/2025/27268_46f05be6-f252-4d67-85a4-8a685492e879");
+}
+.team-27272 {
+  background-image: url("/avatars/composed/2025/27272_e602d5ca-defe-4dcb-b737-b8fe018c9eee");
+}
+.team-27311 {
+  background-image: url("/avatars/composed/2025/27311_454964dd-fc4b-4a31-851f-20eca8c74110");
+}
+.team-27318 {
+  background-image: url("/avatars/composed/2025/27318_32f2d599-5fff-416f-83e6-325ca6f43750");
+}
+.team-27350 {
+  background-image: url("/avatars/composed/2025/27350_f1f7e8fd-c36b-4ef2-b4fe-bde0d3b4e726");
+}
+.team-27353 {
+  background-image: url("/avatars/composed/2025/27353_bb0c7b6a-c4a6-4fc2-9908-ec272f617bc0");
+}
+.team-27361 {
+  background-image: url("/avatars/composed/2025/27361_09c75f59-1f36-4ce8-8231-e43939bb73de");
+}
+.team-27377 {
+  background-image: url("/avatars/composed/2025/27377_af680930-f734-4e15-a7aa-cc8fc81ef6e7");
+}
+.team-27386 {
+  background-image: url("/avatars/composed/2025/27386_6100f637-764a-434b-971a-95bae68fb19e");
+}
+.team-27391 {
+  background-image: url("/avatars/composed/2025/27391_4022d553-8b83-4f89-a1d0-d76aef4bc455");
+}
+.team-27393 {
+  background-image: url("/avatars/composed/2025/27393_3d5e8e44-7b32-4f0b-86c5-9d98fd6875cb");
+}
+.team-27415 {
+  background-image: url("/avatars/composed/2025/27415_1a0cfd37-cefe-4cb1-9978-64bf78a37b98");
+}
+.team-27421 {
+  background-image: url("/avatars/composed/2025/27421_8d57dc13-af6e-4b80-806d-40b079e7f4c1");
+}
+.team-27457 {
+  background-image: url("/avatars/composed/2025/27457_c775a716-e420-4ed4-a555-9a740312668b");
+}
+.team-27468 {
+  background-image: url("/avatars/composed/2025/27468_8998156f-6911-43ba-b31b-f995da0d2308");
+}
+.team-27508 {
+  background-image: url("/avatars/composed/2025/27508_5a2b25cb-c69f-4501-ba1e-3fd076aee5f9");
+}
+.team-27519 {
+  background-image: url("/avatars/composed/2025/27519_1eb38323-ae75-4f7f-927d-0e07f4467f0f");
+}
+.team-27523 {
+  background-image: url("/avatars/composed/2025/27523_a37bf825-757a-4c3b-8c7b-f2df9128c310");
+}
+.team-27526 {
+  background-image: url("/avatars/composed/2025/27526_078d1865-7aeb-4c64-98b0-c36a638cdad8");
+}
+.team-27531 {
+  background-image: url("/avatars/composed/2025/27531_f9e1c191-6ba8-4cfe-97ef-65f0547041b2");
+}
+.team-27532 {
+  background-image: url("/avatars/composed/2025/27532_87e6dd89-3d5a-407c-96f3-d49be2809f05");
+}
+.team-27533 {
+  background-image: url("/avatars/composed/2025/27533_7d0801fc-20fa-42ef-ab0d-5b004099f26f");
+}
+.team-27534 {
+  background-image: url("/avatars/composed/2025/27534_4fe9f5f7-760c-4a3c-a391-b17c42031df7");
+}
+.team-27535 {
+  background-image: url("/avatars/composed/2025/27535_7dcff882-d395-47a7-a10e-1242bcabac65");
+}
+.team-27536 {
+  background-image: url("/avatars/composed/2025/27536_4d97037b-8db4-420b-8a7c-7fa28a9d004c");
+}
+.team-27542 {
+  background-image: url("/avatars/composed/2025/27542_15a2f81a-33cb-4381-9b7b-8c151c9d17f1");
+}
+.team-27545 {
+  background-image: url("/avatars/composed/2025/27545_f848ea7a-80c3-46c1-9068-a90f187e61f9");
+}
+.team-27551 {
+  background-image: url("/avatars/composed/2025/27551_0756c24b-79e6-4754-8a0c-b11acf900cfb");
+}
+.team-27552 {
+  background-image: url("/avatars/composed/2025/27552_3b917223-bbef-4431-993a-078b5ce73525");
+}
+.team-27560 {
+  background-image: url("/avatars/composed/2025/27560_d4adc758-c8ff-46d3-8d86-a07dbe7d11ca");
+}
+.team-27572 {
+  background-image: url("/avatars/composed/2025/27572_c6a09ee9-c70d-4c6a-b0d9-60d746dbdb8f");
+}
+.team-27583 {
+  background-image: url("/avatars/composed/2025/27583_cd51461f-d9ef-4598-b54a-41bf099bfcf2");
+}
+.team-27584 {
+  background-image: url("/avatars/composed/2025/27584_888d0817-78a2-4bec-9eb3-00b0dabaad0e");
+}
+.team-27585 {
+  background-image: url("/avatars/composed/2025/27585_8125cb26-c2a8-4d08-a56e-8f1e74382a75");
+}
+.team-27586 {
+  background-image: url("/avatars/composed/2025/27586_69babe07-6888-4252-9510-d441c391a536");
+}
+.team-27587 {
+  background-image: url("/avatars/composed/2025/27587_68820d1c-a0c2-4812-b105-73ae8e56e1e3");
+}
+.team-27599 {
+  background-image: url("/avatars/composed/2025/27599_ebe772e3-3e28-4f4b-a299-1f0f909c418d");
+}
+.team-27604 {
+  background-image: url("/avatars/composed/2025/27604_6e3aee81-f050-449e-aa2b-5123edd68a0c");
+}
+.team-27613 {
+  background-image: url("/avatars/composed/2025/27613_eae1306e-24cc-4d07-854b-c05b67706e87");
+}
+.team-27616 {
+  background-image: url("/avatars/composed/2025/27616_1e0ddbdb-9f4f-4f3e-8667-0c5911da68ab");
+}
+.team-27674 {
+  background-image: url("/avatars/composed/2025/27674_169e1fb1-d265-45c7-817f-ec86f436f4e7");
+}
+.team-27689 {
+  background-image: url("/avatars/composed/2025/27689_b6273ac0-128c-4a12-a2ea-98d6c9432ef7");
+}
+.team-27772 {
+  background-image: url("/avatars/composed/2025/27772_c2cc873e-07f9-4b48-8e36-50baebf0b75d");
+}
+.team-27790 {
+  background-image: url("/avatars/composed/2025/27790_e916648f-ae65-43e4-9e32-0d2158159ee6");
+}
+.team-27817 {
+  background-image: url("/avatars/composed/2025/27817_2d8cd7f7-f0f8-422a-8cac-eef7346230f4");
+}
+.team-27835 {
+  background-image: url("/avatars/composed/2025/27835_1c1a8bb2-510e-471c-aa70-7456225bd9cb");
+}
+.team-27836 {
+  background-image: url("/avatars/composed/2025/27836_d6d68388-bf8b-4a52-96ab-ced81e4c16ff");
+}
+.team-27846 {
+  background-image: url("/avatars/composed/2025/27846_fc5ad8c4-5b9f-4c04-ba2d-23fae389f3d2");
+}
+.team-27971 {
+  background-image: url("/avatars/composed/2025/27971_3e8934c8-ac3b-4a02-b218-86dbcc8aaaed");
+}
+.team-27983 {
+  background-image: url("/avatars/composed/2025/27983_01cc7040-3f96-498f-9b7a-d061f868c41b");
+}
+.team-28015 {
+  background-image: url("/avatars/composed/2025/28015_aca425d7-5a79-4221-b222-793ce03556f2");
+}
+.team-28028 {
+  background-image: url("/avatars/composed/2025/28028_210416bd-27df-48b5-9a3e-9fb81405e773");
+}
+.team-28030 {
+  background-image: url("/avatars/composed/2025/28030_37d71e02-54a8-408f-a6aa-6243d500b5c6");
+}
+.team-28032 {
+  background-image: url("/avatars/composed/2025/28032_0191ff8c-e7ac-4222-baa2-b9e27ae43048");
+}
+.team-28033 {
+  background-image: url("/avatars/composed/2025/28033_9c35e683-a108-47b0-b740-95fc2fb0573d");
+}
+.team-28034 {
+  background-image: url("/avatars/composed/2025/28034_5b0d040a-8ff1-46c6-aca8-86b1e2760f3a");
+}
+.team-28035 {
+  background-image: url("/avatars/composed/2025/28035_73643c7e-c24b-4eff-baa5-c34691892086");
+}
+.team-28036 {
+  background-image: url("/avatars/composed/2025/28036_b752ebee-22b9-4703-8033-0d8fcee5841d");
+}
+.team-28037 {
+  background-image: url("/avatars/composed/2025/28037_b6854ecb-4a0c-48e7-a346-4cee3ab93976");
+}
+.team-28038 {
+  background-image: url("/avatars/composed/2025/28038_eb6625ab-8fc2-4229-ab50-2ffb84958a4b");
+}
+.team-28039 {
+  background-image: url("/avatars/composed/2025/28039_0e411bb1-a437-4bf3-aeb9-aec4df254f92");
+}
+.team-28040 {
+  background-image: url("/avatars/composed/2025/28040_8c7683e3-3464-4f03-be7b-437657e24572");
+}
+.team-28080 {
+  background-image: url("/avatars/composed/2025/28080_2dffb15b-70c0-4f28-8ace-c8dfbe1d281c");
+}
+.team-28082 {
+  background-image: url("/avatars/composed/2025/28082_0a5ac211-79e9-4aa0-a371-76006389e44e");
+}
+.team-28115 {
+  background-image: url("/avatars/composed/2025/28115_fdda8777-d3f4-4847-b3c2-9e387a002af2");
+}
+.team-28119 {
+  background-image: url("/avatars/composed/2025/28119_e2c473ac-7dfb-432c-b9e9-17d8b0075375");
+}
+.team-28128 {
+  background-image: url("/avatars/composed/2025/28128_4e0db363-214c-449d-b98c-33cd1c7082df");
+}
+.team-28129 {
+  background-image: url("/avatars/composed/2025/28129_38b3d1c6-6dc4-4db9-8de8-d8b16b67529c");
+}
+.team-28133 {
+  background-image: url("/avatars/composed/2025/28133_f17713d3-b141-4aa3-bfdd-6e732b51eeb8");
+}
+.team-28163 {
+  background-image: url("/avatars/composed/2025/28163_498bc9dd-6579-424f-86df-572002012cc2");
+}
+.team-28183 {
+  background-image: url("/avatars/composed/2025/28183_2ce32bad-6e64-45d1-b111-dc7cdd169a08");
+}
+.team-28226 {
+  background-image: url("/avatars/composed/2025/28226_c116bba2-9888-4500-92ee-09a637e7227e");
+}
+.team-28227 {
+  background-image: url("/avatars/composed/2025/28227_85a3727b-d4d3-4949-a35a-a8ce65424386");
+}
+.team-28236 {
+  background-image: url("/avatars/composed/2025/28236_93e20217-f249-434a-8623-d2db716affc5");
+}
+.team-28300 {
+  background-image: url("/avatars/composed/2025/28300_63d88eec-2557-4d3d-8676-6f3fbd53f45d");
+}
+.team-28330 {
+  background-image: url("/avatars/composed/2025/28330_b8c9fe07-3fb7-4a5e-a947-1a0729d9d4e2");
+}
+.team-28376 {
+  background-image: url("/avatars/composed/2025/28376_f3bce2f5-70f7-42d5-88ae-e7950532f01b");
+}
+.team-28377 {
+  background-image: url("/avatars/composed/2025/28377_bda5a8f4-08f4-4501-adf1-0bf001985ba2");
+}
+.team-28378 {
+  background-image: url("/avatars/composed/2025/28378_30dd32f5-954b-423f-89f0-cd16c2c0808a");
+}
+.team-28379 {
+  background-image: url("/avatars/composed/2025/28379_db133836-79ea-48ec-b311-9a7bcef5102e");
+}
+.team-28380 {
+  background-image: url("/avatars/composed/2025/28380_2830edd0-5e32-4e32-8fc8-f37847bd29a4");
+}
+.team-28512 {
+  background-image: url("/avatars/composed/2025/28512_e7674b85-fcc7-44d5-a1a9-667b522bf5e0");
+}
+.team-28578 {
+  background-image: url("/avatars/composed/2025/28578_21830afc-2cfe-4ed4-90ab-62ae8544d8ed");
+}
+.team-28596 {
+  background-image: url("/avatars/composed/2025/28596_b83dd823-5b7f-469e-9efe-127ce0b85446");
+}
+.team-28656 {
+  background-image: url("/avatars/composed/2025/28656_734b7843-dbb5-455b-ba88-75c3f866a4ca");
+}
+.team-28745 {
+  background-image: url("/avatars/composed/2025/28745_06a0ab92-f08a-441f-bf6e-f69d1c1f0c50");
+}
+.team-28756 {
+  background-image: url("/avatars/composed/2025/28756_a15a1ac1-6639-4726-bc80-46e683f1acb7");
+}
+.team-28761 {
+  background-image: url("/avatars/composed/2025/28761_dd45ac20-b455-426d-bfd8-732aa283142b");
+}
+.team-28804 {
+  background-image: url("/avatars/composed/2025/28804_8ee5c6a1-0dea-48ac-a2a7-c8f1fd16b8e7");
+}
+.team-28852 {
+  background-image: url("/avatars/composed/2025/28852_925db92e-bd9a-4940-a44b-61f7af2319c5");
+}
+.team-28854 {
+  background-image: url("/avatars/composed/2025/28854_66dda9e2-5071-4f7f-bd83-2fbb08982066");
+}
+.team-28862 {
+  background-image: url("/avatars/composed/2025/28862_85b51888-75e6-489d-b51e-c36f45822a47");
+}
+.team-28863 {
+  background-image: url("/avatars/composed/2025/28863_101d22c6-d87a-44cb-8430-11b9e77141b5");
+}
+.team-28867 {
+  background-image: url("/avatars/composed/2025/28867_c7cd1bbc-630e-4a06-9ed1-b83ffeacc30e");
+}
+.team-28927 {
+  background-image: url("/avatars/composed/2025/28927_67dfbbe8-6a99-4274-b538-ca6a7c64fe92");
+}
+.team-29162 {
+  background-image: url("/avatars/composed/2025/29162_2ee7e6b2-fe65-45f2-aff6-b70177634027");
+}
