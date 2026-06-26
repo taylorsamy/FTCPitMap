@@ -174,6 +174,7 @@ const PitMap = (() => {
       const nameColor  = state.pitNameColor  || '#94a3b8';
       const avatarImg  = state._avatarImgs?.[pit.teamNumber];
       const hasAvatar  = hasTeam && ps >= 80 && avatarImg?.complete && avatarImg.naturalWidth > 0;
+      if (pit.teamNumber && state._avatarImgs) console.log('[render]', pit.teamNumber, 'hasAvatar=', hasAvatar, 'ps=', ps, 'complete=', avatarImg?.complete, 'w=', avatarImg?.naturalWidth);
       if (hasAvatar) {
         const aSize = Math.min(ps * 0.40, 52);
         const ax = pit.x + (ps - aSize) / 2;
