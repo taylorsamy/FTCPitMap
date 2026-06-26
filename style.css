@@ -264,6 +264,7 @@ textarea:focus { border-color: var(--accent); }
 
 /* ── Canvas containers need overflow when zoomed ───────────── */
 #mapContainer { overflow: auto; align-items: flex-start; justify-content: flex-start; }
+#canvasScaler, #adminCanvasScaler { transform: none; }
 
 /* highlight pulse for search */
 @keyframes pitPulse {

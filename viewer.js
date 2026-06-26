@@ -130,6 +130,15 @@
     document.getElementById('panelTeamOrg').textContent    = '';
     document.getElementById('panelLocation').textContent   = pit.label ? 'Pit ' + pit.label : '';
     document.getElementById('panelPitNum').textContent     = '';
+    const avatarEl  = document.getElementById('panelAvatar');
+    const avatarImg = document.getElementById('panelAvatarImg');
+    if (pit.avatarUrl) {
+      avatarImg.src        = pit.avatarUrl;
+      avatarEl.style.display = '';
+    } else {
+      avatarEl.style.display = 'none';
+      avatarImg.src = '';
+    }
     document.getElementById('panelLinks').innerHTML        = '';
 
     const scoutEl = document.getElementById('scoutStats');

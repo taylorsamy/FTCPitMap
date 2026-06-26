@@ -168,44 +168,26 @@ const PitMap = (() => {
       roundRect(ctx, pit.x + 1, pit.y + 1, ps - 2, ps - 2, Math.max(2, ps * 0.06));
       ctx.stroke();
 
-      // Avatar
-      const fontScale  = state.pitFontScale  ?? 1;
-      const textColor  = state.pitTextColor  || '#f1f5f9';
-      const nameColor  = state.pitNameColor  || '#94a3b8';
-      const avatarImg  = state._avatarImgs?.[pit.teamNumber];
-      const hasAvatar  = hasTeam && avatarImg?.complete && avatarImg.naturalWidth > 0;
-      if (hasAvatar) {
-        const aSize = Math.min(ps * 0.40, 52);
-        const ax = pit.x + (ps - aSize) / 2;
-        const ay = pit.y + ps * 0.05;
-        ctx.save();
-        roundRect(ctx, ax, ay, aSize, aSize, aSize * 0.12);
-        ctx.clip();
-        ctx.drawImage(avatarImg, ax, ay, aSize, aSize);
-        ctx.restore();
-      }
+      // Avatar / Text
+      const fontScale = state.pitFontScale ?? 1;
+      const textColor = state.pitTextColor || '#f1f5f9';
+      const avatarImg = state._avatarImgs?.[pit.teamNumber];
+      const hasAvatar = hasTeam && avatarImg?.complete && avatarImg.naturalWidth > 0;
 
-      // Text
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      if (hasTeam) {
-        const hasLabel = Boolean(pit.teamName || pit.label);
-        const numSize  = Math.max(11, ps * 0.22) * fontScale;
-        const nameSize = Math.max(8,  ps * 0.13) * fontScale;
-        const numY  = hasAvatar ? pit.y + ps * (hasLabel ? 0.68 : 0.78)
-                                : pit.y + ps * (hasLabel ? 0.38 : 0.5);
-        const nameY = hasAvatar ? pit.y + ps * 0.88 : pit.y + ps * 0.68;
+      if (hasAvatar) {
+        // Fill the entire pit box with the avatar image
+        const pad = 2;
+        ctx.save();
+        roundRect(ctx, pit.x + pad, pit.y + pad, ps - pad * 2, ps - pad * 2, Math.max(2, ps * 0.06));
+        ctx.clip();
+        ctx.drawImage(avatarImg, pit.x + pad, pit.y + pad, ps - pad * 2, ps - pad * 2);
+        ctx.restore();
+      } else if (hasTeam) {
+        const numSize = Math.max(11, ps * 0.22) * fontScale;
         ctx.font      = `700 ${numSize}px "Segoe UI",system-ui,sans-serif`;
         ctx.fillStyle = isSelected ? '#fed7aa' : isHighlight ? '#fef08a' : textColor;
-        ctx.fillText(pit.teamNumber, pit.x + ps / 2, numY);
-        if (hasLabel) {
-          ctx.font      = `${nameSize}px "Segoe UI",system-ui,sans-serif`;
-          ctx.fillStyle = isSelected ? '#fdba74' : isHighlight ? '#fde68a' : nameColor;
-          const maxW = ps - 14;
-          let text = pit.teamName || pit.label;
-          while (ctx.measureText(text).width > maxW && text.length > 3) text = text.slice(0, -1);
-          if (text !== (pit.teamName || pit.label)) text = text.trimEnd() + '…';
-          ctx.fillText(text, pit.x + ps / 2, nameY);
-        }
+        ctx.fillText(pit.teamNumber, pit.x + ps / 2, pit.y + ps / 2);
       } else {
         ctx.font      = `${Math.max(9, ps * 0.15) * fontScale}px "Segoe UI",system-ui,sans-serif`;
         ctx.fillStyle = '#64748b';
@@ -425,10 +407,9 @@ class ZoomController {
   _apply(z, ax, ay) {
     const prev = this.zoom;
     this.zoom  = Math.max(this.MIN, Math.min(this.MAX, z));
-    this.scaler.style.transform       = `scale(${this.zoom})`;
-    this.scaler.style.transformOrigin = 'top left';
-    this.scaler.parentElement.style.width  = Math.round(this.canvas.width  * this.zoom) + 'px';
-    this.scaler.parentElement.style.height = Math.round(this.canvas.height * this.zoom) + 'px';
+    // CSS zoom affects layout (unlike transform: scale) so scrollable area is always correct
+    this.scaler.style.zoom = this.zoom;
+    this.scaler.style.transform = '';
     if (this.labelEl) this.labelEl.textContent = Math.round(this.zoom * 100) + '%';
     if (ax != null) {
       const r = this.zoom / prev;
