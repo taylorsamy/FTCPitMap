@@ -361,13 +361,13 @@ const PitMap = (() => {
     for (const pit of state.pits) {
       if (!pit.avatarUrl || !pit.teamNumber) continue;
       const existing = state._avatarImgs[pit.teamNumber];
-      // Skip only if already successfully loaded with the same URL
       if (existing && existing.complete && existing.naturalWidth > 0 && existing._src === pit.avatarUrl) continue;
       const img = new Image();
-      img.onload  = onLoad;
-      img.onerror = () => {};
-      img._src = pit.avatarUrl; // track which URL this image was loaded from
+      img.onload  = () => { console.log('[avatar] loaded', pit.teamNumber, 'w=', img.naturalWidth); onLoad(); };
+      img.onerror = (e) => { console.warn('[avatar] error', pit.teamNumber, e); };
+      img._src = pit.avatarUrl;
       img.src  = pit.avatarUrl;
+      console.log('[avatar] creating image for', pit.teamNumber, 'url type:', pit.avatarUrl.slice(0, 30));
       state._avatarImgs[pit.teamNumber] = img;
     }
   }
