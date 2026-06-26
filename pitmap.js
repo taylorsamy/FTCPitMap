@@ -151,7 +151,7 @@ const PitMap = (() => {
 
       // Background
       if      (isSelected)           ctx.fillStyle = 'rgba(154,52,18,0.92)';
-      else if (isHighlight)          ctx.fillStyle = 'rgba(113,63,18,0.92)';
+      else if (isHighlight)          ctx.fillStyle = 'rgba(23,37,84,0.92)';
       else if (isHover && hasTeam)   ctx.fillStyle = 'rgba(20,83,45,0.92)';
       else if (isHover)              ctx.fillStyle = 'rgba(127,29,29,0.92)';
       else if (hasTeam)              ctx.fillStyle = 'rgba(15,23,42,0.82)';
@@ -162,7 +162,7 @@ const PitMap = (() => {
       // Border
       ctx.lineWidth   = isSelected || isHighlight ? 3 : 2;
       ctx.strokeStyle = isSelected  ? '#fb923c'
-                      : isHighlight ? '#fbbf24'
+                      : isHighlight ? '#60a5fa'
                       : isHover     ? '#fdba74'
                       :               '#f97316';
       roundRect(ctx, pit.x + 1, pit.y + 1, ps - 2, ps - 2, Math.max(2, ps * 0.06));
@@ -186,7 +186,7 @@ const PitMap = (() => {
       } else if (hasTeam) {
         const numSize = Math.max(11, ps * 0.22) * fontScale;
         ctx.font      = `700 ${numSize}px "Segoe UI",system-ui,sans-serif`;
-        ctx.fillStyle = isSelected ? '#fed7aa' : isHighlight ? '#fef08a' : textColor;
+        ctx.fillStyle = isSelected ? '#fed7aa' : isHighlight ? '#bfdbfe' : textColor;
         ctx.fillText(pit.teamNumber, pit.x + ps / 2, pit.y + ps / 2);
       } else {
         ctx.font      = `${Math.max(9, ps * 0.15) * fontScale}px "Segoe UI",system-ui,sans-serif`;

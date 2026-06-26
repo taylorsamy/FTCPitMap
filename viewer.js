@@ -125,20 +125,20 @@
     panel.classList.remove('hidden');
     overlay.classList.remove('hidden');
 
-    document.getElementById('panelTeamNumber').textContent = pit.teamNumber || '—';
-    document.getElementById('panelTeamName').textContent   = pit.teamName   || 'Team ' + (pit.teamNumber || '');
-    document.getElementById('panelTeamOrg').textContent    = '';
-    document.getElementById('panelLocation').textContent   = pit.label ? 'Pit ' + pit.label : '';
-    document.getElementById('panelPitNum').textContent     = '';
-    const avatarEl  = document.getElementById('panelAvatar');
-    const avatarImg = document.getElementById('panelAvatarImg');
+    const badge = document.getElementById('panelTeamNumber');
     if (pit.avatarUrl) {
-      avatarImg.src        = pit.avatarUrl;
-      avatarEl.style.display = '';
+      badge.innerHTML = `<img src="${pit.avatarUrl}" alt="Team ${pit.teamNumber}" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)" />`;
+      badge.style.cssText = 'width:120px;height:120px;min-width:120px;padding:0;background:transparent;overflow:hidden';
+      badge.style.alignSelf = 'flex-start';
     } else {
-      avatarEl.style.display = 'none';
-      avatarImg.src = '';
+      badge.textContent  = pit.teamNumber || '—';
+      badge.style.cssText = '';
     }
+    document.getElementById('panelTeamName').textContent    = pit.teamName   || 'Team ' + (pit.teamNumber || '');
+    document.getElementById('panelTeamNumber2').textContent = pit.teamNumber ? '#' + pit.teamNumber : '';
+    document.getElementById('panelTeamOrg').textContent  = '';
+    document.getElementById('panelLocation').textContent = pit.label ? 'Pit ' + pit.label : '';
+    document.getElementById('panelPitNum').textContent   = '';
     document.getElementById('panelLinks').innerHTML        = '';
 
     const scoutEl = document.getElementById('scoutStats');
