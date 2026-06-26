@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pit Map — Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">Pit Map Admin</span>
+      </div>
+      <div class="header-controls">
+        <a href="index.html" class="admin-link">View Public Map</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <section class="sidebar-section">
+        <h3>Guide Image</h3>
+        <p class="hint">Reference overlay — visible in admin only, not on the public map.</p>
+        <label class="file-label" for="guideUpload">
+          Upload Guide Image or PDF
+          <input type="file" id="guideUpload" accept="image/*,.pdf" />
+        </label>
+        <div id="guideControls" style="display:none;gap:8px;flex-direction:column;display:none">
+          <label>Opacity
+            <input type="range" id="guideOpacity" min="5" max="100" value="50" style="width:100%;accent-color:var(--accent)" />
+          </label>
+          <label>Scale
+            <input type="range" id="guideScale" min="10" max="500" value="100" style="width:100%;accent-color:var(--accent)" />
+          </label>
+          <label>Rotation (°)
+            <input type="range" id="guideRotation" min="-180" max="180" value="0" style="width:100%;accent-color:var(--accent)" />
+          </label>
+          <div style="display:flex;gap:4px">
+            <input type="number" id="guideRotationNum" value="0" min="-180" max="180" style="width:64px;flex-shrink:0" />
+            <span class="hint" style="align-self:center">° (type exact value)</span>
+          </div>
+          <p class="hint">Drag guide on canvas to reposition. Ctrl+scroll to scale.</p>
+          <button id="clearGuide" class="btn-danger full-width">Remove Guide Image</button>
+        </div>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Floor Plan</h3>
+        <label class="file-label" for="floorplanUpload">
+          Upload Image or PDF
+          <input type="file" id="floorplanUpload" accept="image/*,.pdf" />
+        </label>
+        <div id="floorplanTransformControls" style="display:none;flex-direction:column;gap:8px">
+          <label>Scale
+            <input type="range" id="floorplanScale" min="10" max="500" value="100" style="width:100%;accent-color:var(--accent)" />
+          </label>
+          <div style="display:flex;gap:4px;align-items:center">
+            <span class="hint" style="white-space:nowrap">Scale %</span>
+            <input type="number" id="floorplanScaleNum" value="100" min="10" max="500" style="width:72px" />
+          </div>
+          <label>Offset X (px)
+            <input type="number" id="floorplanOffsetX" value="0" style="width:100%" />
+          </label>
+          <label>Offset Y (px)
+            <input type="number" id="floorplanOffsetY" value="0" style="width:100%" />
+          </label>
+          <button id="floorplanResetTransform" class="btn-secondary">Reset Scale &amp; Position</button>
+        </div>
+        <button id="cropFloorplan" class="btn-secondary">Crop Image</button>
+        <button id="clearFloorplan" class="btn-secondary">Remove Floor Plan</button>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Event Info</h3>
+        <label>Event Name
+          <input type="text" id="eventName" placeholder="e.g. 2025 Alberta Regional" />
+        </label>
+        <label>FTC Season Year
+          <input type="number" id="seasonYear" placeholder="e.g. 2025" value="2025" />
+        </label>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Import Teams</h3>
+
+        <p class="hint" style="font-weight:600;color:var(--text)">Option A — FTC Scout (auto)</p>
+        <p class="hint">Fetches from FTC Scout. May include withdrawn/waitlisted teams.</p>
+        <label>Season
+          <input type="number" id="importSeason" value="2025" />
+        </label>
+        <label>Event Code
+          <input type="text" id="importEventCode" placeholder="e.g. FPEROC" />
+        </label>
+        <button id="importTeamsBtn" class="btn-primary">Import from FTC Scout</button>
+
+        <div class="divider"></div>
+
+        <p class="hint" style="font-weight:600;color:var(--text)">Option B — Paste team numbers</p>
+        <p class="hint">Copy team numbers from <a href="https://ftc-events.firstinspires.org" target="_blank" rel="noopener">ftc-events.firstinspires.org</a> and paste below. Comma or newline separated.</p>
+        <label>Team Numbers
+          <textarea id="pasteTeamNumbers" rows="4" placeholder="417, 772, 9378&#10;10111, 11138…"></textarea>
+        </label>
+        <button id="pasteImportBtn" class="btn-primary">Import Pasted Teams</button>
+
+        <div id="importStatus" class="hint"></div>
+
+        <div class="divider"></div>
+        <p class="hint" style="font-weight:600;color:var(--text)">Team Avatars</p>
+        <p class="hint">Fetches robot/team avatars from FTC Events via a CORS proxy.</p>
+        <button id="fetchAvatarsBtn" class="btn-secondary full-width">Fetch All Avatars</button>
+        <div id="avatarStatus" class="hint"></div>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Pit Size &amp; Style</h3>
+        <p class="hint">Each pit represents a 10×10 ft space.</p>
+        <label>Pixels per foot
+          <input type="number" id="pixelsPerFoot" value="10" min="1" max="50" />
+        </label>
+        <p class="hint">Pit will be <span id="pitPxSize">100</span>×<span id="pitPxSize2">100</span> px</p>
+        <label>Font Scale
+          <input type="range" id="pitFontScale" min="50" max="200" value="100" style="width:100%;accent-color:var(--accent)" />
+        </label>
+        <div style="display:flex;gap:4px;align-items:center">
+          <span class="hint" style="white-space:nowrap">Scale %</span>
+          <input type="number" id="pitFontScaleNum" value="100" min="50" max="200" style="width:64px" />
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <label style="flex-direction:row;align-items:center;gap:6px;flex:1;min-width:100px">
+            <span>Team # color</span>
+            <input type="color" id="pitTextColor" value="#f1f5f9" style="width:36px;height:28px;padding:2px;border:none;background:none;cursor:pointer" />
+          </label>
+          <label style="flex-direction:row;align-items:center;gap:6px;flex:1;min-width:100px">
+            <span>Name color</span>
+            <input type="color" id="pitNameColor" value="#94a3b8" style="width:36px;height:28px;padding:2px;border:none;background:none;cursor:pointer" />
+          </label>
+        </div>
+        <button id="resetPitStyle" class="btn-secondary">Reset Style Defaults</button>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Elements</h3>
+        <p class="hint">Fields and pipe &amp; drape are shown on both admin and public map.</p>
+        <button id="addCompField"    class="btn-secondary full-width">+ Competition Field</button>
+        <button id="addPractField"   class="btn-secondary full-width">+ Practice Field</button>
+        <button id="addDrapeLine"    class="btn-secondary full-width">+ Pipe &amp; Drape Line</button>
+        <button id="cancelElementPlace" class="btn-secondary full-width hidden">Cancel Placement</button>
+        <div id="selectedElementInfo"></div>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Add Pit</h3>
+        <p class="hint">Click on the map to place a pit, then assign a team below.</p>
+        <label>Pit Label (optional)
+          <input type="text" id="newPitLabel" placeholder="e.g. A1" />
+        </label>
+        <button id="addPitMode" class="btn-primary">Click Map to Place Pit</button>
+        <button id="cancelAddPit" class="btn-secondary hidden">Cancel Placement</button>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Align &amp; Arrange</h3>
+        <p class="hint">Shift+click to multi-select pits. Alignment acts on the selection, or all pits if none selected.</p>
+        <div class="align-grid">
+          <button class="btn-secondary align-btn" data-align="left"    title="Align left edges">◧←</button>
+          <button class="btn-secondary align-btn" data-align="centerH" title="Center horizontally">⬜↔</button>
+          <button class="btn-secondary align-btn" data-align="right"   title="Align right edges">→◨</button>
+          <button class="btn-secondary align-btn" data-align="top"     title="Align top edges">◫↑</button>
+          <button class="btn-secondary align-btn" data-align="centerV" title="Center vertically">⬜↕</button>
+          <button class="btn-secondary align-btn" data-align="bottom"  title="Align bottom edges">↓◫</button>
+          <button class="btn-secondary align-btn" data-align="distH"   title="Distribute evenly (H)">↔↔</button>
+          <button class="btn-secondary align-btn" data-align="distV"   title="Distribute evenly (V)">↕↕</button>
+          <button class="btn-secondary align-btn" data-align="snapGrid" title="Snap all to grid">⊞</button>
+          <button class="btn-secondary align-btn" data-align="stackH"  title="Stack tight horizontally (no gaps)">▐▌</button>
+          <button class="btn-secondary align-btn" data-align="stackV"  title="Stack tight vertically (no gaps)">▄▀</button>
+        </div>
+        <button id="autoArrangeBtn" class="btn-secondary full-width">Auto-arrange in Rows</button>
+        <label class="checkbox-label">
+          <input type="checkbox" id="snapToGrid" checked />
+          Snap to grid while dragging
+        </label>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Selected Pit</h3>
+        <div id="selectedPitInfo">
+          <p class="hint">Click a pit on the map to select it.</p>
+        </div>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Pit List</h3>
+        <div id="pitList" class="pit-list"></div>
+      </section>
+
+      <section class="sidebar-section">
+        <p class="hint" id="fileLabel">No file open</p>
+        <button id="openFile"  class="btn-secondary full-width">Open pitmap.json…</button>
+        <button id="saveMap"   class="btn-primary   full-width">Save As…</button>
+        <button id="clearAll"  class="btn-danger    full-width">New (Clear Everything)</button>
+        <p class="hint">Ctrl+S to save. Upload pitmap.json alongside index.html to publish.</p>
+      </section>
+    </aside>
+
+    <!-- Canvas area -->
+    <div class="admin-canvas-wrap">
+      <div id="adminMapContainer">
+        <div id="adminNoMap">
+          <p>Upload a floor plan to get started.</p>
+        </div>
+        <div id="adminCanvasScaler">
+          <canvas id="adminCanvas"></canvas>
+          <canvas id="cropCanvas"></canvas>
+        </div>
+      </div>
+      <div class="canvas-hint" id="canvasHint"></div>
+      <div class="zoom-controls" id="zoomControls">
+        <button id="zoomOut">−</button>
+        <span id="zoomLabel">100%</span>
+        <button id="zoomIn">+</button>
+        <button id="zoomFit" title="Fit to screen">⊡</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cropToolbar">
+    <span>Drag to set crop region</span>
+    <button id="cropApply" class="btn-primary">Apply Crop</button>
+    <button id="cropCancel" class="btn-secondary">Cancel</button>
+  </div>
+
+  <script src="pitmap.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
