@@ -110,7 +110,10 @@
 
         <div class="divider"></div>
         <p class="hint" style="font-weight:600;color:var(--text)">Team Avatars</p>
-        <p class="hint">Fetches robot/team avatars from FTC Events via a CORS proxy.</p>
+        <p class="hint">Avatars are saved as data URLs in the JSON — the proxy is only needed once during fetch.</p>
+        <label>CORS Proxy URL
+          <input type="text" id="avatarProxyUrl" placeholder="https://your-worker.workers.dev" />
+        </label>
         <button id="fetchAvatarsBtn" class="btn-secondary full-width">Fetch All Avatars</button>
         <div id="avatarStatus" class="hint"></div>
       </section>

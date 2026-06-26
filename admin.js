@@ -695,19 +695,40 @@
   // ── Avatar fetching ───────────────────────────────────────
   let _avatarCssCache = null; // { season, map: { teamNumber: url } }
 
+  // Persist proxy URL across sessions — it's a local admin config, not map data
+  const proxyInput = document.getElementById('avatarProxyUrl');
+  proxyInput.value = localStorage.getItem('avatarProxyUrl') || '';
+  proxyInput.addEventListener('change', () => localStorage.setItem('avatarProxyUrl', proxyInput.value.trim()));
+
+  function getProxyUrl() { return (proxyInput.value || '').trim().replace(/\/$/, ''); }
+
   async function loadAvatarCss(season) {
     if (_avatarCssCache?.season === season) return _avatarCssCache.map;
-    const cssUrl = `https://ftc-scoring.firstinspires.org/avatars/composed/${season}.css`;
+    const directUrl = `https://ftc-scoring.firstinspires.org/avatars/composed/${season}.css`;
     let css = null;
+    // Same-origin copy committed by GitHub Actions — no CORS
     try {
-      const r = await fetch(cssUrl);
+      const r = await fetch(`./avatars/${season}.css?_=${Date.now()}`);
       if (r.ok) css = await r.text();
     } catch {}
+    // Direct fetch (works localhost or if FIRST ever adds CORS headers)
+    if (!css) {
+      try {
+        const r = await fetch(directUrl);
+        if (r.ok) css = await r.text();
+      } catch {}
+    }
     if (!css) return null;
     const map = {};
     const re = /\.team-(\d+)[^{]*\{[^}]*background(?:-image)?\s*:\s*url\(['"]?([^'")\s]+)['"]?\)/gi;
     let m;
-    while ((m = re.exec(css)) !== null) map[m[1]] = resolveUrl(m[2]);
+    while ((m = re.exec(css)) !== null) {
+      const rawUrl = m[2];
+      const resolved = rawUrl.startsWith('./img/')
+        ? `./avatars/${rawUrl.slice(2)}`
+        : resolveUrl(rawUrl);
+      map[m[1]] = resolved;
+    }
     _avatarCssCache = { season, map };
     return map;
   }
@@ -720,25 +741,57 @@
     return url;
   }
 
+  // Fetch an external image URL via the CORS proxy and convert to a data URL.
+  // If the URL is already same-origin (data: or relative), return it directly.
+  async function fetchImageAsDataUrl(imgUrl) {
+    if (!imgUrl) return null;
+    // Data URLs and same-origin relative paths need no proxy
+    if (imgUrl.startsWith('data:') || !imgUrl.startsWith('http')) return imgUrl;
+    const proxy = getProxyUrl();
+    if (!proxy) return imgUrl; // no proxy configured — caller deals with result
+    const proxied = `${proxy}?url=${encodeURIComponent(imgUrl)}`;
+    const resp = await fetch(proxied);
+    if (!resp.ok) throw new Error(`Proxy returned ${resp.status} for ${imgUrl}`);
+    const blob = await resp.blob();
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload  = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+
   document.getElementById('fetchAvatarsBtn').addEventListener('click', async () => {
     const statusEl = document.getElementById('avatarStatus');
     const season = state.seasonYear || 2025;
+    const proxy = getProxyUrl();
     statusEl.textContent = `Loading avatar CSS for season ${season}…`;
     const map = await loadAvatarCss(season);
     if (!map) { statusEl.textContent = 'Could not load avatar CSS — check season year and connection.'; return; }
-    const total = Object.keys(map).length;
-    statusEl.textContent = `CSS loaded (${total} teams). Applying to pits…`;
-    let applied = 0;
-    for (const pit of state.pits) {
-      if (pit.teamNumber && map[pit.teamNumber]) {
-        pit.avatarUrl = map[pit.teamNumber]; applied++;
+    const pitsToFetch = state.pits.filter(p => p.teamNumber && map[p.teamNumber]);
+    if (!pitsToFetch.length) {
+      statusEl.textContent = `CSS loaded but no matching teams found. Check season year (currently ${season}).`;
+      return;
+    }
+    if (!proxy && pitsToFetch.some(p => (map[p.teamNumber] || '').startsWith('http'))) {
+      statusEl.textContent = 'Enter your Cloudflare Worker URL above — it\'s needed to fetch cross-origin avatar images.';
+      return;
+    }
+    let applied = 0, failed = 0;
+    for (const pit of pitsToFetch) {
+      const rawUrl = map[pit.teamNumber];
+      statusEl.textContent = `Fetching avatar for team ${pit.teamNumber}… (${applied + failed + 1}/${pitsToFetch.length})`;
+      try {
+        pit.avatarUrl = await fetchImageAsDataUrl(rawUrl);
+        applied++;
+      } catch (e) {
+        console.warn('Avatar fetch failed for', pit.teamNumber, e);
+        failed++;
       }
     }
     PitMap.loadAvatars(state, redraw);
     markDirty(); redraw();
-    statusEl.textContent = applied
-      ? `Applied avatars to ${applied} pit${applied !== 1 ? 's' : ''}.`
-      : `CSS loaded but no matching teams found. Check season year (currently ${season}).`;
+    statusEl.textContent = `Done — ${applied} avatar${applied !== 1 ? 's' : ''} applied${failed ? `, ${failed} failed` : ''}.`;
   });
 
   function placePits(teams) {
@@ -1026,12 +1079,17 @@
       st.textContent = 'Loading avatar CSS…';
       const season = state.seasonYear || 2025;
       const map = await loadAvatarCss(season);
-      const url = map?.[num];
-      if (url) {
-        pit.avatarUrl = url;
-        PitMap.loadAvatars(state, redraw);
-        markDirty(); redraw();
-        st.textContent = 'Avatar loaded.';
+      const rawUrl = map?.[num];
+      if (rawUrl) {
+        try {
+          st.textContent = 'Fetching avatar image…';
+          pit.avatarUrl = await fetchImageAsDataUrl(rawUrl);
+          PitMap.loadAvatars(state, redraw);
+          markDirty(); redraw();
+          st.textContent = 'Avatar loaded.';
+        } catch (e) {
+          st.textContent = 'Avatar fetch failed — check proxy URL. ' + e.message;
+        }
       } else {
         st.textContent = map ? 'No avatar found for this team.' : 'Could not load avatar CSS.';
       }
