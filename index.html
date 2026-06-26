@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pit Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">FTC Pit Map</span>
+      </div>
+      <div class="header-controls">
+        <div class="search-wrap">
+          <input type="text" id="teamSearch" placeholder="Search team number or name…" autocomplete="off" />
+          <button id="clearSearch">Clear</button>
+        </div>
+        <a href="admin.html" class="admin-link">Admin</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="mapContainer">
+      <div id="noMap">
+        <p id="noMapMsg">Loading map…</p>
+        <label class="file-label" id="noMapFilePick" style="display:none">
+          Open pitmap.json
+          <input type="file" id="noMapFileInput" accept=".json" />
+        </label>
+        <a href="admin.html" id="noMapAdminLink" style="display:none">Go to Admin to create one →</a>
+      </div>
+      <div id="canvasScaler"><canvas id="mapCanvas"></canvas></div>
+    </div>
+    <div class="zoom-controls" id="zoomControls">
+      <button id="zoomOut">−</button>
+      <span id="zoomLabel">100%</span>
+      <button id="zoomIn">+</button>
+      <button id="zoomFit" title="Fit to screen">⊡</button>
+    </div>
+  </main>
+
+  <!-- Team info panel -->
+  <div id="teamPanel" class="hidden">
+    <button id="closePanel">✕</button>
+    <div id="teamPanelContent">
+      <div class="team-header">
+        <div class="team-number-badge" id="panelTeamNumber"></div>
+        <div>
+          <div class="team-name" id="panelTeamName"></div>
+          <div class="team-org" id="panelTeamOrg"></div>
+        </div>
+      </div>
+      <div class="team-meta">
+        <span id="panelLocation"></span>
+        <span id="panelPitNum"></span>
+      </div>
+      <div id="scoutStats">
+        <div class="stats-loading">Loading scouting data…</div>
+      </div>
+      <div id="panelLinks"></div>
+    </div>
+  </div>
+  <div id="panelOverlay" class="hidden"></div>
+
+  <script src="pitmap.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>
