@@ -173,8 +173,7 @@ const PitMap = (() => {
       const textColor  = state.pitTextColor  || '#f1f5f9';
       const nameColor  = state.pitNameColor  || '#94a3b8';
       const avatarImg  = state._avatarImgs?.[pit.teamNumber];
-      const hasAvatar  = hasTeam && ps >= 80 && avatarImg?.complete && avatarImg.naturalWidth > 0;
-      if (pit.teamNumber && state._avatarImgs) console.log('[render]', pit.teamNumber, 'hasAvatar=', hasAvatar, 'ps=', ps, 'complete=', avatarImg?.complete, 'w=', avatarImg?.naturalWidth);
+      const hasAvatar  = hasTeam && avatarImg?.complete && avatarImg.naturalWidth > 0;
       if (hasAvatar) {
         const aSize = Math.min(ps * 0.40, 52);
         const ax = pit.x + (ps - aSize) / 2;
@@ -364,11 +363,10 @@ const PitMap = (() => {
       const existing = state._avatarImgs[pit.teamNumber];
       if (existing && existing.complete && existing.naturalWidth > 0 && existing._src === pit.avatarUrl) continue;
       const img = new Image();
-      img.onload  = () => { console.log('[avatar] loaded', pit.teamNumber, 'w=', img.naturalWidth); onLoad(); };
-      img.onerror = (e) => { console.warn('[avatar] error', pit.teamNumber, e); };
+      img.onload  = onLoad;
+      img.onerror = () => {};
       img._src = pit.avatarUrl;
       img.src  = pit.avatarUrl;
-      console.log('[avatar] creating image for', pit.teamNumber, 'url type:', pit.avatarUrl.slice(0, 30));
       state._avatarImgs[pit.teamNumber] = img;
     }
   }
